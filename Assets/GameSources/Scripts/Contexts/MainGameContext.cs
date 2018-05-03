@@ -12,5 +12,9 @@ public class MainGameContext : MVCSContext {
     mediationBinder.Bind<EmoListView>().To<EmoListMediator>();
     mediationBinder.Bind<EmoTileView>().To<EmoTileMediator>();
     mediationBinder.Bind<StaffView>().To<StaffMediator>();
+    mediationBinder.Bind<NodeCollumTileView>().To<NodeCollumTileMediator>();
+    mediationBinder.Bind<NodeTileView>().To<NodeTileMediator>();
+    mediationBinder.Bind<MusicFieldView>().To<MusicFieldMediator>();
+    mediationBinder.Bind<MelodyTileView>().To<MelodyTileMediator>();
   }
 }

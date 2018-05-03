@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0336fa4ff73774095806181e380f3664
+guid: dcbfc34a5cc824ddabb9fbc256983ab8
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -67,40 +67,18 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Standalone
-    maxTextureSize: 256
-    resizeAlgorithm: 0
-    textureFormat: 12
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 1
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 256
-    resizeAlgorithm: 0
-    textureFormat: 47
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 1
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8627789d164f843879abfef4738ab8ac
+    spriteID: 97587f1832fd848698be4c2739be8eb4
     vertices: []
     indices: 
     edges: []
     weights: []
-  spritePackingTag: Melody
+  spritePackingTag: 
   userData: 
   assetBundleName: 
   assetBundleVariant: 
