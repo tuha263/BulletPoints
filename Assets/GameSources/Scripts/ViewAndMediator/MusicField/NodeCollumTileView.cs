@@ -17,7 +17,7 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
     }
   }
 
-  public void SetData(NodeCollumTileData data) {
-    this.data = data;
+  public override void SetData(EnhancedScrollerCellData data) {
+    this.data = data as NodeCollumTileData;
   }
 }

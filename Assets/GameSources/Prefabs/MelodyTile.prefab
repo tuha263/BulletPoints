@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 222389453977416624}
   - component: {fileID: 114709877125575586}
   - component: {fileID: 225032509097856170}
+  - component: {fileID: 114975833855195380}
   m_Layer: 0
   m_Name: Melody
   m_TagString: Untagged
@@ -134,6 +135,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &114975833855195380
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1502082935441080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045460176890d4547b12c1ee5d9a1607, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellIdentifier: 
 --- !u!222 &222353251445335004
 CanvasRenderer:
   m_ObjectHideFlags: 1

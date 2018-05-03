@@ -1,15 +1,13 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
 using System.Collections;
 using strange.extensions.mediation.impl;
+using UnityEngine;
 
-namespace EnhancedUI.EnhancedScroller
-{
+namespace EnhancedUI.EnhancedScroller {
     /// <summary>
     /// This is the base class that all cell views should derive from
     /// </summary>
-    public class EnhancedScrollerCellView : View
-    {
+    public class EnhancedScrollerCellView : View {
         /// <summary>
         /// The cellIdentifier is a unique string that allows the scroller
         /// to handle different types of cells in a single list. Each type
@@ -40,6 +38,10 @@ namespace EnhancedUI.EnhancedScroller
         /// This method is called by the scroller when the RefreshActiveCellViews is called on the scroller
         /// You can override it to update your cell's view UID
         /// </summary>
-        public virtual void RefreshCellView() { }
+        public virtual void RefreshCellView() {}
+
+        public virtual void SetData(EnhancedScrollerCellData data) {
+
+        }
     }
 }

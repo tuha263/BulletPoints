@@ -21,8 +21,7 @@ GameObject:
   - component: {fileID: 224802006002965570}
   - component: {fileID: 114099704569573210}
   - component: {fileID: 114354173361410558}
-  - component: {fileID: 114892412241518314}
-  - component: {fileID: 114653964655363058}
+  - component: {fileID: 114370077476141542}
   m_Layer: 5
   m_Name: NodeCollum
   m_TagString: Untagged
@@ -71,7 +70,7 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &114653964655363058
+--- !u!114 &114370077476141542
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -79,22 +78,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1143477910147914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88eeb592ac6b54ce7b804fb13beee84c, type: 3}
+  m_Script: {fileID: 11500000, guid: cc0eb853f5f1a455292663e033bd091e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cellIdentifier: 
-  nodeCollumView: {fileID: 114892412241518314}
---- !u!114 &114892412241518314
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1143477910147914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7622f23adffd74f57992850828db96c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   nodeTile: {fileID: 1228665151023474, guid: 87cb17b29d6fa4be0a9b937842add864, type: 2}
   amountOfNode: 5
 --- !u!224 &224802006002965570

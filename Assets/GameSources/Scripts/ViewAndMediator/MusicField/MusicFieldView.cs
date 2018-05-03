@@ -8,32 +8,31 @@ public class MusicFieldView : View, IEnhancedScrollerDelegate {
   private const int INIT_COLLUM_AMOUNT = 100;
 
   [SerializeField]
-  private GameObject root;
-
+  private EnhancedScrollerCellView nodeCollumViewPrefab;
   [SerializeField]
-  private NodeCollumTileView nodeCollumViewPrefab;
-  [SerializeField]
-  private MelodyTileView melodyViewPrefab;
+  private EnhancedScrollerCellView melodyViewPrefab;
   [SerializeField]
   private EnhancedScroller enhancedScroller;
-  [SerializeField]
-  private ScrollRect scrollRect;
 
   private List<EnhancedScrollerCellData> cellDatas;
   public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex) {
     EnhancedScrollerCellView cellView;
     if (cellDatas[dataIndex] is NodeCollumTileData) {
-      cellView = scroller.GetCellView(nodeCollumViewPrefab) as NodeCollumTileView;
-      (cellView as NodeCollumTileView).SetData(cellDatas[dataIndex] as NodeCollumTileData);
+      cellView = scroller.GetCellView(nodeCollumViewPrefab);
     } else {
-      cellView = scroller.GetCellView(melodyViewPrefab) as MelodyTileView;
-      (cellView as MelodyTileView).SetData(cellDatas[dataIndex] as MelodyTileData);
+      cellView = scroller.GetCellView(melodyViewPrefab);
     }
+    cellView.SetData(cellDatas[dataIndex]);
+
     return cellView;
   }
 
   public float GetCellViewSize(EnhancedScroller scroller, int dataIndex) {
-    return 58.36f;
+    if (cellDatas[dataIndex] is NodeCollumTileData) {
+      return 58.36f;
+    } else {
+      return 110f;
+    }
   }
 
   public int GetNumberOfCells(EnhancedScroller scroller) {

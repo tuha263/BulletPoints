@@ -2,7 +2,7 @@ using EnhancedUI.EnhancedScroller;
 
 public class MelodyTileView : EnhancedScrollerCellView {
   private MelodyTileData data;
-  public void SetData(MelodyTileData data) {
-    this.data = data;
+  public override void SetData(EnhancedScrollerCellData data) {
+    this.data = data as MelodyTileData;
   }
 }

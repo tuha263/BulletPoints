@@ -550,7 +550,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 488174858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6413415e8eee5423c98f28ed369170d9, type: 3}
+  m_Script: {fileID: 11500000, guid: ec061c8983eba4e3fa5104f0ef72d29a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   line: {fileID: 1722895414333964, guid: c08ef3e8815134116a53515f2df3ed36, type: 2}
@@ -683,7 +683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000045776, y: -5.6}
+  m_AnchoredPosition: {x: -0.020046, y: -5.6}
   m_SizeDelta: {x: 1021, y: 339.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &870011761
@@ -758,16 +758,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 870011759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e9f6a35dc5b4c60b6eb11b5cc161d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c04cbb99a7774fd2a75d450962e86e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  root: {fileID: 1321626586}
-  nodeCollumCellViewPrefab: {fileID: 114653964655363058, guid: b14b7f9f0f7a54021981dce5b498fef7,
+  nodeCollumViewPrefab: {fileID: 114370077476141542, guid: b14b7f9f0f7a54021981dce5b498fef7,
     type: 2}
-  melodyPrefab: {fileID: 1502082935441080, guid: 220b30dbfefd74a49947d6f8e8bbda92,
+  melodyViewPrefab: {fileID: 114975833855195380, guid: 220b30dbfefd74a49947d6f8e8bbda92,
     type: 2}
   enhancedScroller: {fileID: 870011765}
-  scrollRect: {fileID: 870011763}
 --- !u!114 &870011765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,7 +905,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 872909598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4853002b3bee4e899246046a22c5fcb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a0f3397a013f4b53a42afde063a00e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scroller: {fileID: 872909602}
@@ -1171,8 +1169,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1233039459}
   m_HandleRect: {fileID: 1233039458}
   m_Direction: 0
-  m_Value: 0.5
-  m_Size: 0.9999999
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
