@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114354173361410558}
   - component: {fileID: 114370077476141542}
   m_Layer: 5
-  m_Name: NodeCollum
+  m_Name: NodeCollumTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 20
-    m_Bottom: 10
+    m_Top: 0
+    m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
@@ -81,9 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0eb853f5f1a455292663e033bd091e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellIdentifier: 
+  cellIdentifier: NodeCollumTile
   nodeTile: {fileID: 1228665151023474, guid: 87cb17b29d6fa4be0a9b937842add864, type: 2}
-  amountOfNode: 5
 --- !u!224 &224802006002965570
 RectTransform:
   m_ObjectHideFlags: 1

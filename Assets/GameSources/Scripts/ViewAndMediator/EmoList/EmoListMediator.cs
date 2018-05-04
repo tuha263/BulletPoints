@@ -15,6 +15,6 @@ public class EmoListMediator : Mediator {
 
   private void LoadEmosFromResource() {
     emoSprites = Resources.LoadAll<Sprite>("Emos").ToList();
-    emoSprites.ForEach(sprite => { view.PopulateEmo(sprite); });
+    view.PopulateEmos(emoSprites);
   }
 }

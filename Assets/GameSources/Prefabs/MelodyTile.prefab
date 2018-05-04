@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 225032509097856170}
   - component: {fileID: 114975833855195380}
   m_Layer: 0
-  m_Name: Melody
+  m_Name: MelodyTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045460176890d4547b12c1ee5d9a1607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellIdentifier: 
+  cellIdentifier: MelodyTile
 --- !u!222 &222353251445335004
 CanvasRenderer:
   m_ObjectHideFlags: 1

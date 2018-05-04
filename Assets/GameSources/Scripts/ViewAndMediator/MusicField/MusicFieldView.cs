@@ -14,6 +14,9 @@ public class MusicFieldView : View, IEnhancedScrollerDelegate {
   [SerializeField]
   private EnhancedScroller enhancedScroller;
 
+  [Inject]
+  public IGameStateData gameStateData { get; set; }
+
   private List<EnhancedScrollerCellData> cellDatas;
   public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex) {
     EnhancedScrollerCellView cellView;
@@ -43,7 +46,9 @@ public class MusicFieldView : View, IEnhancedScrollerDelegate {
     cellDatas = new List<EnhancedScrollerCellData>();
     cellDatas.Add(new MelodyTileData());
     for (int i = 0; i < INIT_COLLUM_AMOUNT; i++) {
-      cellDatas.Add(new NodeCollumTileData());
+      NodeCollumTileData nodeCollumData = new NodeCollumTileData();
+      gameStateData.collumDatas.Add(nodeCollumData);
+      cellDatas.Add(nodeCollumData);
     }
 
     enhancedScroller.Delegate = this;

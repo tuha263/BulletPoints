@@ -5,6 +5,5 @@ public class NodeCollumTileMediator : Mediator {
   public NodeCollumTileView view { get; set; }
 
   public override void OnRegister() {
-    view.PopulateNodeSlot();
   }
 }

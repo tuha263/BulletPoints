@@ -1,3 +1,4 @@
-public class EnhancedScrollerCellData {
+using System.Collections.Generic;
 
+public class EnhancedScrollerCellData {
 }
