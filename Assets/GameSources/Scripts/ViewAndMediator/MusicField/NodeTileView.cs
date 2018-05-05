@@ -12,11 +12,11 @@ public class NodeTileView : View {
   [SerializeField]
   private Sprite defaultSprite;
 
-  public EmoTileData emoTileData { get; private set; }
+  private EmoTileData emoTileData { get { return gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[index]; } }
 
   [NonSerialized]
   public NodeCollumTileView nodeCollumTileView;
-  private int index;
+  public int index { get; private set; }
 
   [Inject]
   public IGameStateData gameStateData { get; set; }
@@ -24,22 +24,20 @@ public class NodeTileView : View {
   public void AddOnclickListener(UnityAction action) {
     button.onClick.AddListener(action);
   }  
-  public void SetData(EmoTileData data) {
-    emoTileData = data;
-    if (data == null) {
+  public void SetData() {
+    icon.color = emoTileData == null ? new Color(255, 255, 255, 0) : new Color(255, 255, 255, 255);
+    if (emoTileData == null) {
       return;
     }
-    icon.color = data.sprite == null ? new Color(255, 255, 255, 0) : new Color(255, 255, 255, 255);
-    icon.sprite = data.sprite;
+    icon.sprite = emoTileData.sprite;
   }
 
-  public void OnClick(EmoTileData data){
-    gameStateData.collumDatas[nodeCollumTileView.dataIndex].emoDatas[index] = data;
-    SetData(data);
+  public void OnClick() {
+    //because of melody so dataindex - 1
+    SetData();
   }
 
   public void Reset() {
-    emoTileData = null;
     icon.sprite = defaultSprite;
   }
 

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114099704569573210}
   - component: {fileID: 114354173361410558}
   - component: {fileID: 114370077476141542}
+  - component: {fileID: 222956282058733868}
   m_Layer: 5
   m_Name: NodeCollumTile
   m_TagString: Untagged
@@ -43,10 +44,10 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Top: 23
+    m_Bottom: 23
   m_ChildAlignment: 0
-  m_Spacing: 0
+  m_Spacing: 8.9
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -83,6 +84,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellIdentifier: NodeCollumTile
   nodeTile: {fileID: 1228665151023474, guid: 87cb17b29d6fa4be0a9b937842add864, type: 2}
+--- !u!222 &222956282058733868
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143477910147914}
 --- !u!224 &224802006002965570
 RectTransform:
   m_ObjectHideFlags: 1

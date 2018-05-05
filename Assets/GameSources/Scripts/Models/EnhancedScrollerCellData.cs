@@ -1,4 +1,5 @@
 using System.Collections.Generic;
 
-public class EnhancedScrollerCellData {
+public abstract class EnhancedScrollerCellData {
+  public abstract float GetCellViewSize();
 }

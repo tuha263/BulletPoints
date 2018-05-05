@@ -12,9 +12,12 @@ public class MainGameContext : MVCSContext {
 
     //Command
     commandBinder.Bind<SelectEmoSignal>().To<SelectEmoCommand>().Pooled();
+    commandBinder.Bind<SetEmoSignal>().To<SetEmoCommand>().Pooled();
 
     //Model
     injectionBinder.Bind<IGameStateData>().To<GameStateData>().ToSingleton();
+
+    //Singleton
     injectionBinder.Bind<MainGameContext>().To(this).CrossContext();
 
     //view - mediator
@@ -26,7 +29,8 @@ public class MainGameContext : MVCSContext {
     mediationBinder.Bind<MusicFieldView>().To<MusicFieldMediator>();
     mediationBinder.Bind<MelodyTileView>().To<MelodyTileMediator>();
     mediationBinder.Bind<CurrentEmoView>().To<CurrentEmoMediator>();
-
+    mediationBinder.Bind<MusicManagerView>().To<MusicManagerMediator>();
+    mediationBinder.Bind<BottomMenuView>().To<BottomMenuMediator>();
   }
 
   protected override void addCoreComponents() {

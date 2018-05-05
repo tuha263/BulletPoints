@@ -25,10 +25,6 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
     if (nodeViews == null) {
       PopulateNodeSlot(nodeCollumTileData);
     }
-
-    for (var i = 0; i < nodeCollumTileData.emoDatas.Count; i++) {
-      nodeViews[i].SetData(nodeCollumTileData.emoDatas[i]);
-    }
   }
 
   public void SetNode() {
