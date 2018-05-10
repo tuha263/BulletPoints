@@ -1,16 +1,20 @@
+using System;
+using AudioHelm;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class EmoTileData : EnhancedScrollerCellData {
-  public const float NodeLong = 4;
   public Sprite sprite;
-  public int note;
-  public float start;
-  public float end;
-  public float velocity = 1.0f;
+  public AudioMixerGroup audioMixerGroup;
+  public HelmSequencer sequencer;
+  public readonly int note;
+  public readonly SoundType soundType;
 
-  public EmoTileData(Sprite sprite = null) {
-    this.sprite = sprite;
-    note = 72;
+  public readonly db_EmoData data;
+  public EmoTileData(db_EmoData data) {
+    this.data = data;
+    note = data.Note;
+    soundType = (SoundType) Enum.Parse(typeof(SoundType), data.Soundtype);
   }
 
   public override float GetCellViewSize() {

@@ -11,10 +11,4 @@ public class MusicFieldView : View {
   public EnhancedScrollerCellView melodyViewPrefab;
 
   public EnhancedScroller enhancedScroller;
-  [SerializeField]
-  private MusicManagerView musicManagerPrefab;
-
-  public void CreateMusicManager() {
-    gameObject.InstantiateAsChild(musicManagerPrefab);
-  }
 }

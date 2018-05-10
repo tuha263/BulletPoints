@@ -8,19 +8,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbcda13c00cae4f4087d84a149a1c70b, type: 3}
+  m_Script: {fileID: 11500000, guid: dc737d9d5bfc140ac8be3d2368863a8e, type: 3}
   m_Name: Google Data Settings
   m_EditorClassIdentifier: 
   TemplatePath: QuickSheet/GDataPlugin/Templates
-  RuntimePath: 
-  EditorPath: 
+  RuntimePath: GameSources/GoogleDatas/Runtime
+  EditorPath: GameSources/GoogleDatas/Editor
   OAuth2Data:
-    client_id: 
-    auth_uri: 
-    token_uri: 
-    auth_provider_x509_cert_url: 
-    client_secret: 
-    redirect_uris: []
-  _AccessCode: Paste AcecessCode here!
-  _RefreshToken: 
-  _AccessToken: 
+    client_id: 320622725341-l3jb9l9jnadhio81pmn6o6dd9acn7r49.apps.googleusercontent.com
+    auth_uri: https://accounts.google.com/o/oauth2/auth
+    token_uri: https://accounts.google.com/o/oauth2/token
+    auth_provider_x509_cert_url: https://www.googleapis.com/oauth2/v1/certs
+    client_secret: vdCXR-uE3_9I8b5RLYzwmv4v
+    redirect_uris:
+    - urn:ietf:wg:oauth:2.0:oob
+    - http://localhost
+  _AccessCode: 4/AAAzzOCy1giX0FdQVizTnYXLpX-oFoNRiIK6_ea15fMnxH_3TbyF0o8
+  _RefreshToken: 1/Sm0PzRT46bdivES4MLdfZz5WVgu97dBJRqb1tNbcs4gkSZHx16NeOgOpSP8eG98S
+  _AccessToken: ya29.Glu3BdN6VqZc1EgyCpRvs84Ps9wBOSlQ5Z6aI-PmAlUIkbUl3yg-p0LcI34JX9GGH5u_MgOjVpDUpT3L8gf8L4yWFyu1yR2-WcYq-7GlmL-zZWPD3hqpksQncCsM

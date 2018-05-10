@@ -18,9 +18,6 @@ public class MusicManagerMediator : EventMediator {
     view.Init();
     dispatcher.AddListener(GameEvent.OnPlayOrStopMusic, OnPlayOrStopMusic);
     dispatcher.AddListener(GameEvent.SetMusicLoop, OnSetMusicLoop);
-    gameStateData.musicLength = view.GetMusicLength();
-    gameStateData.division = view.GetMusicDivision();
-    dispatcher.Dispatch(GameEvent.OnInitStaff);
   }
 
   private void OnSetMusicLoop(IEvent payload) {
@@ -36,17 +33,6 @@ public class MusicManagerMediator : EventMediator {
   }
 
   public void OnPlayMusic() {
-    view.ClearSequencer();
-    for (int i = 0; i < gameStateData.collumDatas.Count; i++) {
-      NodeCollumTileData nodeCollumTileData = gameStateData.collumDatas[i];
-      for (int j = 0; j < nodeCollumTileData.emoDatas.Count; j++) {
-        EmoTileData emoTileData = nodeCollumTileData.emoDatas[j];
-        if (emoTileData == null) {
-          continue;
-        }
-        view.AddNode(i, nodeCollumTileData.emoDatas.Count - j - 1, emoTileData);
-      }
-    }
     view.Play();
   }
 

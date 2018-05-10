@@ -18,7 +18,6 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
   public override void OnRegister() {
     mainGameContext.injectionBinder.Bind<MusicFieldMediator>().To(this);
     dispatcher.AddListener(GameEvent.OnInitStaff, Init);
-    view.CreateMusicManager();
   }
 
   public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex) {

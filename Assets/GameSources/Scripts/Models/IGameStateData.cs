@@ -48,5 +48,6 @@ public class GameStateData : IGameStateData {
 
   public GameStateData() {
     collumDatas = new List<NodeCollumTileData>();
+    musicLength = 16;
   }
 }

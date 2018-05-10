@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c900add66dd4897b6eb08c7c0c5f9d, type: 3}
+  m_Name: db_Emo
+  m_EditorClassIdentifier: 
+  SheetName: BulletPoints
+  WorksheetName: db_Emo
+  dataArray:
+  - id: 1
+    texture: Emo1
+    patch: Bass_Bubbly
+    soundtype: Sequencer
+    note: 72
+  - id: 2
+    texture: Emo2
+    patch: Bass_Dirty
+    soundtype: Sequencer
+    note: 72
+  - id: 3
+    texture: Emo3
+    patch: Bass_Port
+    soundtype: Sequencer
+    note: 72
+  - id: 4
+    texture: Emo4
+    patch: Melody_8Bit
+    soundtype: Sequencer
+    note: 72
+  - id: 5
+    texture: Emo5
+    patch: Melody_Cute
+    soundtype: Sequencer
+    note: 72
+  - id: 6
+    texture: Emo6
+    patch: Melody_PizzDelay
+    soundtype: Sequencer
+    note: 72
+  - id: 7
+    texture: Emo7
+    patch: Melody_Stutter
+    soundtype: Sequencer
+    note: 72
+  - id: 8
+    texture: Emo8
+    patch: Melody_Vibrato
+    soundtype: Sequencer
+    note: 72
+  - id: 9
+    texture: Emo9
+    patch: Melody_Wobble
+    soundtype: Sequencer
+    note: 72
+  - id: 10
+    texture: Emo10
+    patch: (none)
+    soundtype: Drum
+    note: 5
+  - id: 11
+    texture: Emo11
+    patch: (none)
+    soundtype: Drum
+    note: 6
+  - id: 12
+    texture: Emo12
+    patch: (none)
+    soundtype: Drum
+    note: 7

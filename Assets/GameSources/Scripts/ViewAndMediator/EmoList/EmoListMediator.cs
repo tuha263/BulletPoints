@@ -4,9 +4,12 @@ using System.Linq;
 using strange.extensions.mediation.impl;
 using UnityEngine;
 
-public class EmoListMediator : Mediator {
+public class EmoListMediator : EventMediator {
   [Inject]
   public EmoListView view { get; set; }
+
+  [Inject]
+  public IEmoDataManager emoDataManager { get; set; }
   private List<Sprite> emoSprites;
 
   public override void OnRegister() {
@@ -14,7 +17,7 @@ public class EmoListMediator : Mediator {
   }
 
   private void LoadEmosFromResource() {
-    emoSprites = Resources.LoadAll<Sprite>("Emos").ToList();
-    view.PopulateEmos(emoSprites);
+    view.PopulateEmos(emoDataManager.Datas);
+    dispatcher.Dispatch(GameEvent.OnInitStaff);
   }
 }

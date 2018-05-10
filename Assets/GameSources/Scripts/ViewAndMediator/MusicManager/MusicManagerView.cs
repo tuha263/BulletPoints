@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MusicManagerView : View {
   [SerializeField]
-  private HelmSequencer sequencer;
+  public HelmSequencer sequencer;
   [SerializeField]
   private int increase;
   [SerializeField]

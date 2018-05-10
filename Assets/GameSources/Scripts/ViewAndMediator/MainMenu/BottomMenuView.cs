@@ -7,9 +7,18 @@ public class BottomMenuView : View {
   public Button PlayButton;
   [SerializeField]
   public Button LoopButton;
+  [SerializeField]
+  private Slider slider;
+  [SerializeField]
+  private Text sliderValue;
 
   public void Init() {
+    sliderValue.text = slider.value.ToString();
+    slider.onValueChanged.AddListener(OnValueChange);
+  }
 
+  private void OnValueChange(float value) {
+    sliderValue.text = value.ToString();
   }
 
   public void OnPlayClick(bool isPlaying) {}

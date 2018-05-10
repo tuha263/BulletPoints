@@ -10,6 +10,9 @@ public class BottomMenuMediator : EventMediator {
   [Inject]
   public IGameStateData gameStateData { get; set; }
 
+  [Inject]
+  public PlayMusicSignal playMusicSignal { get; set; }
+
   private Text playText;
   private Text loopText;
 
@@ -22,6 +25,7 @@ public class BottomMenuMediator : EventMediator {
   }
 
   private void Init() {
+    view.Init();
     gameStateData.isPlaying = false;
     gameStateData.isLoop = true;
     SetPlayText();
@@ -31,6 +35,9 @@ public class BottomMenuMediator : EventMediator {
   public void OnClickPlayButton() {
     gameStateData.isPlaying = !gameStateData.isPlaying;
     dispatcher.Dispatch(GameEvent.OnPlayOrStopMusic);
+    if (gameStateData.isPlaying) {
+      playMusicSignal.Dispatch();
+    }
     SetPlayText();
   }
 
