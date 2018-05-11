@@ -14,10 +14,10 @@ public class BottomMenuView : View {
 
   public void Init() {
     sliderValue.text = slider.value.ToString();
-    slider.onValueChanged.AddListener(OnValueChange);
+    slider.onValueChanged.AddListener(OnSliderValueChange);
   }
 
-  private void OnValueChange(float value) {
+  private void OnSliderValueChange(float value) {
     sliderValue.text = value.ToString();
   }
 
