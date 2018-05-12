@@ -1,17 +1,17 @@
 using System;
+using System.Collections.Generic;
 using strange.extensions.mediation.impl;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class NodeTileView : View {
+  private Image icon { get { return icons[index % 2]; } }
+
   [SerializeField]
-  private Image icon;
+  private List<Image> icons;
   [SerializeField]
   private Button button;
-  [SerializeField]
-  private Sprite defaultSprite;
-
   private EmoTileData emoTileData { get { return gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[index]; } }
 
   [NonSerialized]
@@ -35,10 +35,6 @@ public class NodeTileView : View {
   public void OnClick() {
     //because of melody so dataindex - 1
     SetData();
-  }
-
-  public void Reset() {
-    icon.sprite = defaultSprite;
   }
 
   public void Init(int index) {

@@ -6,6 +6,8 @@ using UnityEngine;
 public class NodeCollumTileView : EnhancedScrollerCellView {
   [SerializeField]
   private GameObject nodeTile;
+  [SerializeField]
+  private GameObject notesRoot;
   public NodeCollumTileData nodeCollumTileData { get; private set; }
   private List<NodeTileView> nodeViews;
 
@@ -13,7 +15,7 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
     this.nodeCollumTileData = data;
     nodeViews = new List<NodeTileView>();
     for (int i = 0; i < data.emoDatas.Count; i++) {
-      NodeTileView nodeView = gameObject.InstantiateAsChild(nodeTile).GetComponent<NodeTileView>();
+      NodeTileView nodeView = notesRoot.InstantiateAsChild(nodeTile).GetComponent<NodeTileView>();
       nodeView.Init(i);
       nodeViews.Add(nodeView);
     }
@@ -25,11 +27,5 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
     if (nodeViews == null) {
       PopulateNodeSlot(nodeCollumTileData);
     }
-  }
-
-  public void SetNode() {
-    nodeViews.ForEach(node => {
-      node.Reset();
-    });
   }
 }

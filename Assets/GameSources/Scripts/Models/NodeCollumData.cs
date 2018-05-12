@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 public class NodeCollumTileData : EnhancedScrollerCellData {
-  public const int AmountOfNode = 4;
+  public const int AmountOfNode = 15;
 
   public List<EmoTileData> emoDatas { get; set; }
 
@@ -16,6 +16,6 @@ public class NodeCollumTileData : EnhancedScrollerCellData {
 
   public override float GetCellViewSize()
   {
-    return 58.36f;
+    return 80;
   }
 } 

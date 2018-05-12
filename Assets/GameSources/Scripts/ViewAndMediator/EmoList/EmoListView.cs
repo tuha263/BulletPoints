@@ -36,7 +36,7 @@ public class EmoListView : View, IEnhancedScrollerDelegate {
   }
 
   public float GetCellViewSize(EnhancedScroller scroller, int dataIndex) {
-    return 80f;
+    return 60f;
   }
 
   public int GetNumberOfCells(EnhancedScroller scroller) {
