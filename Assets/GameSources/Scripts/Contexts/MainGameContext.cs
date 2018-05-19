@@ -31,7 +31,7 @@ public class MainGameContext : MVCSContext {
     injectionBinder.Bind<Dictionary<AudioMixerGroup, MusicManagerView>>().To(sequencerDic).ToSingleton();
 
     //Singleton
-    injectionBinder.Bind<MainGameContext>().To(this).CrossContext();
+    injectionBinder.Bind<MainGameContext>().To(this).CrossContext().ToSingleton();
 
     //view - mediator
     mediationBinder.Bind<EmoListView>().To<EmoListMediator>();

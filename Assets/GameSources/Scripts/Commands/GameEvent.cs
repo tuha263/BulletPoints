@@ -2,5 +2,6 @@
         OnInitStaff,
         OnPlayOrStopMusic,
         SetMusicLoop,
+        OnTimeUpdate
 
     }

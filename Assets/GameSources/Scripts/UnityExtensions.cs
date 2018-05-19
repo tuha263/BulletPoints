@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class UnityExtensions {
 	public static Transform InstantiateAsChild(this Transform parent, Transform original) {
@@ -432,5 +433,16 @@ public static class RectTransformExtensions {
 			prop.SetValue(dst, prop.GetValue(original, null), null);
 		}
 		return dst as T;
+	}
+
+	//Tuha - Extension
+	public static void AddWidth(this RectTransform rectTransform, float value) {
+		float newWidth = rectTransform.GetWidth() + value;
+		rectTransform.SetWidth(newWidth);
+	}
+
+	public static void AddHorizontalPosition(this ScrollRect scrollRect, float value) {
+		float newPos = scrollRect.horizontalNormalizedPosition + value;
+		scrollRect.horizontalNormalizedPosition = Math.Max(0, Math.Min(1, newPos));
 	}
 }

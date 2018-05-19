@@ -13,7 +13,6 @@ public class NodeTileMediator : Mediator {
 
   public override void OnRegister() {
     view.AddOnclickListener(OnClick);
-    view.nodeCollumTileView = transform.parent.parent.GetComponent<NodeCollumTileView>();
   }
 
   private void OnClick() {

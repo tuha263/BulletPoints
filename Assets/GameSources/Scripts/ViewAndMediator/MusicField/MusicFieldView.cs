@@ -11,4 +11,9 @@ public class MusicFieldView : View {
   public EnhancedScrollerCellView melodyViewPrefab;
 
   public EnhancedScroller enhancedScroller;
+  public RectTransform musicBar;
+
+  public float GetMinPosX() {
+    return enhancedScroller.ScrollSize;
+  }
 }

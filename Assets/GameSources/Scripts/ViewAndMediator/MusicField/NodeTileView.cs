@@ -14,8 +14,7 @@ public class NodeTileView : View {
   private Button button;
   private EmoTileData emoTileData { get { return gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[index]; } }
 
-  [NonSerialized]
-  public NodeCollumTileView nodeCollumTileView;
+  public NodeCollumTileView nodeCollumTileView { get; private set; }
   public int index { get; private set; }
 
   [Inject]
@@ -24,7 +23,7 @@ public class NodeTileView : View {
   public void AddOnclickListener(UnityAction action) {
     button.onClick.AddListener(action);
   }  
-  public void SetData() {
+  public void SetData(EmoTileData emoTileData) {
     icon.color = emoTileData == null ? new Color(255, 255, 255, 0) : new Color(255, 255, 255, 255);
     if (emoTileData == null) {
       return;
@@ -33,11 +32,11 @@ public class NodeTileView : View {
   }
 
   public void OnClick() {
-    //because of melody so dataindex - 1
-    SetData();
+    //Todo - do move effect
   }
 
-  public void Init(int index) {
+  public void Init(int index, NodeCollumTileView nodeCollumTileView) {
+    this.nodeCollumTileView = nodeCollumTileView;
     this.index = index;
   }
 }

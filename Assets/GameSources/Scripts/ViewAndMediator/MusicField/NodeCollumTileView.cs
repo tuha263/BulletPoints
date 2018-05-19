@@ -16,7 +16,7 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
     nodeViews = new List<NodeTileView>();
     for (int i = 0; i < data.emoDatas.Count; i++) {
       NodeTileView nodeView = notesRoot.InstantiateAsChild(nodeTile).GetComponent<NodeTileView>();
-      nodeView.Init(i);
+      nodeView.Init(i, this);
       nodeViews.Add(nodeView);
     }
   }
@@ -24,8 +24,18 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
   public override void SetData(EnhancedScrollerCellData data) {
     nodeCollumTileData = data as NodeCollumTileData;
 
+    //Populate for the inital
     if (nodeViews == null) {
       PopulateNodeSlot(nodeCollumTileData);
+      return;
     }
+
+    for (int i = 0; i < nodeCollumTileData.emoDatas.Count; i++) {
+      nodeViews[i].SetData(nodeCollumTileData.emoDatas[i]);
+    }
+  }
+
+  public void SetNodeData(int index, EmoTileData emoTileData) {
+    nodeViews[index].SetData(emoTileData);
   }
 }

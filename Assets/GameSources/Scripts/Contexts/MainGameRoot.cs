@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 public class MainGameRoot : ContextView {
+  private GameObject moveSystem;
   void Awake() {
     MainGameContext mainGameContext = new MainGameContext(this, true);
     context = mainGameContext;
