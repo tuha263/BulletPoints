@@ -74,6 +74,9 @@ public class EmoListView : View, IEnhancedScrollerDelegate {
   private void CreateHelmSequencers() {
     foreach (EmoTileData emo in emoDatas) {
       AudioSource audioSource = sequencersPrefabs.GetComponent<AudioSource>();
+      if (emo.audioMixerGroup == null) {
+        continue;
+      }
       audioSource.outputAudioMixerGroup = emo.audioMixerGroup;
       GameObject sequencer = sequencersRoot.InstantiateAsChild(sequencersPrefabs);
       emo.sequencer = sequencer.GetComponent<HelmSequencer>();
