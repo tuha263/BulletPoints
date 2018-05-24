@@ -80,6 +80,7 @@ public class EmoListView : View, IEnhancedScrollerDelegate {
       audioSource.outputAudioMixerGroup = emo.audioMixerGroup;
       GameObject sequencer = sequencersRoot.InstantiateAsChild(sequencersPrefabs);
       emo.sequencer = sequencer.GetComponent<HelmSequencer>();
+      emo.sequencer.channel = emo.data.Channel;
       if (emo.audioMixerGroup != null) {
         musicManagerViewDic.Add(emo.audioMixerGroup, sequencer.GetComponent<MusicManagerView>());
       }

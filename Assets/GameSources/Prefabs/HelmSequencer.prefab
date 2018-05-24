@@ -38,10 +38,10 @@ AudioSource:
   m_GameObject: {fileID: 1915368214449172}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: e0c93034946e34f4a985cba999f1b4ef,
+  OutputAudioMixerGroup: {fileID: 243101523195553340, guid: aa0db53a0628a47c68681fb1f9cd3587,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -242,48 +242,6 @@ MonoBehaviour:
   - notes: []
   - notes: []
   - notes: []
-  - notes:
-    - note_: 72
-      start_: 0
-      end_: 1
-      velocity_: 0.8
-      parent: {fileID: 114303745734787108}
-  - notes:
-    - note_: 73
-      start_: 1
-      end_: 2
-      velocity_: 0.8
-      parent: {fileID: 114303745734787108}
-  - notes:
-    - note_: 74
-      start_: 2
-      end_: 3
-      velocity_: 0.8
-      parent: {fileID: 114303745734787108}
-  - notes:
-    - note_: 75
-      start_: 3
-      end_: 4
-      velocity_: 0.8
-      parent: {fileID: 114303745734787108}
-  - notes:
-    - note_: 76
-      start_: 4
-      end_: 5
-      velocity_: 0.8
-      parent: {fileID: 114303745734787108}
-  - notes:
-    - note_: 77
-      start_: 5
-      end_: 6
-      velocity_: 0.8
-      parent: {fileID: 114303745734787108}
-  - notes:
-    - note_: 78
-      start_: 6
-      end_: 7
-      velocity_: 0.8
-      parent: {fileID: 114303745734787108}
   - notes: []
   - notes: []
   - notes: []
@@ -333,7 +291,14 @@ MonoBehaviour:
   - notes: []
   - notes: []
   - notes: []
-  scrollPosition: {x: 0, y: 643.8501}
+  - notes: []
+  - notes: []
+  - notes: []
+  - notes: []
+  - notes: []
+  - notes: []
+  - notes: []
+  scrollPosition: {x: 0, y: 895}
   autoScroll: 0
   division: 1
   zoom: 0.3
