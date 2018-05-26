@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using AudioHelm;
 using GDataDB;
 using UnityEditor;
@@ -16,9 +17,12 @@ public class BulletPointsExtension : Editor {
       AudioMixerGroup[] audioMixerGroups = audioMixer.FindMatchingGroups(emoData.Patch);
       if (audioMixerGroups.Length > 0) {
         AudioMixerGroup audioMixerGroup = audioMixerGroups[0];
-        Debug.Log(emoData.Patch + ": " + emoData.Channel);
-        audioMixerGroup.audioMixer.SetFloat("Channel", emoData.Channel);
-        Debug.Log(audioMixerGroup.audioMixer.name);
+        PropertyInfo effectInfo = audioMixerGroup.GetType().GetProperty("effects");
+        Debug.Log(effectInfo.Name);
+        audioMixerGroup.GetType().GetProperties().ToList().ForEach(e => { Debug.Log(e); });
+        effectInfo.GetIndexParameters().ToList().ForEach(e => { Debug.Log(e); });
+        effectInfo.GetOptionalCustomModifiers().ToList().ForEach(e => { Debug.Log(e); });
+        effectInfo.GetRequiredCustomModifiers().ToList().ForEach(e => { Debug.Log(e); });
       }
     });
   }
