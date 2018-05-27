@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CurrentEmoView : View {
+  private const string DESCRIPTION_FORM = "Name: {0} \nStarting Note: {1}";
   [SerializeField]
   private Image icon;
 
@@ -13,6 +14,7 @@ public class CurrentEmoView : View {
 
   public void Init(EmoTileData data) {
     this.data = data;
-    icon.sprite = data.sprite; 
+    icon.sprite = data.sprite;
+    description.text = string.Format(DESCRIPTION_FORM, data.data.Patch, data.data.Note);
   }
 }
