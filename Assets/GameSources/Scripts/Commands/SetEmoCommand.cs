@@ -11,11 +11,14 @@ public class SetEmoCommand : Command {
   public IGameStateData gameStateData { get; set; }
 
   public override void Execute() {
+    //dataIndex - 1 because of melody data    
     if (gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex] != gameStateData.currentEmo) {
       gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex] = gameStateData.currentEmo;
     } else {
       gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex] = null;
     }
     nodeCollumTileView.SetNodeData(nodeIndex, gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex]);
+    nodeCollumTileView.DoMoveNote(nodeIndex);
   }
+
 }
