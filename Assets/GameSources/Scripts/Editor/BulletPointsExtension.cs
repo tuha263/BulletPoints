@@ -8,23 +8,25 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityQuickSheet;
 
-public class BulletPointsExtension : Editor {
+public class BulletPointsExtension {
+  private const string channel_param_post_fix = "_Channel";
   [MenuItem("BulletPoints/Import Data")]
   static void ImportData() {
     db_Emo data = Resources.Load<db_Emo>("GoogleDatas/db_Emo");
     AudioMixer audioMixer = Resources.Load<AudioMixer>("AudioMixers/BulletPoints");
+    Debug.Log(audioMixer.GetHashCode());
     data.dataArray.ToList().ForEach(emoData => {
       AudioMixerGroup[] audioMixerGroups = audioMixer.FindMatchingGroups(emoData.Patch);
       if (audioMixerGroups.Length > 0) {
         AudioMixerGroup audioMixerGroup = audioMixerGroups[0];
-        PropertyInfo effectInfo = audioMixerGroup.GetType().GetProperty("effects");
-        Debug.Log(effectInfo.Name);
-        audioMixerGroup.GetType().GetProperties().ToList().ForEach(e => { Debug.Log(e); });
-        effectInfo.GetIndexParameters().ToList().ForEach(e => { Debug.Log(e); });
-        effectInfo.GetOptionalCustomModifiers().ToList().ForEach(e => { Debug.Log(e); });
-        effectInfo.GetRequiredCustomModifiers().ToList().ForEach(e => { Debug.Log(e); });
       }
+      float a;
+      audioMixer.GetFloat(emoData.Patch + channel_param_post_fix, out a);
+      Debug.Log(emoData.Patch + channel_param_post_fix + ": " + a + " -> " + emoData.Channel);
+
+      audioMixer.SetFloat(emoData.Patch + channel_param_post_fix, emoData.Channel);
     });
+
   }
 
   [MenuItem("BulletPoints/Reload Data")]

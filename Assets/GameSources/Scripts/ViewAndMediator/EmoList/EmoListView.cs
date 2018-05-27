@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using AudioHelm;
 using EnhancedUI.EnhancedScroller;
 using strange.extensions.mediation.impl;
@@ -7,6 +8,8 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class EmoListView : View, IEnhancedScrollerDelegate {
+  private const string channel_param_post_fix = "_Channel";
+
   public const string emoSpritePath = "Emos/";
 
   [SerializeField]
@@ -72,18 +75,32 @@ public class EmoListView : View, IEnhancedScrollerDelegate {
   }
 
   private void CreateHelmSequencers() {
-    foreach (EmoTileData emo in emoDatas) {
+    // emoDatas.ForEach(emo => {
+    //   audioMixer.SetFloat(emo.data.Patch + channel_param_post_fix, emo.data.Channel);
+    //   float a;
+    //   audioMixer.GetFloat(emo.data.Patch + channel_param_post_fix, out a);
+    //   Debug.Log(audioMixer.GetHashCode());
+    //   Debug.Log(emo.data.Patch + channel_param_post_fix + ": " + a + " -> " + emo.data.Channel);
+    // });
+    //audioMixer.SetFloat("Bass_Bubbly_Volume", 20);
+
+    emoDatas.ForEach(emo => {
       AudioSource audioSource = sequencersPrefabs.GetComponent<AudioSource>();
       if (emo.audioMixerGroup == null) {
-        continue;
+        return;
       }
       audioSource.outputAudioMixerGroup = emo.audioMixerGroup;
       GameObject sequencer = sequencersRoot.InstantiateAsChild(sequencersPrefabs);
       emo.sequencer = sequencer.GetComponent<HelmSequencer>();
-      emo.sequencer.channel = emo.data.Channel;
+      Debug.Log(audioSource.outputAudioMixerGroup.audioMixer.SetFloat(emo.data.Patch + channel_param_post_fix, emo.data.Channel));
+      float channel = 0;
+      audioMixer.GetFloat(emo.data.Patch + channel_param_post_fix, out channel);
+
+      emo.sequencer.channel = (int) channel;
       if (emo.audioMixerGroup != null) {
         musicManagerViewDic.Add(emo.audioMixerGroup, sequencer.GetComponent<MusicManagerView>());
       }
-    }
+    });
+
   }
 }
