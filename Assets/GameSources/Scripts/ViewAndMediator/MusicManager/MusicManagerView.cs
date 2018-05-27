@@ -39,6 +39,6 @@ public class MusicManagerView : View {
   }
 
   public void AddNode(int collum, int index, EmoTileData emoTileData) {
-    sequencer.AddNote(emoTileData.note + index, collum, collum + 1, 1);
+    sequencer.AddNote(emoTileData.note + NodeCollumTileData.AmountOfNode - 1 - index, collum, collum + 1, 1);
   }
 }
