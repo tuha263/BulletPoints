@@ -92,7 +92,6 @@ public class EmoListView : View, IEnhancedScrollerDelegate {
       audioSource.outputAudioMixerGroup = emo.audioMixerGroup;
       GameObject sequencer = sequencersRoot.InstantiateAsChild(sequencersPrefabs);
       emo.sequencer = sequencer.GetComponent<HelmSequencer>();
-      Debug.Log(audioSource.outputAudioMixerGroup.audioMixer.SetFloat(emo.data.Patch + channel_param_post_fix, emo.data.Channel));
       float channel = 0;
       audioMixer.GetFloat(emo.data.Patch + channel_param_post_fix, out channel);
 

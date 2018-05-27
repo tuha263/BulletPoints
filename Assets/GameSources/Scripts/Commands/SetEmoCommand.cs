@@ -16,6 +16,6 @@ public class SetEmoCommand : Command {
     } else {
       gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex] = null;
     }
-    nodeCollumTileView.SetNodeData(nodeIndex, gameStateData.currentEmo);
+    nodeCollumTileView.SetNodeData(nodeIndex, gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex]);
   }
 }
