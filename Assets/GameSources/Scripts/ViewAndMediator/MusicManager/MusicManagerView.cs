@@ -37,8 +37,8 @@ public class MusicManagerView : View {
   public Sequencer.Division GetMusicDivision() {
     return sequencer.division;
   }
-
+  private int[] scale = new int[] {0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19, 21, 23, 24};
   public void AddNode(int collum, int index, EmoTileData emoTileData) {
-    sequencer.AddNote(emoTileData.note + NodeCollumTileData.AmountOfNode - 1 - index, collum, collum + 1, 1);
+    sequencer.AddNote(emoTileData.note + NodeCollumTileData.AmountOfNode - 1 - scale[index], collum, collum + 1, 1);
   }
 }
