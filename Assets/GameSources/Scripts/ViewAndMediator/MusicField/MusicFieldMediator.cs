@@ -57,7 +57,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
     } else {
       cellView = scroller.GetCellView(view.melodyViewPrefab);
     }
-    cellView.SetData(cellDatas[dataIndex]);
+    cellView.SetData(dataIndex, cellDatas[dataIndex]);
 
     return cellView;
   }

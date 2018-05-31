@@ -43,5 +43,8 @@ namespace EnhancedUI.EnhancedScroller {
         public virtual void SetData(EnhancedScrollerCellData data) {
 
         }
+        public virtual void SetData(int dataIndex, EnhancedScrollerCellData data) {
+
+        }
     }
 }

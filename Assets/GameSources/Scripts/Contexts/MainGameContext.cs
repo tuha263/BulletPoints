@@ -17,11 +17,13 @@ public class MainGameContext : MVCSContext {
     commandBinder.Bind<SelectEmoSignal>().To<SelectEmoCommand>().Pooled();
     commandBinder.Bind<SetEmoSignal>().To<SetEmoCommand>().Pooled();
     commandBinder.Bind<PlayMusicSignal>().To<PlayMusicCommand>().Pooled();
+    commandBinder.Bind<StopMusicSignal>().To<StopMusicCommand>().Pooled();
 
     //Model
     injectionBinder.Bind<IGameStateData>().To<GameStateData>().ToSingleton();
     injectionBinder.Bind<IEmoDataManager>().To<EmoDataManager>().ToSingleton();
     injectionBinder.Bind<IStaffSettingDataManager>().To<StaffSettingDataManager>().ToSingleton();
+    injectionBinder.Bind<AudioHelmClock>().To<AudioHelmClock>().ToSingleton();
 
     //Audio mixer
     AudioMixer audioMixer = Resources.Load<AudioMixer>("AudioMixers/BulletPoints");

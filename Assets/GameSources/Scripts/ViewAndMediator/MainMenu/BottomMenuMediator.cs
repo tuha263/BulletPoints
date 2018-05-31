@@ -13,6 +13,9 @@ public class BottomMenuMediator : EventMediator {
   [Inject]
   public PlayMusicSignal playMusicSignal { get; set; }
 
+  [Inject]
+  public StopMusicSignal StopMusicSignal { get; set; }
+
   private Text playText;
   private Text loopText;
 
@@ -37,6 +40,8 @@ public class BottomMenuMediator : EventMediator {
     dispatcher.Dispatch(GameEvent.OnPlayOrStopMusic);
     if (gameStateData.isPlaying) {
       playMusicSignal.Dispatch();
+    } else {
+      StopMusicSignal.Dispatch();
     }
     SetPlayText();
   }

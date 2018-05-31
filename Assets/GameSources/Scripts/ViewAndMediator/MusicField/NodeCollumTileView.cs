@@ -2,15 +2,17 @@ using System.Collections.Generic;
 using EnhancedUI.EnhancedScroller;
 using strange.extensions.mediation.impl;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NodeCollumTileView : EnhancedScrollerCellView {
   [SerializeField]
   private GameObject nodeTile;
   [SerializeField]
   private GameObject notesRoot;
+  [SerializeField]
+  private VerticalLayoutGroup lineVerticalLayout;
   public NodeCollumTileData nodeCollumTileData { get; private set; }
   private List<NodeTileView> noteViews;
-
   public void PopulateNodeSlot(NodeCollumTileData data) {
     this.nodeCollumTileData = data;
     noteViews = new List<NodeTileView>();
@@ -21,8 +23,13 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
     }
   }
 
-  public override void SetData(EnhancedScrollerCellData data) {
+  public override void SetData(int dataIndex, EnhancedScrollerCellData data) {
     nodeCollumTileData = data as NodeCollumTileData;
+    if (dataIndex % 4 == 0) {
+      lineVerticalLayout.spacing = 0;
+    } else {
+      lineVerticalLayout.spacing = 10;
+    }
 
     //Populate for the inital
     if (noteViews == null) {

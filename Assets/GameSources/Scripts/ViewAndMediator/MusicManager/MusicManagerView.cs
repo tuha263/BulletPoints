@@ -15,17 +15,14 @@ public class MusicManagerView : View {
 
   public void Init() {
     ClearSequencer();
-    sequencer.enabled = false;
   }
 
   public void ClearSequencer() {
     sequencer.Clear();
   }
   public void Play() {
-    sequencer.enabled = true;
   }
   public void Stop() {
-    sequencer.enabled = false;
   }
 
   public void SetLoop(bool isLoop) {

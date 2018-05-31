@@ -14,7 +14,11 @@ public class PlayMusicCommand : Command {
   [Inject]
   public MusicFieldMediator musicFieldMediator { get; set; }
 
+  [Inject] 
+  public AudioHelmClock helmClock { get; set; }
+
   public override void Execute() {
+    helmClock.pause = false;
     gameStateData.gameState = GameState.Play;
     musicFieldMediator.MoveMusicStaff(0);
     musicFieldMediator.RemoveEmptyCell();

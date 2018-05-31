@@ -7,7 +7,8 @@ public class EmoTileData : EnhancedScrollerCellData {
   public Sprite sprite;
   public AudioMixerGroup audioMixerGroup;
   public HelmSequencer sequencer;
-  public readonly int note;
+  private int _note;
+  public int note { get { return _note + 12; } private set {_note = value; } }
   public readonly SoundType soundType;
 
   public readonly db_EmoData data;
