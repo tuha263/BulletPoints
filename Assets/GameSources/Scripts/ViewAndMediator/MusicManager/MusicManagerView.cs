@@ -10,6 +10,9 @@ public class MusicManagerView : View {
   [SerializeField]
   private int startingNote;
 
+  [Inject]
+  public IStaffSettingDataManager staffSettingData { get; set; }
+
   public void Init() {
     ClearSequencer();
     sequencer.enabled = false;
@@ -39,6 +42,6 @@ public class MusicManagerView : View {
   }
 
   public void AddNode(int collum, int index, EmoTileData emoTileData) {
-    sequencer.AddNote(emoTileData.note + NodeCollumTileData.AmountOfNode - 1 - index, collum, collum + 1, 1);
+    sequencer.AddNote(emoTileData.note + staffSettingData.Datas[NodeCollumTileData.AmountOfNode - 1 - index].Noteadditional, collum, collum + 1, 1);
   }
 }

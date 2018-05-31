@@ -21,6 +21,7 @@ public class MainGameContext : MVCSContext {
     //Model
     injectionBinder.Bind<IGameStateData>().To<GameStateData>().ToSingleton();
     injectionBinder.Bind<IEmoDataManager>().To<EmoDataManager>().ToSingleton();
+    injectionBinder.Bind<IStaffSettingDataManager>().To<StaffSettingDataManager>().ToSingleton();
 
     //Audio mixer
     AudioMixer audioMixer = Resources.Load<AudioMixer>("AudioMixers/BulletPoints");

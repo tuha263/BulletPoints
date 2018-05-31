@@ -33,6 +33,7 @@ public class BulletPointsExtension {
 
   static void ReloadData() {
     db_EmoEditor.ReLoad();
+    db_StaffSettingEditor.ReLoad();
   }
 
   void Start() {
