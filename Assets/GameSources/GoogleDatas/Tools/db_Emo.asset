@@ -41,4 +41,8 @@ MonoBehaviour:
     name: Channel
     isEnable: 0
     isArray: 0
+  - type: 3
+    name: NoteLength
+    isEnable: 0
+    isArray: 0
   AccessCode: 

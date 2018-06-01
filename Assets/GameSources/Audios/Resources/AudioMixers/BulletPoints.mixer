@@ -20,7 +20,7 @@ AudioMixerController:
   - guid: a6a101158361b45d68e67ce08b747041
     name: Bass_Dirty_Channel
   - guid: 3b625e2b66a10416595ea2fb4d627a24
-    name: Bass_Poss_Channel
+    name: Bass_Port_Channel
   - guid: 90c5afb0c205a4886be32c3b44770938
     name: Melody_8Bit_Channel
   - guid: 628ab2b2f39c043ee8e6112cd422b4f3

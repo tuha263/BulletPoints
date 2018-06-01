@@ -85,7 +85,6 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
     NodeCollumTileData nodeCollumData = new NodeCollumTileData();
     gameStateData.collumDatas.Add(nodeCollumData);
     cellDatas.Add(nodeCollumData);
-
   }
 
   public void ContainerMoveUpdate(float deltaTime) {
@@ -109,7 +108,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
 
   public void RemoveEmptyCell(int minIndex = 0) {
     while (true) {
-      if (cellDatas.Count <= gameStateData.musicLength || cellDatas.Count <= minIndex) {
+      if (cellDatas.Count <= gameStateData.musicLength + 1|| cellDatas.Count <= minIndex) {
         return;
       }
       var data = cellDatas[cellDatas.Count - 1];
@@ -121,9 +120,14 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
       if (nodeCollumTileData.emoDatas.Exists(emoData => emoData != null)) {
         return;
       }
-      cellDatas.RemoveAt(cellDatas.Count - 1);
+      RemoveLastNodeCollum();
       view.enhancedScroller.ScrollRect.content.AddWidth(-nodeCollumTileData.GetCellViewSize());
     }
+  }
+
+  private void RemoveLastNodeCollum() {
+    cellDatas.RemoveAt(cellDatas.Count - 1);
+    gameStateData.collumDatas.RemoveAt(gameStateData.collumDatas.Count - 1);
   }
 
   public void MoveMusicStaff(float position) {

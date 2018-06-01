@@ -32,4 +32,8 @@ public class db_EmoData
   int channel;
   public int Channel { get {return channel; } set { channel = value;} }
   
+  [SerializeField]
+  int notelength;
+  public int Notelength { get {return notelength; } set { notelength = value;} }
+  
 }

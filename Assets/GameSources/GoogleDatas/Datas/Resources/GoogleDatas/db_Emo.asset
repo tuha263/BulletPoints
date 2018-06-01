@@ -20,69 +20,81 @@ MonoBehaviour:
     soundtype: Sequencer
     note: 24
     channel: 1
+    notelength: 1
   - id: 2
     texture: Emo2
     patch: Bass_Dirty
     soundtype: Sequencer
     note: 36
     channel: 2
+    notelength: 1
   - id: 3
     texture: Emo3
     patch: Bass_Port
     soundtype: Sequencer
     note: 36
     channel: 3
+    notelength: 1
   - id: 4
     texture: Emo4
     patch: Melody_8Bit
     soundtype: Sequencer
     note: 48
     channel: 4
+    notelength: 1
   - id: 5
     texture: Emo5
     patch: Melody_Cute
     soundtype: Sequencer
     note: 60
     channel: 5
+    notelength: 1
   - id: 6
     texture: Emo6
     patch: Melody_PizzDelay
     soundtype: Sequencer
     note: 36
     channel: 6
+    notelength: 1
   - id: 7
     texture: Emo7
     patch: Melody_Stutter
     soundtype: Sequencer
     note: 48
     channel: 7
+    notelength: 1
   - id: 8
     texture: Emo8
     patch: Melody_Vibrato
     soundtype: Sequencer
     note: 60
     channel: 8
+    notelength: 1
   - id: 9
     texture: Emo9
     patch: Melody_Wobble
     soundtype: Sequencer
     note: 48
     channel: 9
+    notelength: 1
   - id: 10
     texture: Emo10
     patch: (none)
     soundtype: Drum
     note: 5
     channel: 10
+    notelength: 1
   - id: 11
     texture: Emo11
     patch: (none)
     soundtype: Drum
     note: 6
     channel: 10
+    notelength: 1
   - id: 12
     texture: Emo12
     patch: (none)
     soundtype: Drum
     note: 7
     channel: 10
+    notelength: 1
