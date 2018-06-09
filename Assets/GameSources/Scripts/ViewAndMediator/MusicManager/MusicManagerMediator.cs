@@ -18,7 +18,6 @@ public class MusicManagerMediator : EventMediator {
     view.Init();
     dispatcher.AddListener(GameEvent.OnPlayMusic, OnPlayMusic);
     dispatcher.AddListener(GameEvent.OnStopMusic, OnStopMusic);
-
     dispatcher.AddListener(GameEvent.SetMusicLoop, OnSetMusicLoop);
   }
 

@@ -26,7 +26,6 @@ public class MusicManagerView : View {
   }
 
   public void SetLoop(bool isLoop) {
-    Debug.Log(isLoop);
     sequencer.loop = isLoop;
   }
 

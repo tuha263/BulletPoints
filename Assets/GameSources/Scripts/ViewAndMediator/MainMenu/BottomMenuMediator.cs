@@ -1,4 +1,5 @@
 using System;
+using strange.extensions.dispatcher.eventdispatcher.api;
 using strange.extensions.mediation.impl;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,13 @@ public class BottomMenuMediator : EventMediator {
     playText = view.PlayButton.GetComponentInChildren<Text>();
     loopText = view.LoopButton.GetComponentInChildren<Text>();
     Init();
+
+    dispatcher.AddListener(GameEvent.OnChangeTempo, OnChangeTempo);
+  }
+
+  private void OnChangeTempo(IEvent payload) {
+    view.SetTempoText(gameStateData.tempo);
+    view.HideTempoList();
   }
 
   private void Init() {
@@ -46,7 +54,6 @@ public class BottomMenuMediator : EventMediator {
   }
 
   private void OnClickLoopButton() {
-    return;
     gameStateData.isLoop = !gameStateData.isLoop;
     dispatcher.Dispatch(GameEvent.SetMusicLoop);
     SetLoopText();

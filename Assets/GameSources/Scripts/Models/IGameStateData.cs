@@ -21,6 +21,7 @@ public interface IGameStateData {
   int staffLength { get; set; }
   //View Option
   Sequencer.Division division { get; set; }
+  int tempo { get; set; }
 }
 
 public class GameStateData : IGameStateData {
@@ -61,6 +62,8 @@ public class GameStateData : IGameStateData {
   public int prepairCollumOffset { get; set; }
 
   public int staffLength { get; set; }
+
+  public int tempo { get; set; }
 
   public GameStateData() {
     collumDatas = new List<NodeCollumTileData>();

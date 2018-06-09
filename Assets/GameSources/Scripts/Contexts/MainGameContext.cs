@@ -47,6 +47,7 @@ public class MainGameContext : MVCSContext {
     mediationBinder.Bind<CurrentEmoView>().To<CurrentEmoMediator>();
     mediationBinder.Bind<MusicManagerView>().To<MusicManagerMediator>();
     mediationBinder.Bind<BottomMenuView>().To<BottomMenuMediator>();
+    mediationBinder.Bind<TempoTileView>().To<TempoTileMediator>();
   }
 
   protected override void addCoreComponents() {

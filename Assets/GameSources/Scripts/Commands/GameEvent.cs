@@ -1,8 +1,8 @@
-    public enum GameEvent {
-        OnInitStaff,
-        OnPlayMusic,
-        OnStopMusic,
-        SetMusicLoop,
-        OnTimeUpdate
-
-    }
+public enum GameEvent {
+  OnInitStaff,
+  OnPlayMusic,
+  OnStopMusic,
+  SetMusicLoop,
+  OnTimeUpdate,
+  OnChangeTempo
+}

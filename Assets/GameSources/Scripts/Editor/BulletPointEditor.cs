@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityQuickSheet;
 
-public class BulletPointsExtension {
+public class BulletPointEditor {
   private const string channel_param_post_fix = "_Channel";
   [MenuItem("BulletPoints/Import Data")]
   static void ImportData() {
@@ -36,11 +36,5 @@ public class BulletPointsExtension {
     db_StaffSettingEditor.ReLoad();
   }
 
-  void Start() {
-    Debug.LogError("start");
-  }
-}
-
-public static class GoogleSheetExtension {
-
+  
 }
