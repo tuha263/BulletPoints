@@ -1,6 +1,7 @@
     public enum GameEvent {
         OnInitStaff,
-        OnPlayOrStopMusic,
+        OnPlayMusic,
+        OnStopMusic,
         SetMusicLoop,
         OnTimeUpdate
 

@@ -1,9 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using AudioHelm;
 using DG.Tweening;
 using EnhancedUI.EnhancedScroller;
+using strange.extensions.dispatcher.eventdispatcher.api;
 using strange.extensions.mediation.impl;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
   [Inject]
@@ -14,13 +18,50 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
 
   [Inject]
   public MainGameContext mainGameContext { get; set; }
+
+  [Inject]
+  public Dictionary<AudioMixerGroup, MusicManagerView> sequencerDic { get; set; }
   private List<EnhancedScrollerCellData> cellDatas;
+  private float melodySize;
+  private float collumSize;
+  private float scrollCollumMoveAmount;
+  private float barCollumMoveAmount;
+  private float barScrollSize;
+  private HelmSequencer sequencer;
 
   public override void OnRegister() {
     mainGameContext.injectionBinder.Bind<MusicFieldMediator>().To(this).ToSingleton();
-    dispatcher.AddListener(GameEvent.OnInitStaff, Init);
     view.enhancedScroller.ScrollRect.onValueChanged.AddListener(OnScroll);
     view.musicBar.gameObject.SetActive(false);
+    melodySize = new MelodyTileData().GetCellViewSize();
+    collumSize = new NodeCollumTileData().GetCellViewSize();
+
+    dispatcher.AddListener(GameEvent.OnInitStaff, Init);
+    dispatcher.AddListener(GameEvent.OnTimeUpdate, OnTimeUpdate);
+    dispatcher.AddListener(GameEvent.OnPlayMusic, OnPlayMusic);
+    dispatcher.AddListener(GameEvent.OnStopMusic, OnStopMusic);
+
+  }
+
+  private void OnStopMusic(IEvent payload) {
+    if (view.musicBar.gameObject.activeSelf) {
+      view.musicBar.gameObject.SetActive(false);
+    }
+  }
+
+  private void OnPlayMusic(IEvent payload) {
+    sequencer = sequencerDic.Values.ToList().Find(e => e.sequencer != null).sequencer;
+    scrollCollumMoveAmount = view.enhancedScroller.ScrollSize / collumSize;
+    barCollumMoveAmount = sequencer.length - scrollCollumMoveAmount - 1;
+    barScrollSize = barCollumMoveAmount * collumSize;
+    if (!view.musicBar.gameObject.activeSelf) {
+      view.musicBar.gameObject.SetActive(true);
+    }
+  }
+
+  private void OnTimeUpdate(IEvent payload) {
+    float deltaTime = (float) payload.data;
+    ContainerMoveUpdate(deltaTime);
   }
 
   private void OnScroll(Vector2 position) {
@@ -88,27 +129,20 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
   }
 
   public void ContainerMoveUpdate(float deltaTime) {
-    if (!view.musicBar.gameObject.activeSelf) {
-      view.musicBar.gameObject.SetActive(true);
+    float currentPos = (float) sequencer.GetSequencerPosition();
+    view.debugText.text = currentPos.ToString();
+    if (currentPos <= scrollCollumMoveAmount) {
+      view.enhancedScroller.ScrollRect.SetHorizontalPosition(currentPos / scrollCollumMoveAmount);
       view.musicBar.SetLocalPositionX(0);
-    }
-
-    view.enhancedScroller.ScrollRect.AddHorizontalPosition(gameStateData.musicSpeed * deltaTime / view.enhancedScroller.ScrollSize);
-    if (view.enhancedScroller.ScrollRect.horizontalNormalizedPosition >= 1) {
-      view.musicBar.AddLocalPositionX(gameStateData.musicSpeed * deltaTime);
-    }
-  }
-
-  void Update() {
-    if (gameStateData.isPlaying) {
-      float deltaTime = Time.deltaTime;
-      ContainerMoveUpdate(deltaTime);
+    } else {
+      view.enhancedScroller.ScrollRect.SetHorizontalPosition(1);
+      view.musicBar.SetLocalPositionX(barScrollSize * ((currentPos - scrollCollumMoveAmount) / barCollumMoveAmount));
     }
   }
 
   public void RemoveEmptyCell(int minIndex = 0) {
     while (true) {
-      if (cellDatas.Count <= gameStateData.musicLength + 1|| cellDatas.Count <= minIndex) {
+      if (cellDatas.Count <= gameStateData.musicLength + 1 || cellDatas.Count <= minIndex) {
         return;
       }
       var data = cellDatas[cellDatas.Count - 1];

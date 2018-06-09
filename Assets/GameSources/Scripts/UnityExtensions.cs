@@ -445,4 +445,9 @@ public static class RectTransformExtensions {
 		float newPos = scrollRect.horizontalNormalizedPosition + value;
 		scrollRect.horizontalNormalizedPosition = Math.Max(0, Math.Min(1, newPos));
 	}
+	public static void SetHorizontalPosition(this ScrollRect scrollRect, float value) {
+		float newPos = value;
+		scrollRect.horizontalNormalizedPosition = Math.Max(0, Math.Min(1, newPos));
+	}
+	//_End_
 }

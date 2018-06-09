@@ -1,9 +1,10 @@
+using strange.extensions.context.api;
 using strange.extensions.context.impl;
+using strange.extensions.dispatcher.eventdispatcher.api;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class MainGameRoot : ContextView {
-  private GameObject moveSystem;
+public partial class MainGameRoot : ContextView {
   void Awake() {
     MainGameContext mainGameContext = new MainGameContext(this, true);
     context = mainGameContext;

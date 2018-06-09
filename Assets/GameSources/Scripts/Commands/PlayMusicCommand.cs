@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using AudioHelm;
 using strange.extensions.command.impl;
+using strange.extensions.context.api;
+using strange.extensions.dispatcher.eventdispatcher.api;
 using UnityEngine.Audio;
 
 public class PlayMusicCommand : Command {
@@ -16,6 +18,9 @@ public class PlayMusicCommand : Command {
 
   [Inject] 
   public AudioHelmClock helmClock { get; set; }
+
+  [Inject(ContextKeys.CONTEXT_DISPATCHER)]
+  public IEventDispatcher dispatcher { get; set; }
 
   public override void Execute() {
     helmClock.pause = false;
@@ -38,5 +43,7 @@ public class PlayMusicCommand : Command {
         musicManagerViewDic[emoTileData.audioMixerGroup].AddNode(i, j, emoTileData);
       }
     }
+
+    dispatcher.Dispatch(GameEvent.OnPlayMusic);
   }
 }

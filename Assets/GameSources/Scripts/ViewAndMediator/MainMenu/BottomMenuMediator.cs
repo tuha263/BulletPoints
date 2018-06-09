@@ -37,7 +37,6 @@ public class BottomMenuMediator : EventMediator {
 
   public void OnClickPlayButton() {
     gameStateData.isPlaying = !gameStateData.isPlaying;
-    dispatcher.Dispatch(GameEvent.OnPlayOrStopMusic);
     if (gameStateData.isPlaying) {
       playMusicSignal.Dispatch();
     } else {

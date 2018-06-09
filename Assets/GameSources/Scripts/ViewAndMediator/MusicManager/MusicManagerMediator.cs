@@ -16,7 +16,9 @@ public class MusicManagerMediator : EventMediator {
 
   private void Init() {
     view.Init();
-    dispatcher.AddListener(GameEvent.OnPlayOrStopMusic, OnPlayOrStopMusic);
+    dispatcher.AddListener(GameEvent.OnPlayMusic, OnPlayMusic);
+    dispatcher.AddListener(GameEvent.OnStopMusic, OnStopMusic);
+
     dispatcher.AddListener(GameEvent.SetMusicLoop, OnSetMusicLoop);
   }
 
@@ -24,19 +26,11 @@ public class MusicManagerMediator : EventMediator {
     view.SetLoop(gameStateData.isLoop);
   }
 
-  private void OnPlayOrStopMusic(IEvent payload) {
-    if (gameStateData.isPlaying) {
-      OnPlayMusic();
-      return;
-    }
-    OnStopMusic();
-  }
-
-  public void OnPlayMusic() {
+  public void OnPlayMusic(IEvent payload) {
     view.Play();
   }
 
-  private void OnStopMusic() {
+  private void OnStopMusic(IEvent payload) {
     view.Stop();
   }
 }
