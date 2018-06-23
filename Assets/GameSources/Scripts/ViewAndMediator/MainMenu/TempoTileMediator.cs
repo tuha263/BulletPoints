@@ -14,6 +14,6 @@ public class TempoTileMediator : EventMediator {
 
   private void OnSelectTempo() {
     gameStateData.tempo = view.tempo;
-    dispatcher.Dispatch(GameEvent.OnChangeTempo);
+    dispatcher.Dispatch(GameEvent.OnChangeTempo, view.tempo);
   }
 }

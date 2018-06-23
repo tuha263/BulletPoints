@@ -30,6 +30,8 @@ public class NodeTileView : View {
   public IGameStateData gameStateData { get; set; }
   public NotePositionType positionType;
 
+  private bool isSetable;
+
   public void AddOnclickListener(UnityAction action) {
     button.onClick.AddListener(action);
   }  
@@ -38,6 +40,9 @@ public class NodeTileView : View {
     positionType = NotePositionType.Center;
     icon.color = emoTileData == null ? new Color(255, 255, 255, 0) : new Color(255, 255, 255, 255);
     if (emoTileData == null) {
+      if (!isSetable) {
+        SetSetable(isSetable);
+      }
       return;
     }
     icon.sprite = emoTileData.sprite;
@@ -65,5 +70,14 @@ public class NodeTileView : View {
   public void Init(int index, NodeCollumTileView nodeCollumTileView) {
     this.nodeCollumTileView = nodeCollumTileView;
     this.index = index;
+  }
+
+  public void SetSetable(bool isSetable) {
+    this.isSetable = isSetable;
+    if (emoTileData != null && isSetable == false) {
+      return;
+    }
+    button.image.color = isSetable ? new Color(255, 255, 255, 0) : new Color(0, 0, 0, 50);
+    button.interactable = isSetable;
   }
 }

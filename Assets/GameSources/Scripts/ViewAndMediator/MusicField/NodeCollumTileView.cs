@@ -13,6 +13,9 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
   private VerticalLayoutGroup lineVerticalLayout;
   public NodeCollumTileData nodeCollumTileData { get; private set; }
   private List<NodeTileView> noteViews;
+ 
+
+  private bool isSetable;
   public void PopulateNodeSlot(NodeCollumTileData data) {
     this.nodeCollumTileData = data;
     noteViews = new List<NodeTileView>();
@@ -81,5 +84,16 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
     } else {
       noteViews[index2].MoveNoteToLeft();
     }
+  }
+
+  private void SetSetable(bool isSetable) {
+    this.isSetable = isSetable;
+    noteViews.ForEach(note => note.SetSetable(isSetable));
+  }
+
+  public void OnChangeTempo(int tempo) {
+    int numOfNode = tempo / 4;
+    //SetSetable((dataIndex - 1) % 4 < numOfNode);
+    SetSetable((dataIndex - 1) % (4 / numOfNode) == 0);
   }
 }
