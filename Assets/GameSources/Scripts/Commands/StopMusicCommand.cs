@@ -11,6 +11,7 @@ public class StopMusicCommand : Command {
   public IEventDispatcher dispatcher { get; set; }
   public override void Execute() {
     helmClock.pause = true;
+    helmClock.Reset();
     dispatcher.Dispatch(GameEvent.OnStopMusic);
   }
 }
