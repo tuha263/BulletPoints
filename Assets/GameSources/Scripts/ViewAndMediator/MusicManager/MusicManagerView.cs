@@ -21,8 +21,10 @@ public class MusicManagerView : View {
     sequencer.Clear();
   }
   public void Play() {
+    sequencer.ResetBeat();
   }
   public void Stop() {
+    sequencer.ResetBeat();
   }
 
   public void SetLoop(bool isLoop) {

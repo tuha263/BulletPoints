@@ -603,6 +603,10 @@ namespace AudioHelm
             return Utils.kSixteenthsPerBeat * beatTime;
         }
 
+        public void ResetBeat(){
+            beatTime = 0.0f;
+        }
+
         /// <summary>
         /// Gets the current position of the sequencer measured in sixteenth notes.
         /// </summary>

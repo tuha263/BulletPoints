@@ -46,6 +46,12 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
     // if (view.musicBar.gameObject.activeSelf) {
     //   view.musicBar.gameObject.SetActive(false);
     // }
+    ResetScrollBar();
+  }
+
+  private void ResetScrollBar() {
+    view.enhancedScroller.ScrollRect.SetHorizontalPosition(0);
+    view.musicBar.SetLocalPositionX(0);
   }
 
   private void OnPlayMusic(IEvent payload) {
