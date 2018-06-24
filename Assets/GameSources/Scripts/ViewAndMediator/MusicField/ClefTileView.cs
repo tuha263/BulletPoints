@@ -12,6 +12,7 @@ public class ClefTileView : View {
 
   [Inject]
   public IGameStateData gameStateData { get; set; }
+
   public void Init(db_ClefsData data) {
     this.data = data;
     icon.sprite = ClefsDataManager.LoadSprite(data);

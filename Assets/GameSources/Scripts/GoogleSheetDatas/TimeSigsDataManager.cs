@@ -34,13 +34,15 @@ public class TimeSigsDataManager : GoogleSheetDataManager<db_TimeSigs>, ITimeSig
     }
   }
 
+  private static Sprite _Sprite = null;
+  public static Sprite LoadSprite(db_TimeSigsData data) {
+    string path = "TimeSigs/" + data.Texture;
+    _Sprite = Resources.Load<Sprite>(path);
+    return _Sprite;
+  }
+
   protected override string GetFileName() {
     return "db_TimeSigs";
   }
 
-  private static Sprite _Sprite = null;
-  public static Sprite LoadSprite(db_TimeSigsData data){
-    _Sprite = Resources.Load<Sprite>("TimeSigs/" + data.Texture);
-    return _Sprite;
-  }
 }

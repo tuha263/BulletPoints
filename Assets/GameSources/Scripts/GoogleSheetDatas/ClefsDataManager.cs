@@ -30,13 +30,14 @@ public class ClefsDataManager : GoogleSheetDataManager<db_Clefs>, IClefsDataMana
       return _Datas;
     }
   }
-
-  protected override string GetFileName() {
-    return "db_Clefs";
-  }
   private static Sprite _Sprite = null;
   public static Sprite LoadSprite(db_ClefsData data) {
     _Sprite = Resources.Load<Sprite>("Clefs/" + data.Texture);
     return _Sprite;
   }
+
+  protected override string GetFileName() {
+    return "db_Clefs";
+  }
+
 }

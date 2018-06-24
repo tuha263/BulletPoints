@@ -17,11 +17,19 @@ public class MelodyTileView : EnhancedScrollerCellView {
   private GameObject timeSigRoot;
   [SerializeField]
   private GameObject timeSigTilePrefab;
+  [SerializeField]
+  private GameObject listClefsRoot;
+  [SerializeField]
+  private GameObject listTimeSigRoot;
+
   [Inject]
   public ITimeSigsDataManager timeSigsDataManager { get; set; }
 
   [Inject]
   public IClefsDataManager clefDataManager { get; set; }
+
+  [Inject]
+  public IGameStateData gameStateData { get; set; }
 
   public override void SetData(EnhancedScrollerCellData data) {
     this.data = data as MelodyTileData;
@@ -36,13 +44,28 @@ public class MelodyTileView : EnhancedScrollerCellView {
       TimeSigTileView timeSignView = timeSigRoot.InstantiateAsChild(timeSigTilePrefab).GetComponent<TimeSigTileView>();
       timeSignView.Init(timeSig);
     });
+
+    gameStateData.currentClef = clefDataManager.Datas.Find(clef => clef.CLEFSTYPE == ClefsType.Major);
+    gameStateData.currentTimeSig = timeSigsDataManager.Datas.Find(timeSig => timeSig.TIMESIGSTYPE == TimeSigsType._3_4);
+    SetTimeSig(gameStateData.currentTimeSig);
+    SetClef(gameStateData.currentClef);
   }
 
-  public void SetTimeSig(db_TimeSigsData data) {
-    timeSignIcon.sprite = Resources.Load<Sprite>("TimeSigs/" + data);
+  private void SetTimeSig(db_TimeSigsData data) {
+    timeSignIcon.sprite = TimeSigsDataManager.LoadSprite(data);
   }
 
-  public void SetClef() {
+  private void SetClef(db_ClefsData data) {
+    clefIcon.sprite = ClefsDataManager.LoadSprite(data);
+  }
 
+  public void OnChangeTimeSig() {
+    SetTimeSig(gameStateData.currentTimeSig);
+    listTimeSigRoot.SetActive(false);
+  }
+
+  public void OnChangeClef() {
+    SetClef(gameStateData.currentClef);
+    listClefsRoot.SetActive(false);
   }
 }

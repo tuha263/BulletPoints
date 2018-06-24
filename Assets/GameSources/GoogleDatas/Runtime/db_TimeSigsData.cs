@@ -9,8 +9,8 @@ using System.Collections;
 public class db_TimeSigsData
 {
   [SerializeField]
-  string id;
-  public string ID { get {return id; } set { id = value;} }
+  TimeSigsType timesigstype;
+  public TimeSigsType TIMESIGSTYPE { get {return timesigstype; } set { timesigstype = value;} }
   
   [SerializeField]
   string texture;

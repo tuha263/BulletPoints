@@ -16,8 +16,11 @@ public class MelodyTileMediator : EventMediator {
   }
 
   private void OnChangeTimeSig(IEvent payload) {
-    
+    view.OnChangeTimeSig();
+
   }
 
-  private void OnChangeClef(IEvent payload) {}
+  private void OnChangeClef(IEvent payload) {
+    view.OnChangeClef();
+  }
 }
