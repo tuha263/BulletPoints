@@ -9,16 +9,24 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b44ff3e837f404f8eb603f99674d76de, type: 3}
-  m_Name: db_StaffSetting
+  m_Name: db_Clefs
   m_EditorClassIdentifier: 
   templatePath: QuickSheet/GDataPlugin/Templates
   scriptFilePath: GameSources/GoogleDatas/Runtime
   editorScriptFilePath: GameSources/GoogleDatas/Editor
   sheetName: BulletPoints
-  workSheetName: db_StaffSetting
+  workSheetName: db_Clefs
   columnHeaderList:
-  - type: 3
-    name: NoteAdditional
+  - type: 0
+    name: ClefsType
     isEnable: 0
     isArray: 0
+  - type: 1
+    name: Texture
+    isEnable: 0
+    isArray: 0
+  - type: 3
+    name: NotesHigh
+    isEnable: 0
+    isArray: 1
   AccessCode: 

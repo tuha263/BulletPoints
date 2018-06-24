@@ -22,6 +22,8 @@ public interface IGameStateData {
   //View Option
   Sequencer.Division division { get; set; }
   int tempo { get; set; }
+  db_ClefsData currentClef { get; set; }
+  db_TimeSigsData currentTimeSig { get; set; }
 }
 
 public class GameStateData : IGameStateData {
@@ -64,6 +66,10 @@ public class GameStateData : IGameStateData {
   public int staffLength { get; set; }
 
   public int tempo { get; set; }
+
+  public db_ClefsData currentClef { get; set; }
+
+  public db_TimeSigsData currentTimeSig { get; set; }
 
   public GameStateData() {
     collumDatas = new List<NodeCollumTileData>();

@@ -11,7 +11,7 @@ public class MusicManagerView : View {
   private int startingNote;
 
   [Inject]
-  public IStaffSettingDataManager staffSettingData { get; set; }
+  public IGameStateData gameStateData { get; set; }
 
   public void Init() {
     ClearSequencer();
@@ -40,6 +40,6 @@ public class MusicManagerView : View {
   }
 
   public void AddNode(int collum, int index, EmoTileData emoTileData) {
-    sequencer.AddNote(emoTileData.note + staffSettingData.Datas[NodeCollumTileData.AmountOfNode - 1 - index].Noteadditional, collum, collum + emoTileData.data.Notelength, 1);
+    sequencer.AddNote(emoTileData.note + gameStateData.currentClef.Noteshigh[NodeCollumTileData.AmountOfNode - 1 - index], collum, collum + emoTileData.data.Notelength, 1);
   }
 }

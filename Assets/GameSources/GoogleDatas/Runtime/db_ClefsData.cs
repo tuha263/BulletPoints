@@ -9,8 +9,8 @@ using System.Collections;
 public class db_ClefsData
 {
   [SerializeField]
-  string name;
-  public string Name { get {return name; } set { name = value;} }
+  ClefsType clefstype;
+  public ClefsType CLEFSTYPE { get {return clefstype; } set { clefstype = value;} }
   
   [SerializeField]
   string texture;

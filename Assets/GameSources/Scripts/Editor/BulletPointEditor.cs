@@ -33,8 +33,7 @@ public class BulletPointEditor {
 
   static void ReloadData() {
     db_EmoEditor.ReLoad();
-    db_StaffSettingEditor.ReLoad();
+    db_ClefsEditor.ReLoad();
+    db_TimeSigsEditor.ReLoad();
   }
-
-  
 }

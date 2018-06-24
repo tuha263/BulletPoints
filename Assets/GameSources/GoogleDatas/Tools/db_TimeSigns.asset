@@ -17,8 +17,8 @@ MonoBehaviour:
   sheetName: BulletPoints
   workSheetName: db_TimeSigs
   columnHeaderList:
-  - type: 1
-    name: ID
+  - type: 0
+    name: TimeSigsType
     isEnable: 0
     isArray: 0
   - type: 1

@@ -22,7 +22,8 @@ public class MainGameContext : MVCSContext {
     //Model
     injectionBinder.Bind<IGameStateData>().To<GameStateData>().ToSingleton();
     injectionBinder.Bind<IEmoDataManager>().To<EmoDataManager>().ToSingleton();
-    injectionBinder.Bind<IStaffSettingDataManager>().To<StaffSettingDataManager>().ToSingleton();
+    injectionBinder.Bind<IClefsDataManager>().To<ClefsDataManager>().ToSingleton();
+    injectionBinder.Bind<ITimeSigsDataManager>().To<TimeSigsDataManager>().ToSingleton();
     injectionBinder.Bind<AudioHelmClock>().To<AudioHelmClock>().ToSingleton();
 
     //Audio mixer
@@ -48,6 +49,8 @@ public class MainGameContext : MVCSContext {
     mediationBinder.Bind<MusicManagerView>().To<MusicManagerMediator>();
     mediationBinder.Bind<BottomMenuView>().To<BottomMenuMediator>();
     mediationBinder.Bind<TempoTileView>().To<TempoTileMediator>();
+    mediationBinder.Bind<ClefTileView>().To<ClefTileMediator>();
+    mediationBinder.Bind<TimeSigTileView>().To<TimeSigTileMediator>();
   }
 
   protected override void addCoreComponents() {

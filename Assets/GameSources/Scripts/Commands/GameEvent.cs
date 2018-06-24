@@ -4,5 +4,7 @@ public enum GameEvent {
   OnStopMusic,
   SetMusicLoop,
   OnTimeUpdate,
-  OnChangeTempo
+  OnChangeTempo,
+  OnChangeTimeSig,
+  OnChangeClef
 }
