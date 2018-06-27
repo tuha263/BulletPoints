@@ -21,7 +21,7 @@ public class DrumSequencerScript : MonoBehaviour {
 			Keyzone keyZone = sampler.AddKeyzone();
 			keyZone.minKey = minKey;
 			keyZone.rootKey = minKey + 2;
-			keyZone.maxKey = minKey + 5;
+			keyZone.maxKey = minKey + 4;
 			keyZone.audioClip = sampleArray[i] as AudioClip;
 			keyZone.mixer = mixerGroup;
 			minKey += 5;			
