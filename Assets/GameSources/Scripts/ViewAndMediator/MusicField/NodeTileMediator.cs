@@ -1,7 +1,7 @@
 using strange.extensions.mediation.impl;
 using UnityEngine;
 
-public class NodeTileMediator : Mediator {
+public class NodeTileMediator : EventMediator {
   [Inject]
   public NodeTileView view { get; set; }
 

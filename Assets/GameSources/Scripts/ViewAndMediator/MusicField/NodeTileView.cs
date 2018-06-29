@@ -80,4 +80,11 @@ public class NodeTileView : View {
     button.image.color = isSetable ? new Color(255, 255, 255, 0) : new Color(0, 0, 0, 50);
     button.interactable = isSetable;
   }
+
+  public void OnPlay() {
+    if (emoTileData == null) {
+      return;
+    }
+    transform.DOScale(Vector3.one * 1.2f, 0.2f).OnComplete(() => transform.DOScale(Vector3.one, 0.2f));
+  }
 }

@@ -6,5 +6,6 @@ public enum GameEvent {
   OnTimeUpdate,
   OnChangeTempo,
   OnChangeTimeSig,
-  OnChangeClef
+  OnChangeClef,
+  OnPlayNote
 }

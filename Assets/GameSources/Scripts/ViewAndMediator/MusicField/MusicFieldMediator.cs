@@ -28,6 +28,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
   private float barCollumMoveAmount;
   private float barScrollSize;
   private HelmSequencer sequencer;
+  private int currentNote;
 
   public override void OnRegister() {
     mainGameContext.injectionBinder.Bind<MusicFieldMediator>().To(this).ToSingleton();
@@ -55,6 +56,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
   }
 
   private void OnPlayMusic(IEvent payload) {
+    currentNote = -1;
     sequencer = sequencerDic.Values.ToList().Find(e => e.sequencer != null).sequencer;
     scrollCollumMoveAmount = view.enhancedScroller.ScrollSize / collumSize;
     barCollumMoveAmount = sequencer.length - scrollCollumMoveAmount;
@@ -135,6 +137,12 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
 
   public void ContainerMoveUpdate(float deltaTime) {
     float currentPos = (float) sequencer.GetSequencerPosition();
+    var realNote = (int) currentPos;
+    if (realNote != currentNote) {
+      currentNote = realNote;
+      dispatcher.Dispatch(GameEvent.OnPlayNote, currentNote);
+    }
+
     if (currentPos <= scrollCollumMoveAmount) {
       view.enhancedScroller.ScrollRect.SetHorizontalPosition(currentPos / scrollCollumMoveAmount);
       view.musicBar.SetLocalPositionX(0);
