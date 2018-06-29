@@ -12,7 +12,7 @@ public class NodeCollumTileMediator : EventMediator {
   public override void OnRegister() {
     dispatcher.AddListener(GameEvent.OnChangeTempo, OnChangeTempo);
     dispatcher.AddListener(GameEvent.OnPlayNote, OnPlayNote);
-    view.OnChangeTempo(gameStateData.tempo);
+    view.OnChangeTempo();
   }
 
   private void OnPlayNote(IEvent payload) {
@@ -21,7 +21,6 @@ public class NodeCollumTileMediator : EventMediator {
   }
 
   private void OnChangeTempo(IEvent payload) {
-    var tempo = (int) payload.data;
-    view.OnChangeTempo(tempo);
+    view.OnChangeTempo();
   }
 }

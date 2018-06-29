@@ -14,7 +14,9 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
   public NodeCollumTileData nodeCollumTileData { get; private set; }
   private List<NodeTileView> noteViews;
 
-  private bool isSetable;
+  [Inject]
+  public IGameStateData gameStateData { get; set; }
+
   public void PopulateNodeSlot(NodeCollumTileData data) {
     this.nodeCollumTileData = data;
     noteViews = new List<NodeTileView>();
@@ -43,6 +45,7 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
       noteViews[i].SetData(nodeCollumTileData.emoDatas[i]);
     }
 
+    OnChangeTempo();
   }
 
   public void SetNodeData(int index, EmoTileData emoTileData) {
@@ -85,15 +88,8 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
     }
   }
 
-  private void SetSetable(bool isSetable) {
-    this.isSetable = isSetable;
-    noteViews.ForEach(note => note.SetSetable(isSetable));
-  }
-
-  public void OnChangeTempo(int tempo) {
-    int numOfNode = tempo / 4;
-    //SetSetable((dataIndex - 1) % 4 < numOfNode);
-    SetSetable((dataIndex - 1) % (4 / numOfNode) == 0);
+  public void OnChangeTempo() {
+    noteViews.ForEach(note => note.SetSetable());
   }
 
   public void OnPlayNote(int collumIdnex) {

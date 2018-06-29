@@ -12,6 +12,7 @@ public class EmoTileData : EnhancedScrollerCellData {
   public readonly SoundType soundType;
 
   public readonly db_EmoData data;
+
   public EmoTileData(db_EmoData data) {
     this.data = data;
     note = data.Note;

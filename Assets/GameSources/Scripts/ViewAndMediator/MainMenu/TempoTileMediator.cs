@@ -8,12 +8,14 @@ public class TempoTileMediator : EventMediator {
   [Inject]
   public IGameStateData gameStateData { get; set; }
 
+  [Inject]
+  public ChangeTempoSignal changeTempoSignal { get; set; }
+
   public override void OnRegister() {
     view.button.onClick.AddListener(OnSelectTempo);
   }
 
   private void OnSelectTempo() {
-    gameStateData.tempo = view.tempo;
-    dispatcher.Dispatch(GameEvent.OnChangeTempo, view.tempo);
+    changeTempoSignal.Dispatch(view.tempo);
   }
 }

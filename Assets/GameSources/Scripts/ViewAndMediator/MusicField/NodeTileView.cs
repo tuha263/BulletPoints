@@ -21,7 +21,7 @@ public class NodeTileView : View {
   private List<Image> icons;
   [SerializeField]
   private Button button;
-  public EmoTileData emoTileData { get { return gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[index]; } }
+  public EmoTileData emoTileData { get { return gameStateData.collumDatas[nodeCollumTileView.nodeCollumTileData.columnIndex].emoDatas[index]; } }
 
   public NodeCollumTileView nodeCollumTileView { get; private set; }
   public int index { get; private set; }
@@ -30,7 +30,7 @@ public class NodeTileView : View {
   public IGameStateData gameStateData { get; set; }
   public NotePositionType positionType;
 
-  private bool isSetable;
+  private bool isSetable { get { return nodeCollumTileView.nodeCollumTileData.isSetable; } }
 
   public void AddOnclickListener(UnityAction action) {
     button.onClick.AddListener(action);
@@ -41,7 +41,8 @@ public class NodeTileView : View {
     icon.color = emoTileData == null ? new Color(255, 255, 255, 0) : new Color(255, 255, 255, 255);
     if (emoTileData == null) {
       if (!isSetable) {
-        SetSetable(isSetable);
+        button.image.color = new Color(0, 0, 0, 50);
+        button.interactable = isSetable;
       }
       return;
     }
@@ -72,8 +73,7 @@ public class NodeTileView : View {
     this.index = index;
   }
 
-  public void SetSetable(bool isSetable) {
-    this.isSetable = isSetable;
+  public void SetSetable() {
     if (emoTileData != null && isSetable == false) {
       return;
     }

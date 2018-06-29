@@ -21,6 +21,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
 
   [Inject]
   public Dictionary<AudioMixerGroup, MusicManagerView> sequencerDic { get; set; }
+
   private List<EnhancedScrollerCellData> cellDatas;
   private float melodySize;
   private float collumSize;
@@ -130,9 +131,14 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
   }
 
   public void AddNewNodeCollum() {
-    NodeCollumTileData nodeCollumData = new NodeCollumTileData();
+    NodeCollumTileData nodeCollumData = new NodeCollumTileData(gameStateData.collumDatas.Count, gameStateData.tempo);
     gameStateData.collumDatas.Add(nodeCollumData);
     cellDatas.Add(nodeCollumData);
+  }
+
+  private void RemoveLastNodeCollum() {
+    cellDatas.RemoveAt(cellDatas.Count - 1);
+    gameStateData.collumDatas.RemoveAt(gameStateData.collumDatas.Count - 1);
   }
 
   public void ContainerMoveUpdate(float deltaTime) {
@@ -169,11 +175,6 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
       RemoveLastNodeCollum();
       view.enhancedScroller.ScrollRect.content.AddWidth(-nodeCollumTileData.GetCellViewSize());
     }
-  }
-
-  private void RemoveLastNodeCollum() {
-    cellDatas.RemoveAt(cellDatas.Count - 1);
-    gameStateData.collumDatas.RemoveAt(gameStateData.collumDatas.Count - 1);
   }
 
   public void MoveMusicStaff(float position) {

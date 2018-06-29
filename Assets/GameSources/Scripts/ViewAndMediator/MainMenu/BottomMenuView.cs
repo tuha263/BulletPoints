@@ -31,6 +31,9 @@ public class BottomMenuView : View {
   private GameObject tempListRoot;
   [SerializeField]
   private GameObject tempoTilePrefab;
+
+  [Inject]
+  public ChangeTempoSignal changeTempoSignal { get; set; }
   private bool isShowingTempSelection;
 
   public void Init() {

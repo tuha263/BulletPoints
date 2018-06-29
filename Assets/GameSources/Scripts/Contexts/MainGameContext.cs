@@ -18,6 +18,7 @@ public class MainGameContext : MVCSContext {
     commandBinder.Bind<SetEmoSignal>().To<SetEmoCommand>().Pooled();
     commandBinder.Bind<PlayMusicSignal>().To<PlayMusicCommand>().Pooled();
     commandBinder.Bind<StopMusicSignal>().To<StopMusicCommand>().Pooled();
+    commandBinder.Bind<ChangeTempoSignal>().To<ChangeTempoCommand>().Pooled();
 
     //Model
     injectionBinder.Bind<IGameStateData>().To<GameStateData>().ToSingleton();
