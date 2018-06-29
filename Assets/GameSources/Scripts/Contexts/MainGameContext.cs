@@ -37,6 +37,9 @@ public class MainGameContext : MVCSContext {
     //Singleton
     injectionBinder.Bind<MainGameContext>().To(this).CrossContext().ToSingleton();
 
+    GlobalCoroutine GlobalCoroutine = GameObject.Find("GlobalCoroutine").GetComponent<GlobalCoroutine>();
+    injectionBinder.Bind<GlobalCoroutine>().To(GlobalCoroutine).ToSingleton().CrossContext();
+
     //view - mediator
     mediationBinder.Bind<EmoListView>().To<EmoListMediator>();
     mediationBinder.Bind<EmoTileView>().To<EmoTileMediator>();
@@ -51,6 +54,7 @@ public class MainGameContext : MVCSContext {
     mediationBinder.Bind<TempoTileView>().To<TempoTileMediator>();
     mediationBinder.Bind<ClefTileView>().To<ClefTileMediator>();
     mediationBinder.Bind<TimeSigTileView>().To<TimeSigTileMediator>();
+
   }
 
   protected override void addCoreComponents() {

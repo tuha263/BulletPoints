@@ -1,7 +1,7 @@
+using System.Collections;
 using strange.extensions.command.impl;
 using strange.extensions.context.api;
 using UnityEngine;
-using System.Collections;
 
 public class SelectEmoCommand : Command {
 
@@ -14,10 +14,14 @@ public class SelectEmoCommand : Command {
   [Inject]
   public CurrentEmoMediator currentEmoMediator { get; set; }
 
+  [Inject]
+  public GlobalCoroutine globalCoroutine { get; set; }
+
   override public void Execute() {
     gameStateData.currentEmo = emoTileData;
     currentEmoMediator.view.Init(emoTileData);
-    SampleEmoSound();
+    globalCoroutine.StartCoroutine(SampleEmoSound());
+    Retain();
   }
 
   IEnumerator SampleEmoSound() {
@@ -25,5 +29,6 @@ public class SelectEmoCommand : Command {
     emoTileData.sequencer.NoteOn(note);
     yield return new WaitForSeconds(0.5f);
     emoTileData.sequencer.NoteOff(note);
+    Release();
   }
 }
