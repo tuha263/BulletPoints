@@ -1,8 +1,8 @@
 {
   "license": "Patch (c) by Matt Tytel.  This patch is licensed under a Creative Commons Attribution 4.0 International License.  You should have received a copy of the license along with this work.  If not, see <http://creativecommons.org/licenses/by/4.0/>.",
   "synth_version": "0.9.0",
-  "patch_name": "VibMelody",
-  "folder_name": "Patches",
+  "patch_name": "Melody_Vibrato",
+  "folder_name": "Luke",
   "author": "Matt Tytel",
   "settings": {
     "amp_attack": 0,
@@ -66,13 +66,13 @@
     "osc_1_tune": 0,
     "osc_1_unison_detune": 10,
     "osc_1_unison_voices": 1,
-    "osc_1_volume": 0.54772255749999998464,
+    "osc_1_volume": 0.65940020161290324729,
     "osc_1_waveform": 10,
     "osc_2_transpose": -12,
     "osc_2_tune": 0,
     "osc_2_unison_detune": 10,
     "osc_2_unison_voices": 1,
-    "osc_2_volume": 0.54772255749999998464,
+    "osc_2_volume": 0.47586945564516125451,
     "osc_2_waveform": 10,
     "osc_feedback_amount": 0,
     "osc_feedback_transpose": 0,
@@ -143,7 +143,7 @@
     "unison_1_harmonize": 0,
     "unison_2_harmonize": 0,
     "velocity_track": 0,
-    "volume": 0.70710680000000003531,
+    "volume": 0.99177500507305182964,
     "modulations": [
       {
         "source": "poly_lfo",
