@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class EmoTileData : EnhancedScrollerCellData {
   public Sprite sprite;
   public AudioMixerGroup audioMixerGroup;
-  public HelmSequencer sequencer;
+  public Sequencer sequencer;
   private int _note;
   public int note { get { return _note + 12; } private set {_note = value; } }
   public readonly SoundType soundType;

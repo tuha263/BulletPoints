@@ -28,7 +28,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
   private float scrollCollumMoveAmount;
   private float barCollumMoveAmount;
   private float barScrollSize;
-  private HelmSequencer sequencer;
+  private AudioHelm.Sequencer sequencer;
   private int currentNote;
 
   public override void OnRegister() {

@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class MusicManagerView : View {
   [SerializeField]
-  public HelmSequencer sequencer;
-  [SerializeField]
-  private int increase;
-  [SerializeField]
-  private int startingNote;
-
+  public Sequencer sequencer;
   [Inject]
   public IGameStateData gameStateData { get; set; }
 
@@ -39,7 +34,7 @@ public class MusicManagerView : View {
     return sequencer.division;
   }
 
-  public void AddNode(int collum, int index, EmoTileData emoTileData) {
+  public virtual void AddNode(int collum, int index, EmoTileData emoTileData) {
     sequencer.AddNote(emoTileData.note + gameStateData.currentClef.Noteshigh[NodeCollumTileData.AmountOfNode - 1 - index], collum, collum + emoTileData.data.Notelength, 1);
   }
 }

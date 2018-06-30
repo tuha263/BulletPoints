@@ -55,6 +55,7 @@ public class MainGameContext : MVCSContext {
     mediationBinder.Bind<TempoTileView>().To<TempoTileMediator>();
     mediationBinder.Bind<ClefTileView>().To<ClefTileMediator>();
     mediationBinder.Bind<TimeSigTileView>().To<TimeSigTileMediator>();
+    mediationBinder.Bind<DrumSequencerView>().To<DrumSequencerMediator>();
 
   }
 

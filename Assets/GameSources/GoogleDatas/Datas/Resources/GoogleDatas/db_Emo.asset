@@ -27,7 +27,7 @@ MonoBehaviour:
     soundtype: Sequencer
     note: 36
     channel: 2
-    notelength: 1
+    notelength: 4
   - id: 3
     texture: Emo3
     patch: Bass_Port
@@ -81,20 +81,111 @@ MonoBehaviour:
     texture: Emo10
     patch: (none)
     soundtype: Drum
-    note: 5
+    note: 0
     channel: 10
     notelength: 1
   - id: 11
     texture: Emo11
     patch: (none)
     soundtype: Drum
-    note: 6
+    note: 5
     channel: 10
     notelength: 1
   - id: 12
     texture: Emo12
     patch: (none)
     soundtype: Drum
-    note: 7
+    note: 10
+    channel: 10
+    notelength: 1
+  - id: 13
+    texture: Emo13
+    patch: (none)
+    soundtype: Drum
+    note: 15
+    channel: 10
+    notelength: 1
+  - id: 14
+    texture: Emo14
+    patch: (none)
+    soundtype: Drum
+    note: 20
+    channel: 10
+    notelength: 1
+  - id: 15
+    texture: Emo15
+    patch: (none)
+    soundtype: Drum
+    note: 25
+    channel: 10
+    notelength: 1
+  - id: 16
+    texture: Emo16
+    patch: (none)
+    soundtype: Drum
+    note: 30
+    channel: 10
+    notelength: 1
+  - id: 17
+    texture: Emo17
+    patch: (none)
+    soundtype: Drum
+    note: 35
+    channel: 10
+    notelength: 1
+  - id: 18
+    texture: Emo18
+    patch: (none)
+    soundtype: Drum
+    note: 40
+    channel: 10
+    notelength: 1
+  - id: 19
+    texture: Emo19
+    patch: (none)
+    soundtype: Drum
+    note: 45
+    channel: 10
+    notelength: 1
+  - id: 20
+    texture: Emo20
+    patch: (none)
+    soundtype: Drum
+    note: 50
+    channel: 10
+    notelength: 1
+  - id: 21
+    texture: Emo21
+    patch: (none)
+    soundtype: Drum
+    note: 55
+    channel: 10
+    notelength: 1
+  - id: 22
+    texture: Emo22
+    patch: (none)
+    soundtype: Drum
+    note: 60
+    channel: 10
+    notelength: 1
+  - id: 23
+    texture: Emo23
+    patch: (none)
+    soundtype: Drum
+    note: 65
+    channel: 10
+    notelength: 1
+  - id: 24
+    texture: Emo24
+    patch: (none)
+    soundtype: Drum
+    note: 70
+    channel: 10
+    notelength: 1
+  - id: 25
+    texture: Emo25
+    patch: (none)
+    soundtype: Drum
+    note: 75
     channel: 10
     notelength: 1

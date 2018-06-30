@@ -23,6 +23,8 @@ public class EmoListView : View, IEnhancedScrollerDelegate {
   private GameObject sequencersRoot;
   [SerializeField]
   private GameObject sequencersPrefabs;
+  [SerializeField]
+  private GameObject drumSequencersPrefabs;
 
   private List<EmoTileData> emoDatas;
 
@@ -84,22 +86,35 @@ public class EmoListView : View, IEnhancedScrollerDelegate {
     // });
     //audioMixer.SetFloat("Bass_Bubbly_Volume", 20);
 
+    //Create Drum Sequencer
+    var drumSequencerView = sequencersRoot.InstantiateAsChild(drumSequencersPrefabs).GetComponent<DrumSequencerView>();
+    musicManagerViewDic.Add(drumSequencerView.mixerGroup, drumSequencerView);
+
     emoDatas.ForEach(emo => {
-      AudioSource audioSource = sequencersPrefabs.GetComponent<AudioSource>();
-      if (emo.audioMixerGroup == null) {
-        return;
-      }
-      audioSource.outputAudioMixerGroup = emo.audioMixerGroup;
-      GameObject sequencer = sequencersRoot.InstantiateAsChild(sequencersPrefabs);
-      emo.sequencer = sequencer.GetComponent<HelmSequencer>();
-      float channel = 0;
-      audioMixer.GetFloat(emo.data.Patch + channel_param_post_fix, out channel);
+      switch (emo.soundType) {
+        case SoundType.Sequencer:
+          AudioSource audioSource = sequencersPrefabs.GetComponent<AudioSource>();
+          if (emo.audioMixerGroup == null) {
+            break;
+          }
+          audioSource.outputAudioMixerGroup = emo.audioMixerGroup;
+          GameObject sequencer = sequencersRoot.InstantiateAsChild(sequencersPrefabs);
+          emo.sequencer = sequencer.GetComponent<HelmSequencer>();
+          float channel = 0;
+          audioMixer.GetFloat(emo.data.Patch + channel_param_post_fix, out channel);
 
-      emo.sequencer.channel = (int) channel;
-      if (emo.audioMixerGroup != null) {
-        musicManagerViewDic.Add(emo.audioMixerGroup, sequencer.GetComponent<MusicManagerView>());
+          (emo.sequencer as HelmSequencer).channel = (int) channel;
+          if (emo.audioMixerGroup != null) {
+            musicManagerViewDic.Add(emo.audioMixerGroup, sequencer.GetComponent<MusicManagerView>());
+          }
+          break;
+          //Drum
+        case SoundType.Drum:
+          emo.sequencer = drumSequencerView.sequencer;
+          emo.audioMixerGroup = drumSequencerView.mixerGroup;
+          break;
       }
+
     });
-
   }
 }
