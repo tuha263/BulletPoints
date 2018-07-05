@@ -27,6 +27,6 @@ public class DrumSequencerView : MusicManagerView {
 	}
 
 	public override void AddNode(int collum, int index, EmoTileData emoTileData){
-    sequencer.AddNote(emoTileData.note + NodeCollumTileData.AmountOfNode - 1 - index, collum, collum + emoTileData.data.Notelength, 1);
+    sequencer.AddNote(emoTileData.note + (NodeCollumTileData.AmountOfNode - 1 - index) / 3, collum, collum + emoTileData.data.Notelength, 1);
 	}
 }
