@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114178887355985114}
   - component: {fileID: 114040029660943132}
   m_Layer: 0
-  m_Name: DrumSeq
+  m_Name: Test_DrumSeq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
