@@ -1,9 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using AudioHelm;
 using strange.extensions.command.impl;
 using strange.extensions.context.api;
 using strange.extensions.dispatcher.eventdispatcher.api;
+using UnityEngine;
 using UnityEngine.Audio;
 
 public class PlayMusicCommand : Command {
@@ -22,7 +24,25 @@ public class PlayMusicCommand : Command {
   [Inject(ContextKeys.CONTEXT_DISPATCHER)]
   public IEventDispatcher dispatcher { get; set; }
 
+  [Inject]
+  public GlobalCoroutine globalCoroutine { get; set; }
+
   public override void Execute() {
+    dispatcher.Dispatch(GameEvent.OnStartCount);
+    globalCoroutine.StartCoroutine(ExecuteRoutine());
+    Retain();
+  }
+
+  private IEnumerator ExecuteRoutine() {
+    int timeRemain = gameStateData.playDelayTime;
+    while (timeRemain >= 0) {
+      yield return new WaitForSeconds(1);
+      timeRemain--;
+      dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
+
+    }
+
+    gameStateData.isPlaying = true;
     helmClock.pause = false;
     gameStateData.gameState = GameState.Play;
     musicFieldMediator.MoveMusicStaff(0);
@@ -41,10 +61,11 @@ public class PlayMusicCommand : Command {
           continue;
         }
         musicManagerViewDic[emoTileData.audioMixerGroup].AddNode(i, j, emoTileData);
-        
+
       }
     }
 
     dispatcher.Dispatch(GameEvent.OnPlayMusic);
+    Release();
   }
 }

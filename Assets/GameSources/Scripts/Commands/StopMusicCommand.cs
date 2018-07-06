@@ -9,7 +9,11 @@ public class StopMusicCommand : Command {
 
   [Inject(ContextKeys.CONTEXT_DISPATCHER)]
   public IEventDispatcher dispatcher { get; set; }
+
+  [Inject]
+  public IGameStateData gameStateData { get; set; }
   public override void Execute() {
+    gameStateData.isPlaying = false;
     helmClock.pause = true;
     dispatcher.Dispatch(GameEvent.OnStopMusic);
   }

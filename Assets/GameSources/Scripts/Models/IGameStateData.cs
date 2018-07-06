@@ -24,6 +24,7 @@ public interface IGameStateData {
   int tempo { get; set; }
   db_ClefsData currentClef { get; set; }
   db_TimeSigsData currentTimeSig { get; set; }
+  int playDelayTime { get; set; }
 }
 
 public class GameStateData : IGameStateData {
@@ -71,9 +72,12 @@ public class GameStateData : IGameStateData {
 
   public db_TimeSigsData currentTimeSig { get; set; }
 
+  public int playDelayTime { get; set; }
+
   public GameStateData() {
     collumDatas = new List<NodeCollumTileData>();
     musicLength = 16;
     musicSpeed = 120;
+    playDelayTime = 3;
   }
 }

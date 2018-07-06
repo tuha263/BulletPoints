@@ -11,6 +11,8 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
   private GameObject notesRoot;
   [SerializeField]
   private VerticalLayoutGroup lineVerticalLayout;
+  [SerializeField]
+  private GameObject measureBar;
   public NodeCollumTileData nodeCollumTileData { get; private set; }
   private List<NodeTileView> noteViews;
 
@@ -29,10 +31,17 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
 
   public override void SetData(int dataIndex, EnhancedScrollerCellData data) {
     nodeCollumTileData = data as NodeCollumTileData;
-    if (dataIndex % 4 == 0) {
-      lineVerticalLayout.spacing = 0;
+    if (gameStateData != null && dataIndex % gameStateData.musicLength == 0) {
+      measureBar.SetActive(true);
+      lineVerticalLayout.gameObject.SetActive(false);
     } else {
-      lineVerticalLayout.spacing = 10;
+      measureBar.SetActive(false);
+      lineVerticalLayout.gameObject.SetActive(true);
+      if (dataIndex % 4 == 0) {
+        lineVerticalLayout.spacing = 0;
+      } else {
+        lineVerticalLayout.spacing = 10;
+      }
     }
 
     //Populate for the inital

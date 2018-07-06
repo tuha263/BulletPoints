@@ -56,7 +56,7 @@ public class MainGameContext : MVCSContext {
     mediationBinder.Bind<ClefTileView>().To<ClefTileMediator>();
     mediationBinder.Bind<TimeSigTileView>().To<TimeSigTileMediator>();
     mediationBinder.Bind<DrumSequencerView>().To<DrumSequencerMediator>();
-
+    mediationBinder.Bind<CountPanelView>().To<CountPanelMediator>();
   }
 
   protected override void addCoreComponents() {

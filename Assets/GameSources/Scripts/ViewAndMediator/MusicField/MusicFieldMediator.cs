@@ -42,6 +42,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
     dispatcher.AddListener(GameEvent.OnTimeUpdate, OnTimeUpdate);
     dispatcher.AddListener(GameEvent.OnPlayMusic, OnPlayMusic);
     dispatcher.AddListener(GameEvent.OnStopMusic, OnStopMusic);
+    dispatcher.AddListener(GameEvent.OnStartCount, ResetScrollBar);
   }
 
   private void OnStopMusic(IEvent payload) {
@@ -52,6 +53,9 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
   }
 
   private void ResetScrollBar() {
+    if (!view.musicBar.gameObject.activeSelf) {
+      view.musicBar.gameObject.SetActive(true);
+    }
     view.enhancedScroller.ScrollRect.SetHorizontalPosition(0);
     view.musicBar.SetLocalPositionX(0);
   }
