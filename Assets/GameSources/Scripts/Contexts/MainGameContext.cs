@@ -22,11 +22,8 @@ public class MainGameContext : MVCSContext {
     commandBinder.Bind<SelectTimeSigSignal>().To<SelectTimeSigCommand>().Pooled();
 
     //Model
-    injectionBinder.Bind<IGameStateData>().To<GameStateData>().ToSingleton();
-    injectionBinder.Bind<IEmoDataManager>().To<EmoDataManager>().ToSingleton();
-    injectionBinder.Bind<IClefsDataManager>().To<ClefsDataManager>().ToSingleton();
-    injectionBinder.Bind<ITimeSigsDataManager>().To<TimeSigsDataManager>().ToSingleton();
-    injectionBinder.Bind<AudioHelmClock>().To<AudioHelmClock>().ToSingleton();
+    injectionBinder.Bind<AudioHelmClock>().To<AudioHelmClock>().ToSingleton().CrossContext();
+
 
     //Audio mixer
     AudioMixer audioMixer = Resources.Load<AudioMixer>("AudioMixers/BulletPoints");

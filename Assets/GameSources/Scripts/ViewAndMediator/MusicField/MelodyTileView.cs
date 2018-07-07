@@ -44,9 +44,8 @@ public class MelodyTileView : EnhancedScrollerCellView {
       TimeSigTileView timeSignView = timeSigRoot.InstantiateAsChild(timeSigTilePrefab).GetComponent<TimeSigTileView>();
       timeSignView.Init(timeSig);
     });
-
-    gameStateData.currentClef = clefDataManager.Datas.Find(clef => clef.CLEFSTYPE == ClefsType.Major);
     gameStateData.currentTimeSig = timeSigsDataManager.Datas.Find(timeSig => timeSig.TIMESIGSTYPE == TimeSigsType._3_4);
+    gameStateData.currentClef = clefDataManager.Datas.Find(clef => clef.CLEFSTYPE == ClefsType.Major);
     SetTimeSig(gameStateData.currentTimeSig);
     SetClef(gameStateData.currentClef);
   }

@@ -11,6 +11,8 @@ public class EmoListMediator : EventMediator {
   [Inject]
   public IEmoDataManager emoDataManager { get; set; }
   private List<Sprite> emoSprites;
+  [Inject]
+  public IGameStateData gameStateData { get; set; }
 
   public override void OnRegister() {
     LoadEmosFromResource();

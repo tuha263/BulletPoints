@@ -15,6 +15,7 @@ public class SelectTimeSigCommand : Command {
 
   public override void Execute() {
     gameStateData.currentTimeSig = timeSigData;
+    gameStateData.musicLength = timeSigData.Sequencemeasurelength;
     dispatcher.Dispatch(GameEvent.OnChangeTimeSig);
   }
 }

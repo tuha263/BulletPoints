@@ -43,6 +43,12 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
     dispatcher.AddListener(GameEvent.OnPlayMusic, OnPlayMusic);
     dispatcher.AddListener(GameEvent.OnStopMusic, OnStopMusic);
     dispatcher.AddListener(GameEvent.OnStartCount, ResetScrollBar);
+    dispatcher.AddListener(GameEvent.OnChangeTimeSig, OnChangeTimeSig);
+  }
+
+  private void OnChangeTimeSig(IEvent payload)
+  {
+    view.enhancedScroller.RefreshActiveCellViews();
   }
 
   private void OnStopMusic(IEvent payload) {
@@ -77,7 +83,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
   }
 
   private void OnScroll(Vector2 position) {
-    if (gameStateData.isPlaying) {
+    if (gameStateData.isPlaying || cellDatas == null) {
       return;
     }
     float collumSize = new NodeCollumTileData().GetCellViewSize();
@@ -110,7 +116,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate {
     } else {
       cellView = scroller.GetCellView(view.melodyViewPrefab);
     }
-    cellView.SetData(dataIndex, cellDatas[dataIndex]);
+    cellView.SetData(dataIndex, cellDatas[dataIndex], gameStateData);
 
     return cellView;
   }

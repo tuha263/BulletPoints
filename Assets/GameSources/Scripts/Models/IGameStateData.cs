@@ -81,7 +81,14 @@ public class GameStateData : IGameStateData {
     set {
       _currentTimeSig = value;
       _divisionList = value.Divisonlist.Select(e => Int32.Parse(e.Split('/') [1])).ToList();
-      _beatLength = value.Beatlength.ToList();
+      var sum = 0;
+      _beatLength = value.Beatlength.Select(e => { sum += e; return sum; }).ToList();
+      var index = 0;
+      while (sum < value.Sequencemeasurelength) {
+        sum += value.Beatlength[index];
+        _beatLength.Add(sum);
+        index = (index + 1) % value.Beatlength.Length;
+      }
     }
   }
 
@@ -96,5 +103,6 @@ public class GameStateData : IGameStateData {
     musicLength = 16;
     musicSpeed = 120;
     playDelayTime = 3;
+
   }
 }

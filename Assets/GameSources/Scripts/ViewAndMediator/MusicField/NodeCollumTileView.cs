@@ -29,20 +29,10 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
     }
   }
 
-  public override void SetData(int dataIndex, EnhancedScrollerCellData data) {
+  public override void SetData(int dataIndex, EnhancedScrollerCellData data, IGameStateData gameStateData) {
     nodeCollumTileData = data as NodeCollumTileData;
-    if (gameStateData != null && dataIndex % gameStateData.musicLength == 0) {
-      measureBar.SetActive(true);
-      lineVerticalLayout.gameObject.SetActive(false);
-    } else {
-      measureBar.SetActive(false);
-      lineVerticalLayout.gameObject.SetActive(true);
-      if (dataIndex % 4 == 0) {
-        lineVerticalLayout.spacing = 0;
-      } else {
-        lineVerticalLayout.spacing = 10;
-      }
-    }
+
+    SetCollumLine(dataIndex, gameStateData);
 
     //Populate for the inital
     if (noteViews == null) {
@@ -55,6 +45,25 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
     }
 
     OnChangeTempo();
+  }
+
+  private void SetCollumLine(int dataIndex, IGameStateData gameStateData) {
+    if (dataIndex % gameStateData.musicLength == 0) {
+      measureBar.SetActive(true);
+      lineVerticalLayout.gameObject.SetActive(false);
+    } else {
+      measureBar.SetActive(false);
+      lineVerticalLayout.gameObject.SetActive(true);
+      if (gameStateData.beatLength.Contains(dataIndex % gameStateData.musicLength)) {
+        lineVerticalLayout.spacing = 0;
+      } else {
+        lineVerticalLayout.spacing = 10;
+      }
+    }
+  }
+
+  public override void RefreshCellView() {
+    SetCollumLine(dataIndex, gameStateData);
   }
 
   public void SetNodeData(int index, EmoTileData emoTileData) {
