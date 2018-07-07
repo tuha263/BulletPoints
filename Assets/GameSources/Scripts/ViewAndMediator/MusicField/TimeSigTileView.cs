@@ -12,12 +12,15 @@ public class TimeSigTileView : View {
   [Inject]
   public IGameStateData gameStateData { get; set; }
 
+  [Inject]
+  public SelectTimeSigSignal selectTimeSigSignal { get; set; }
+
   public void Init(db_TimeSigsData data) {
     this.data = data;
     icon.sprite = TimeSigsDataManager.LoadSprite(data);
   }
 
   internal void OnClick() {
-    gameStateData.currentTimeSig = data;
+    selectTimeSigSignal.Dispatch(data);
   }
 }

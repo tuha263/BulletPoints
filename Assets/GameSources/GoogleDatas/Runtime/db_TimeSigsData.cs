@@ -20,4 +20,12 @@ public class db_TimeSigsData
   string sequencemeasurelength;
   public string Sequencemeasurelength { get {return sequencemeasurelength; } set { sequencemeasurelength = value;} }
   
+  [SerializeField]
+  string divisonlist;
+  public string Divisonlist { get {return divisonlist; } set { divisonlist = value;} }
+  
+  [SerializeField]
+  string beatlength;
+  public string Beatlength { get {return beatlength; } set { beatlength = value;} }
+  
 }
