@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using AudioHelm;
 
 public enum GameState {
@@ -25,6 +27,8 @@ public interface IGameStateData {
   db_ClefsData currentClef { get; set; }
   db_TimeSigsData currentTimeSig { get; set; }
   int playDelayTime { get; set; }
+  List<int> divisionList { get; }
+  List<int> beatLength { get; }
 }
 
 public class GameStateData : IGameStateData {
@@ -70,9 +74,22 @@ public class GameStateData : IGameStateData {
 
   public db_ClefsData currentClef { get; set; }
 
-  public db_TimeSigsData currentTimeSig { get; set; }
-
   public int playDelayTime { get; set; }
+  private db_TimeSigsData _currentTimeSig;
+  public db_TimeSigsData currentTimeSig {
+    get { return _currentTimeSig; }
+    set {
+      _currentTimeSig = value;
+      _divisionList = value.Divisonlist.Select(e => Int32.Parse(e.Split('/') [1])).ToList();
+      _beatLength = value.Beatlength.ToList();
+    }
+  }
+
+  private List<int> _divisionList;
+  public List<int> divisionList { get { return _divisionList; } }
+
+  private List<int> _beatLength;
+  public List<int> beatLength { get { return _beatLength; } }
 
   public GameStateData() {
     collumDatas = new List<NodeCollumTileData>();

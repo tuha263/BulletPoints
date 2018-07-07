@@ -17,15 +17,15 @@ public class db_TimeSigsData
   public string Texture { get {return texture; } set { texture = value;} }
   
   [SerializeField]
-  string sequencemeasurelength;
-  public string Sequencemeasurelength { get {return sequencemeasurelength; } set { sequencemeasurelength = value;} }
+  int sequencemeasurelength;
+  public int Sequencemeasurelength { get {return sequencemeasurelength; } set { sequencemeasurelength = value;} }
   
   [SerializeField]
-  string divisonlist;
-  public string Divisonlist { get {return divisonlist; } set { divisonlist = value;} }
+  string[] divisonlist = new string[0];
+  public string[] Divisonlist { get {return divisonlist; } set { divisonlist = value;} }
   
   [SerializeField]
-  string beatlength;
-  public string Beatlength { get {return beatlength; } set { beatlength = value;} }
+  int[] beatlength = new int[0];
+  public int[] Beatlength { get {return beatlength; } set { beatlength = value;} }
   
 }

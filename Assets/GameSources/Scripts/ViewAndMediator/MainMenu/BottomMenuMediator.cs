@@ -28,6 +28,11 @@ public class BottomMenuMediator : EventMediator {
     Init();
 
     dispatcher.AddListener(GameEvent.OnChangeTempo, OnChangeTempo);
+    dispatcher.AddListener(GameEvent.OnChangeTimeSig, OnChangeTimeSig);
+  }
+
+  private void OnChangeTimeSig(IEvent payload) {
+    view.OnChangeTimeSig();
   }
 
   private void OnChangeTempo(IEvent payload) {

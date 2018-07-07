@@ -35,6 +35,7 @@ public class BottomMenuView : View {
   [Inject]
   public ChangeTempoSignal changeTempoSignal { get; set; }
   private bool isShowingTempSelection;
+  private List<TempoTileView> tempoViews;
 
   public void Init() {
     sliderValue.text = slider.value.ToString();
@@ -61,10 +62,25 @@ public class BottomMenuView : View {
   }
 
   private void InitTempo() {
-    tempos.ForEach(tempo => {
-      TempoTileView tempoTile = tempListRoot.InstantiateAsChild(tempoTilePrefab).GetComponent<TempoTileView>();
-      tempoTile.Init(tempo);
-    });
+    if (tempoViews == null) {
+      tempoViews = new List<TempoTileView>();
+    }
+
+    for (int i = 0; i < tempos.Count; i++) {
+      if (i >= tempoViews.Count) {
+        TempoTileView tempoTile = tempListRoot.InstantiateAsChild(tempoTilePrefab).GetComponent<TempoTileView>();
+        tempoTile.Init(tempos[i]);
+        tempoViews.Add(tempoTile);
+        continue;
+      }
+      tempoViews[i].gameObject.SetActive(true);
+      tempoViews[i].Init(tempos[i]);
+    }
+
+    for (int i = tempos.Count; i < tempoViews.Count; i++) {
+      tempoViews[i].gameObject.SetActive(false);
+    }
+
     gameStateData.tempo = tempos[0];
     SetTempoText(tempos[0]);
     HideTempoList();
@@ -86,5 +102,10 @@ public class BottomMenuView : View {
 
   public void SetTempoText(int tempo) {
     tempoText.text = BulletPointExtension.GetTempoString(tempo);
+  }
+
+  public void OnChangeTimeSig() {
+    tempos = gameStateData.divisionList;
+    InitTempo();
   }
 }
