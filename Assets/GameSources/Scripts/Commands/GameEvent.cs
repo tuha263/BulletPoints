@@ -9,5 +9,6 @@ public enum GameEvent {
   OnChangeClef,
   OnPlayNote,
   OnStartCount,
-  OnCount
+  OnCount,
+  DoStopOrPlayMusic
 }

@@ -17,6 +17,17 @@ public class Test : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-
+		TestClass a = null;
+		a?.DebugTest();
 	}
+
+	private class TestClass {
+		public void DebugTest(){
+			Debug.Log("asdfbn");
+		}
+	}
+
+	// private (string, int, char) TestTuple{
+	// 	return "aasdf", 2, 'a';
+	// }
 }

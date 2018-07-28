@@ -18,7 +18,7 @@ public class LoadingProgressMediator : Mediator {
   public ITimeSigsDataManager timeSigsDataManager { get; set; }
 
   public override void OnRegister() {
-    gameStateData.currentTimeSig = timeSigsDataManager.Datas.Find(timeSig => timeSig.TIMESIGSTYPE == TimeSigsType._3_4);
+    gameStateData.currentTimeSig = timeSigsDataManager.Datas.Find(timeSig => timeSig.TIMESIGSTYPE == TimeSigsType._4_4);
     gameStateData.currentClef = clefDataManager.Datas.Find(clef => clef.CLEFSTYPE == ClefsType.Major);
 
     LoadMainGameScene();

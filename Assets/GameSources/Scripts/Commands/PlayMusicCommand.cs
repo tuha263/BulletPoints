@@ -36,7 +36,7 @@ public class PlayMusicCommand : Command {
   private IEnumerator ExecuteRoutine() {
     int timeRemain = gameStateData.playDelayTime;
     while (timeRemain >= 0) {
-      yield return new WaitForSeconds(1);
+      yield return new WaitForSeconds(1 * 60 / gameStateData.musicSpeed);
       timeRemain--;
       dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
 

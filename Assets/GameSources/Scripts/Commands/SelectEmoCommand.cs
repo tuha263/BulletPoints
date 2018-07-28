@@ -24,7 +24,7 @@ public class SelectEmoCommand : Command {
     Retain();
   }
 
-  IEnumerator SampleEmoSound() {
+  private IEnumerator SampleEmoSound() {
     int note = emoTileData.data.Note + 12;
     emoTileData.sequencer.NoteOn(note);
     yield return new WaitForSeconds(0.3f);
