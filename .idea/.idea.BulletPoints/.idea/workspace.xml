@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffb5e6b1-8b15-465d-9ac0-109ad005f184" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BulletPoints/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BulletPoints/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BulletPoints/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BulletPoints/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BulletPoints/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameSources/Prefabs/HelmSequencer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameSources/Prefabs/HelmSequencer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameSources/Prefabs/InstanceGameObjects.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameSources/Prefabs/InstanceGameObjects.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameSources/Scenes/LoadDataScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameSources/Scenes/LoadDataScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameSources/Scripts/Commands/GameEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameSources/Scripts/Commands/GameEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameSources/Scripts/Commands/PlayMusicCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameSources/Scripts/Commands/PlayMusicCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameSources/Scripts/Commands/SelectEmoCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameSources/Scripts/Commands/SelectEmoCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameSources/Scripts/Commands/SetEmoCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameSources/Scripts/Commands/SetEmoCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameSources/Scripts/ViewAndMediator/LoadScene/LoadingProgressMediator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameSources/Scripts/ViewAndMediator/LoadScene/LoadingProgressMediator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameSources/Scripts/ViewAndMediator/MainMenu/BottomMenuMediator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameSources/Scripts/ViewAndMediator/MainMenu/BottomMenuMediator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameSources/Scripts/ViewAndMediator/MusicField/MusicFieldMediator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameSources/Scripts/ViewAndMediator/MusicField/MusicFieldMediator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Test.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BulletPoints.sln" beforeDir="false" afterPath="$PROJECT_DIR$/BulletPoints.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,15 +55,17 @@
           <file leaf-file-name="SetEmoCommand.cs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/GameSources/Scripts/Commands/SetEmoCommand.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="36" column="45" lean-forward="true" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+                <state relative-caret-position="23">
+                  <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
                   <folding>
-                    <marker date="1532773493984" expanded="true" signature="6:178" ph="..." />
-                    <marker date="1532773493984" expanded="true" signature="217:1873" ph="{...}" />
-                    <marker date="1532773493984" expanded="true" signature="607:1729" ph="{...}" />
-                    <marker date="1532773493984" expanded="true" signature="773:1218" ph="{...}" />
-                    <marker date="1532773493984" expanded="true" signature="1565:1725" ph="{...}" />
-                    <marker date="1532773493984" expanded="true" signature="1791:1871" ph="{...}" />
+                    <marker date="1532773910235" expanded="true" signature="6:178" ph="..." />
+                    <marker date="1532773910235" expanded="true" signature="216:2116" ph="{...}" />
+                    <marker date="1532773910235" expanded="true" signature="606:1958" ph="{...}" />
+                    <marker date="1532773910235" expanded="true" signature="784:1364" ph="{...}" />
+                    <marker date="1532773910235" expanded="true" signature="990:1354" ph="{...}" />
+                    <marker date="1532773910235" expanded="true" signature="1377:1497" ph="{...}" />
+                    <marker date="1532773910235" expanded="true" signature="1762:1952" ph="{...}" />
+                    <marker date="1532773910235" expanded="true" signature="2022:2114" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -689,12 +672,12 @@
       <updated>1532760267933</updated>
       <workItem from="1532760275423" duration="437000" />
       <workItem from="1532760905710" duration="1999000" />
-      <workItem from="1532762972924" duration="5001000" />
+      <workItem from="1532762972924" duration="5380000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7437000" />
+    <option name="totallyTimeSpent" value="7816000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -716,12 +699,12 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32960895" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unity" order="7" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.4989339" visible="true" weight="0.33407822" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4989339" weight="0.33407822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.32142857" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -1502,15 +1485,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/GameSources/Scripts/Commands/SetEmoCommand.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="36" column="45" lean-forward="true" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+        <state relative-caret-position="23">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
           <folding>
-            <marker date="1532773493984" expanded="true" signature="6:178" ph="..." />
-            <marker date="1532773493984" expanded="true" signature="217:1873" ph="{...}" />
-            <marker date="1532773493984" expanded="true" signature="607:1729" ph="{...}" />
-            <marker date="1532773493984" expanded="true" signature="773:1218" ph="{...}" />
-            <marker date="1532773493984" expanded="true" signature="1565:1725" ph="{...}" />
-            <marker date="1532773493984" expanded="true" signature="1791:1871" ph="{...}" />
+            <marker date="1532773910235" expanded="true" signature="6:178" ph="..." />
+            <marker date="1532773910235" expanded="true" signature="216:2116" ph="{...}" />
+            <marker date="1532773910235" expanded="true" signature="606:1958" ph="{...}" />
+            <marker date="1532773910235" expanded="true" signature="784:1364" ph="{...}" />
+            <marker date="1532773910235" expanded="true" signature="990:1354" ph="{...}" />
+            <marker date="1532773910235" expanded="true" signature="1377:1497" ph="{...}" />
+            <marker date="1532773910235" expanded="true" signature="1762:1952" ph="{...}" />
+            <marker date="1532773910235" expanded="true" signature="2022:2114" ph="{...}" />
           </folding>
         </state>
       </provider>
