@@ -12,6 +12,10 @@ public class NodeCollumTileMediator : EventMediator {
   public override void OnRegister() {
     dispatcher.AddListener(GameEvent.OnChangeTempo, OnChangeTempo);
     dispatcher.AddListener(GameEvent.OnPlayNote, OnPlayNote);
+  }
+
+  private void Start()
+  {
     view.OnChangeTempo();
   }
 
