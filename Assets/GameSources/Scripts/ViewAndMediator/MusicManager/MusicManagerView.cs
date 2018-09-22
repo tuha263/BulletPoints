@@ -26,15 +26,11 @@ public class MusicManagerView : View {
     sequencer.loop = isLoop;
   }
 
-  public int GetMusicLength() {
-    return sequencer.length;
-  }
-
-  public Sequencer.Division GetMusicDivision() {
-    return sequencer.division;
-  }
-
-  public virtual void AddNode(int collum, int index, EmoTileData emoTileData) {
+  public virtual void AddNote(int collum, int index, EmoTileData emoTileData) {
     sequencer.AddNote(emoTileData.note + gameStateData.currentClef.Noteshigh[NodeCollumTileData.AmountOfNode - 1 - index], collum, collum + emoTileData.data.Notelength, 1);
+  }
+  
+  public virtual void RemoveNote(int collum, int index, EmoTileData emoTileData) {
+    sequencer.RemoveNotesInRange(emoTileData.note + gameStateData.currentClef.Noteshigh[NodeCollumTileData.AmountOfNode - 1 - index], collum, collum + emoTileData.data.Notelength);
   }
 }

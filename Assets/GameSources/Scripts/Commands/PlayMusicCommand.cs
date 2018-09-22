@@ -60,7 +60,7 @@ public class PlayMusicCommand : Command {
         if (emoTileData == null) {
           continue;
         }
-        musicManagerViewDic[emoTileData.audioMixerGroup].AddNode(i, j, emoTileData);
+        musicManagerViewDic[emoTileData.audioMixerGroup].AddNote(i, j, emoTileData);
 
       }
     }

@@ -17,13 +17,20 @@ public class SetEmoCommand : Command
     [Inject] public Dictionary<AudioMixerGroup, MusicManagerView> musicManagerViewDic { get; set; }
     [Inject] public GlobalCoroutine globalCoroutine { get; set; }
 
+    //dataIndex - 1 because of melody data    
     public override void Execute()
     {
-        //dataIndex - 1 because of melody data    
-        if (gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex] != gameStateData.currentEmo)
+        //remove note when playing
+        if (gameStateData.isPlaying && getSettedEmoTileData() != null)
         {
-            gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex] = gameStateData.currentEmo;
-            //Sound note when set
+            musicManagerViewDic[gameStateData.currentEmo.audioMixerGroup].RemoveNote(nodeCollumTileView.dataIndex - 1,
+                nodeIndex, getSettedEmoTileData());
+        }
+
+        if (getSettedEmoTileData() != gameStateData.currentEmo)
+        {
+            SetSettedEmoTiledData(gameStateData.currentEmo);
+            //Sound note when set if is not playing
             if (!gameStateData.isPlaying)
             {
                 var note = gameStateData.currentEmo.note +
@@ -34,19 +41,29 @@ public class SetEmoCommand : Command
         }
         else
         {
-            gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex] = null;
+            SetSettedEmoTiledData(null);
         }
 
-        nodeCollumTileView.SetNodeData(nodeIndex,
-            gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex]);
+        nodeCollumTileView.SetNodeData(nodeIndex, getSettedEmoTileData());
         nodeCollumTileView.DoMoveNote(nodeIndex);
 
+
         //Set note when playing
-        if (gameStateData.isPlaying)
+        if (gameStateData.isPlaying && getSettedEmoTileData() != null)
         {
-            musicManagerViewDic[gameStateData.currentEmo.audioMixerGroup].AddNode(nodeCollumTileView.dataIndex - 1,
-                nodeIndex, gameStateData.currentEmo);
+            musicManagerViewDic[gameStateData.currentEmo.audioMixerGroup].AddNote(nodeCollumTileView.dataIndex - 1,
+                nodeIndex, getSettedEmoTileData());
         }
+    }
+
+    private EmoTileData getSettedEmoTileData()
+    {
+        return gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex];
+    }
+
+    private void SetSettedEmoTiledData(EmoTileData emoTileData)
+    {
+        gameStateData.collumDatas[nodeCollumTileView.dataIndex - 1].emoDatas[nodeIndex] = emoTileData;
     }
 
     private IEnumerator OffNote(int note, Sequencer sequencer)
