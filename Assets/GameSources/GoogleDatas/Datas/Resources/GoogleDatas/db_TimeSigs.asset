@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -22,6 +22,7 @@ MonoBehaviour:
     - 1/8
     - 1/4
     beatlength: 04000000
+    count: 2
   - timesigstype: 1
     texture: 3_4
     sequencemeasurelength: 12
@@ -30,6 +31,7 @@ MonoBehaviour:
     - 1/8
     - 1/4
     beatlength: 04000000
+    count: 3
   - timesigstype: 2
     texture: 4_4
     sequencemeasurelength: 16
@@ -38,6 +40,7 @@ MonoBehaviour:
     - 1/8
     - 1/4
     beatlength: 04000000
+    count: 4
   - timesigstype: 3
     texture: 5_4
     sequencemeasurelength: 20
@@ -46,6 +49,7 @@ MonoBehaviour:
     - 1/8
     - 1/4
     beatlength: 04000000
+    count: 5
   - timesigstype: 4
     texture: 7_4
     sequencemeasurelength: 28
@@ -54,6 +58,7 @@ MonoBehaviour:
     - 1/8
     - 1/4
     beatlength: 04000000
+    count: 7
   - timesigstype: 5
     texture: 5_8
     sequencemeasurelength: 10
@@ -61,6 +66,7 @@ MonoBehaviour:
     - 1/16
     - 1/8
     beatlength: 0600000004000000
+    count: 3
   - timesigstype: 6
     texture: 7_8
     sequencemeasurelength: 14
@@ -68,3 +74,4 @@ MonoBehaviour:
     - 1/16
     - 1/8
     beatlength: 0800000006000000
+    count: 4

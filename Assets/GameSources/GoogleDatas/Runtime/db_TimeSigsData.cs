@@ -28,4 +28,8 @@ public class db_TimeSigsData
   int[] beatlength = new int[0];
   public int[] Beatlength { get {return beatlength; } set { beatlength = value;} }
   
+  [SerializeField]
+  int count;
+  public int Count { get {return count; } set { count = value;} }
+  
 }

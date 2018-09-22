@@ -8,64 +8,67 @@ using strange.extensions.dispatcher.eventdispatcher.api;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class PlayMusicCommand : Command {
-  [Inject]
-  public IGameStateData gameStateData { get; set; }
+public class PlayMusicCommand : Command
+{
+    private const int DEFAULT_SPEED = 60;
 
-  [Inject]
-  public Dictionary<AudioMixerGroup, MusicManagerView> musicManagerViewDic { get; set; }
+    [Inject] public IGameStateData gameStateData { get; set; }
 
-  [Inject]
-  public MusicFieldMediator musicFieldMediator { get; set; }
+    [Inject] public Dictionary<AudioMixerGroup, MusicManagerView> musicManagerViewDic { get; set; }
 
-  [Inject] 
-  public AudioHelmClock helmClock { get; set; }
+    [Inject] public MusicFieldMediator musicFieldMediator { get; set; }
 
-  [Inject(ContextKeys.CONTEXT_DISPATCHER)]
-  public IEventDispatcher dispatcher { get; set; }
+    [Inject] public AudioHelmClock helmClock { get; set; }
 
-  [Inject]
-  public GlobalCoroutine globalCoroutine { get; set; }
+    [Inject(ContextKeys.CONTEXT_DISPATCHER)]
+    public IEventDispatcher dispatcher { get; set; }
 
-  public override void Execute() {
-    dispatcher.Dispatch(GameEvent.OnStartCount);
-    globalCoroutine.StartCoroutine(ExecuteRoutine());
-    Retain();
-  }
+    [Inject] public GlobalCoroutine globalCoroutine { get; set; }
 
-  private IEnumerator ExecuteRoutine() {
-    int timeRemain = gameStateData.playDelayTime;
-    while (timeRemain >= 0) {
-      yield return new WaitForSeconds(1 * 60 / gameStateData.musicSpeed);
-      timeRemain--;
-      dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
-
+    public override void Execute()
+    {
+        dispatcher.Dispatch(GameEvent.OnStartCount);
+        globalCoroutine.StartCoroutine(ExecuteRoutine());
+        Retain();
     }
 
-    gameStateData.isPlaying = true;
-    helmClock.pause = false;
-    gameStateData.gameState = GameState.Play;
-    musicFieldMediator.MoveMusicStaff(0);
-    musicFieldMediator.RemoveEmptyCell();
-    foreach (var sequencer in musicManagerViewDic) {
-      sequencer.Value.sequencer.length = musicFieldMediator.GetStaffLength();
-    }
-
-    musicManagerViewDic.Values.ToList().ForEach(musicManagerView => {
-      musicManagerView.ClearSequencer();
-    });
-    for (int i = 0; i < gameStateData.collumDatas.Count; i++) {
-      for (int j = 0; j < gameStateData.collumDatas[i].emoDatas.Count; j++) {
-        EmoTileData emoTileData = gameStateData.collumDatas[i].emoDatas[j];
-        if (emoTileData == null) {
-          continue;
+    private IEnumerator ExecuteRoutine()
+    {
+        int timeRemain = gameStateData.currentTimeSig.Count;
+        dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
+        while (timeRemain >= 0)
+        {
+            yield return new WaitForSeconds(DEFAULT_SPEED / gameStateData.musicSpeed);
+            timeRemain--;
+            dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
         }
-        musicManagerViewDic[emoTileData.audioMixerGroup].AddNote(i, j, emoTileData);
 
-      }
+        gameStateData.isPlaying = true;
+        helmClock.pause = false;
+        gameStateData.gameState = GameState.Play;
+        musicFieldMediator.MoveMusicStaff(0);
+        musicFieldMediator.RemoveEmptyCell();
+        foreach (var sequencer in musicManagerViewDic)
+        {
+            sequencer.Value.sequencer.length = musicFieldMediator.GetStaffLength();
+        }
+
+        musicManagerViewDic.Values.ToList().ForEach(musicManagerView => { musicManagerView.ClearSequencer(); });
+        for (int i = 0; i < gameStateData.collumDatas.Count; i++)
+        {
+            for (int j = 0; j < gameStateData.collumDatas[i].emoDatas.Count; j++)
+            {
+                EmoTileData emoTileData = gameStateData.collumDatas[i].emoDatas[j];
+                if (emoTileData == null)
+                {
+                    continue;
+                }
+
+                musicManagerViewDic[emoTileData.audioMixerGroup].AddNote(i, j, emoTileData);
+            }
+        }
+
+        dispatcher.Dispatch(GameEvent.OnPlayMusic);
+        Release();
     }
-
-    dispatcher.Dispatch(GameEvent.OnPlayMusic);
-    Release();
-  }
 }
