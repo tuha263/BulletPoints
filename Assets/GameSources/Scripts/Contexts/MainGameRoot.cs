@@ -17,5 +17,13 @@ public partial class MainGameRoot : ContextView {
 
   void Start(){
     instanceGameObject.gameObject.SetActive(true);
+    AddClock();
+  }
+
+  void AddClock() {
+    GameObject go = new GameObject();
+    go.transform.parent = gameObject.transform;
+    go.name = "HelmClock";
+    go.AddComponent<AudioHelm.AudioHelmClock>();
   }
 }
