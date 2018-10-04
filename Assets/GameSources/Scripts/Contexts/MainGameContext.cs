@@ -22,7 +22,7 @@ public class MainGameContext : MVCSContext {
     commandBinder.Bind<SelectTimeSigSignal>().To<SelectTimeSigCommand>().Pooled();
 
     //Model
-    injectionBinder.Bind<AudioHelmClock>().To<AudioHelmClock>().ToSingleton().CrossContext();
+    // injectionBinder.Bind<AudioHelmClock>().To<AudioHelmClock>().ToSingleton().CrossContext();
 
 
     //Audio mixer

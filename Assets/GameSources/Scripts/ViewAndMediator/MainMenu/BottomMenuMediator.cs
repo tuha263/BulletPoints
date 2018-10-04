@@ -22,6 +22,7 @@ public class BottomMenuMediator : EventMediator {
   private Text loopText;
 
   public override void OnRegister() {
+    // view.
     view.PlayButton.onClick.AddListener(OnClickPlayButton);
     view.LoopButton.onClick.AddListener(OnClickLoopButton);
     playText = view.PlayButton.GetComponentInChildren<Text>();
@@ -48,7 +49,10 @@ public class BottomMenuMediator : EventMediator {
   }
 
   private void Init() {
-    view.Init();
+    AudioHelm.AudioHelmClock clock = GameObject.Find("HelmClock").GetComponent<AudioHelm.AudioHelmClock>();
+    // AudioHelm.AudioHelmClock clock = transform.parent.Find("HelmClock").gameObject.GetComponent<AudioHelm.AudioHelmClock>();
+    // view.Init();
+    view.InitWithClock(clock);
     gameStateData.isPlaying = false;
     gameStateData.isLoop = true;
     SetPlayText();

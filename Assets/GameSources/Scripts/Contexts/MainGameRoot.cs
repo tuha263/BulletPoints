@@ -10,14 +10,15 @@ public partial class MainGameRoot : ContextView {
   private GameObject instanceGameObject;
 
   void Awake() {
+    AddClock();
     MainGameContext mainGameContext = new MainGameContext(this, true);
     context = mainGameContext;
     context.Start();
   }
 
   void Start(){
+    
     instanceGameObject.gameObject.SetActive(true);
-    AddClock();
   }
 
   void AddClock() {

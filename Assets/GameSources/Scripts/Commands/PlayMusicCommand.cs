@@ -18,7 +18,7 @@ public class PlayMusicCommand : Command {
   [Inject]
   public MusicFieldMediator musicFieldMediator { get; set; }
 
-  [Inject] 
+  // [Inject] 
   public AudioHelmClock helmClock { get; set; }
 
   [Inject(ContextKeys.CONTEXT_DISPATCHER)]
@@ -27,7 +27,11 @@ public class PlayMusicCommand : Command {
   [Inject]
   public GlobalCoroutine globalCoroutine { get; set; }
 
+
+
   public override void Execute() {
+    helmClock = globalCoroutine.clock;
+    helmClock.Reset();
     dispatcher.Dispatch(GameEvent.OnStartCount);
     globalCoroutine.StartCoroutine(ExecuteRoutine());
     Retain();

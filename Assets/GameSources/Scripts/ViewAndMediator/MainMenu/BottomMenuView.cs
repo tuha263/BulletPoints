@@ -15,7 +15,7 @@ public class BottomMenuView : View {
   private Slider slider;
   [SerializeField]
   private Text sliderValue;
-  [Inject]
+  // [Inject]
   public AudioHelmClock helmClock { get; set; }
 
   [Inject]
@@ -38,6 +38,17 @@ public class BottomMenuView : View {
   private List<TempoTileView> tempoViews;
 
   public void Init() {
+    sliderValue.text = slider.value.ToString();
+    slider.onValueChanged.AddListener(OnSliderValueChange);
+    helmClock.pause = true;
+    helmClock.bpm = slider.value;
+    gameStateData.musicSpeed = slider.value;
+    tempoButton.onClick.AddListener(OnButtonTempoClick);
+    InitTempo();
+  }
+
+  public void InitWithClock(AudioHelmClock clock) {
+    this.helmClock = clock;
     sliderValue.text = slider.value.ToString();
     slider.onValueChanged.AddListener(OnSliderValueChange);
     helmClock.pause = true;
