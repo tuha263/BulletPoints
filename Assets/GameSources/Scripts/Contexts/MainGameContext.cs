@@ -30,7 +30,7 @@ public class MainGameContext : MVCSContext
         //Audio mixer
         AudioMixer audioMixer = Resources.Load<AudioMixer>("AudioMixers/BulletPoints");
         injectionBinder.Bind<AudioMixer>().To(audioMixer).ToSingleton();
-        
+
         injectionBinder.Bind<AudioHelmClock>().To(AudioHelmClock.GetInstance());
 
         //List sequencer

@@ -1,8 +1,6 @@
-using strange.extensions.context.api;
+using AudioHelm;
 using strange.extensions.context.impl;
-using strange.extensions.dispatcher.eventdispatcher.api;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public partial class MainGameRoot : ContextView {
 
@@ -24,6 +22,6 @@ public partial class MainGameRoot : ContextView {
     GameObject go = new GameObject();
     go.transform.parent = gameObject.transform;
     go.name = "HelmClock";
-    go.AddComponent<AudioHelm.AudioHelmClock>();
+    go.AddComponent<AudioHelmClock>();
   }
 }
