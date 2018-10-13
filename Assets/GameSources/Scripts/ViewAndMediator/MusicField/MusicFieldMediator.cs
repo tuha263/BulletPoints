@@ -31,7 +31,6 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate
     public override void OnRegister()
     {
         mainGameContext.injectionBinder.Bind<MusicFieldMediator>().To(this).ToSingleton();
-        view.enhancedScroller.ScrollRect.onValueChanged.AddListener(OnScroll);
         view.musicBar.gameObject.SetActive(false);
         melodySize = new MelodyTileData().GetCellViewSize();
         collumSize = new NodeCollumTileData().GetCellViewSize();
@@ -42,6 +41,11 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate
         dispatcher.AddListener(GameEvent.OnStopMusic, OnStopMusic);
         dispatcher.AddListener(GameEvent.OnStartCount, ResetScrollBar);
         dispatcher.AddListener(GameEvent.OnChangeTimeSig, OnChangeTimeSig);
+    }
+
+    public void Start()
+    {
+        view.enhancedScroller.ScrollRect.onValueChanged.AddListener(OnScroll);
     }
 
     private void OnChangeTimeSig(IEvent payload)
@@ -209,6 +213,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate
             {
                 dispatcher.Dispatch(GameEvent.DoStopOrPlayMusic);
             }
+
             view.musicBar.SetLocalPositionX(0);
         }
         else
