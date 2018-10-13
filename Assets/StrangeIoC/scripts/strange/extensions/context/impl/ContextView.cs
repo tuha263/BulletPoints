@@ -33,9 +33,8 @@
 
  */
 
-using System;
-using UnityEngine;
 using strange.extensions.context.api;
+using UnityEngine;
 
 namespace strange.extensions.context.impl
 {

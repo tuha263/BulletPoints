@@ -23,11 +23,11 @@ public class SetEmoCommand : Command
         //remove note when playing
         if (gameStateData.isPlaying && getSettedEmoTileData() != null)
         {
-            musicManagerViewDic[gameStateData.currentEmo.audioMixerGroup].RemoveNote(nodeCollumTileView.dataIndex - 1,
+            musicManagerViewDic[getSettedEmoTileData().audioMixerGroup].RemoveNote(nodeCollumTileView.dataIndex - 1,
                 nodeIndex, getSettedEmoTileData());
         }
 
-        if (getSettedEmoTileData() != gameStateData.currentEmo)
+        if (getSettedEmoTileData() == null)
         {
             SetSettedEmoTiledData(gameStateData.currentEmo);
             //Sound note when set if is not playing

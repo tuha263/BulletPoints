@@ -1,3 +1,7 @@
 /Library/
 /Temp/
 *.cache
+obj/Debug/Assembly-CSharp.csproj.CopyComplete
+obj/Debug/Assembly-CSharp.csproj.FileListAbsolute.txt
+obj/Debug/Assembly-CSharp.dll
+obj/Debug/Assembly-CSharp.pdb

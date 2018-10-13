@@ -1,8 +1,5 @@
-using System;
-using Boo.Lang.Runtime.DynamicDispatching;
 using strange.extensions.dispatcher.eventdispatcher.api;
 using strange.extensions.mediation.impl;
-using UnityEngine;
 using UnityEngine.UI;
 
 public class BottomMenuMediator : EventMediator {
@@ -51,17 +48,17 @@ public class BottomMenuMediator : EventMediator {
     view.Init();
     gameStateData.isPlaying = false;
     gameStateData.isLoop = true;
-    SetPlayText();
+    SetPlayText(gameStateData.isPlaying);
     SetLoopText();
   }
 
   public void OnClickPlayButton() {
+    SetPlayText(!gameStateData.isPlaying);
     if (!gameStateData.isPlaying) {
       playMusicSignal.Dispatch();
     } else {
       StopMusicSignal.Dispatch();
     }
-    SetPlayText();
   }
 
   private void OnClickLoopButton() {
@@ -70,8 +67,8 @@ public class BottomMenuMediator : EventMediator {
     SetLoopText();
   }
 
-  public void SetPlayText() {
-    playText.text = gameStateData.isPlaying ? "Stop" : "Play";
+  public void SetPlayText(bool isPlaying) {
+    playText.text = isPlaying ? "Stop" : "Play";
   }
 
   public void SetLoopText() {

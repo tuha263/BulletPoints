@@ -36,7 +36,7 @@ public class PlayMusicCommand : Command
     {
         int timeRemain = gameStateData.currentTimeSig.Count;
         dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
-        while (timeRemain >= 0)
+        while (timeRemain >= 1)
         {
             yield return new WaitForSeconds(DEFAULT_SPEED / gameStateData.musicSpeed);
             timeRemain--;

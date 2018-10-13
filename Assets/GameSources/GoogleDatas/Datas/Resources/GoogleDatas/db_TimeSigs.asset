@@ -66,7 +66,7 @@ MonoBehaviour:
     - 1/16
     - 1/8
     beatlength: 0600000004000000
-    count: 3
+    count: 5
   - timesigstype: 6
     texture: 7_8
     sequencemeasurelength: 14
@@ -74,4 +74,4 @@ MonoBehaviour:
     - 1/16
     - 1/8
     beatlength: 0800000006000000
-    count: 4
+    count: 7
