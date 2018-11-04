@@ -27,15 +27,17 @@ public class PlayMusicCommand : Command
 
     public override void Execute()
     {
-        dispatcher.Dispatch(GameEvent.OnStartCount);
+//        dispatcher.Dispatch(GameEvent.OnStartCount);
         globalCoroutine.StartCoroutine(ExecuteRoutine());
         Retain();
     }
 
     private IEnumerator ExecuteRoutine()
     {
-        int timeRemain = gameStateData.currentTimeSig.Count;
-        dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
+//        int timeRemain = gameStateData.currentTimeSig.Count;
+//        dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
+        int timeRemain = 0;
+
         while (timeRemain >= 1)
         {
             yield return new WaitForSeconds(DEFAULT_SPEED / gameStateData.musicSpeed);
@@ -43,8 +45,9 @@ public class PlayMusicCommand : Command
             dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
         }
 
-        gameStateData.isPlaying = true;
         helmClock.pause = false;
+        helmClock.Reset();
+        gameStateData.isPlaying = true;
         gameStateData.gameState = GameState.Play;
         musicFieldMediator.MoveMusicStaff(0);
         musicFieldMediator.RemoveEmptyCell();

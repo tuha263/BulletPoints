@@ -1,7 +1,5 @@
-using System;
 using strange.extensions.dispatcher.eventdispatcher.api;
 using strange.extensions.mediation.impl;
-using UnityEngine;
 
 public class MusicManagerMediator : EventMediator {
   [Inject]

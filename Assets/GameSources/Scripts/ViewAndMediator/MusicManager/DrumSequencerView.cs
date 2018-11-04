@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using AudioHelm;
-using strange.extensions.mediation.impl;
+﻿using AudioHelm;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class DrumSequencerView : MusicManagerView
 {
     [SerializeField] private Sampler sampler;
-    [SerializeField] public UnityEngine.Audio.AudioMixerGroup mixerGroup;
+    [SerializeField] public AudioMixerGroup mixerGroup;
 
     // Use this for initialization
     public void LoadDrumSounds()
