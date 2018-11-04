@@ -27,16 +27,16 @@ public class PlayMusicCommand : Command
 
     public override void Execute()
     {
-//        dispatcher.Dispatch(GameEvent.OnStartCount);
+        dispatcher.Dispatch(GameEvent.OnStartCount);
         globalCoroutine.StartCoroutine(ExecuteRoutine());
         Retain();
     }
 
     private IEnumerator ExecuteRoutine()
     {
-//        int timeRemain = gameStateData.currentTimeSig.Count;
-//        dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
-        int timeRemain = 0;
+        int timeRemain = gameStateData.currentTimeSig.Count;
+        dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
+//        int timeRemain = 0;
 
         while (timeRemain >= 1)
         {
