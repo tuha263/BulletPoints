@@ -33,8 +33,17 @@ public class SetEmoCommand : Command
             //Sound note when set if is not playing
             if (!gameStateData.isPlaying)
             {
-                var note = gameStateData.currentEmo.note +
+                int note;
+                if (gameStateData.currentEmo.soundType == SoundType.Drum)
+                {
+                    note = gameStateData.currentEmo.note + (NodeCollumTileData.AmountOfNode - 1 - nodeIndex) / 3;
+                }
+                else
+                {
+                    note = gameStateData.currentEmo.note +
                            gameStateData.currentClef.Noteshigh[NodeCollumTileData.AmountOfNode - 1 - nodeIndex];
+                }
+
                 gameStateData.currentEmo.sequencer.NoteOn(note);
                 globalCoroutine.StartCoroutine(OffNote(note, gameStateData.currentEmo.sequencer));
             }

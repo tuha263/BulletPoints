@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using AudioHelm;
-using DG.Tweening;
 using EnhancedUI.EnhancedScroller;
 using strange.extensions.dispatcher.eventdispatcher.api;
 using strange.extensions.mediation.impl;
@@ -20,19 +18,17 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate
     [Inject] public Dictionary<AudioMixerGroup, MusicManagerView> sequencerDic { get; set; }
 
     private List<EnhancedScrollerCellData> cellDatas;
-    private float melodySize;
     private float collumSize;
     private float scrollCollumMoveAmount;
     private float barCollumMoveAmount;
     private float barScrollSize;
-    private AudioHelm.Sequencer sequencer;
+    private Sequencer sequencer;
     private int currentNote;
 
     public override void OnRegister()
     {
         mainGameContext.injectionBinder.Bind<MusicFieldMediator>().To(this).ToSingleton();
         view.musicBar.gameObject.SetActive(false);
-        melodySize = new MelodyTileData().GetCellViewSize();
         collumSize = new NodeCollumTileData().GetCellViewSize();
 
         dispatcher.AddListener(GameEvent.OnInitStaff, Init);
@@ -133,14 +129,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate
     public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
     {
         EnhancedScrollerCellView cellView;
-        if (cellDatas[dataIndex] is NodeCollumTileData)
-        {
-            cellView = scroller.GetCellView(view.nodeCollumViewPrefab);
-        }
-        else
-        {
-            cellView = scroller.GetCellView(view.melodyViewPrefab);
-        }
+        cellView = scroller.GetCellView(cellDatas[dataIndex] is NodeCollumTileData ? view.nodeCollumViewPrefab : view.melodyViewPrefab);
 
         cellView.SetData(dataIndex, cellDatas[dataIndex], gameStateData);
 
@@ -182,10 +171,6 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate
     {
         cellDatas.RemoveAt(cellDatas.Count - 1);
         gameStateData.collumDatas.RemoveAt(gameStateData.collumDatas.Count - 1);
-    }
-
-    private void RemoveNodeRange(int index, int range)
-    {
     }
 
     private void RemoveNodeRange(int index)
@@ -252,11 +237,6 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate
     public void MoveMusicStaff(float position)
     {
         view.enhancedScroller.ScrollRect.horizontalNormalizedPosition = Mathf.Min(1, Mathf.Max(0, position));
-    }
-
-    private float GetPlayMusicTime()
-    {
-        return view.enhancedScroller.ScrollSize / gameStateData.musicSpeed - 753 / gameStateData.musicSpeed;
     }
 
     public int GetStaffLength()
