@@ -1,12 +1,7 @@
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using AudioHelm;
-using GDataDB;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityQuickSheet;
 
 public class BulletPointEditor {
   private const string channel_param_post_fix = "_Channel";
