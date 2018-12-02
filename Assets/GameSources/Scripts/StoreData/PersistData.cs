@@ -20,5 +20,6 @@ public class PersistData
 
     public static List<String> GetListStoreData()
     {
+        throw new NotImplementedException();
     }
 }
