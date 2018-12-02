@@ -60,6 +60,8 @@ public class MainGameContext : MVCSContext
         mediationBinder.Bind<TimeSigTileView>().To<TimeSigTileMediator>();
         mediationBinder.Bind<DrumSequencerView>().To<DrumSequencerMediator>();
         mediationBinder.Bind<CountPanelView>().To<CountPanelMediator>();
+        mediationBinder.Bind<SaveInputView>().To<SaveInputMediator>();
+        mediationBinder.Bind<LoadDataView>().To<LoadDataMediator>();
     }
 
     protected override void addCoreComponents()

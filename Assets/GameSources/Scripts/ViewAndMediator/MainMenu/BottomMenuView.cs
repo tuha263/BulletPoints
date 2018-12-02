@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class BottomMenuView : View
 {
-    [SerializeField] public Button PlayButton;
-    [SerializeField] public Button LoopButton;
+    [SerializeField] public Button playButton;
+    [SerializeField] public Button loopButton;
     [SerializeField] private Button tempoButton;
     [SerializeField] public Button saveButton;
     [SerializeField] public Button loadButotn;

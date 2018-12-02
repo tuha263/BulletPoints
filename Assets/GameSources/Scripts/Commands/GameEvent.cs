@@ -10,5 +10,9 @@ public enum GameEvent {
   OnPlayNote,
   OnStartCount,
   OnCount,
-  DoStopOrPlayMusic
+  DoStopOrPlayMusic,
+  OpenSaveGame,
+  OpenLoadGame,
+  DoLoadgame,
+  OnChooseSaveData
 }

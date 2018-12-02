@@ -19,15 +19,27 @@ public class BottomMenuMediator : EventMediator {
   private Text loopText;
 
   public override void OnRegister() {
-    view.PlayButton.onClick.AddListener(OnClickPlayButton);
-    view.LoopButton.onClick.AddListener(OnClickLoopButton);
-    playText = view.PlayButton.GetComponentInChildren<Text>();
-    loopText = view.LoopButton.GetComponentInChildren<Text>();
+    view.playButton.onClick.AddListener(OnClickPlayButton);
+    view.loopButton.onClick.AddListener(OnClickLoopButton);
+    view.saveButton.onClick.AddListener(OnClickSaveButton);
+    view.loadButotn.onClick.AddListener(OnClickLoadButton);
+    playText = view.playButton.GetComponentInChildren<Text>();
+    loopText = view.loopButton.GetComponentInChildren<Text>();
     Init();
     
     dispatcher.AddListener(GameEvent.DoStopOrPlayMusic, DoStopOrPlayMusic);
     dispatcher.AddListener(GameEvent.OnChangeTempo, OnChangeTempo);
     dispatcher.AddListener(GameEvent.OnChangeTimeSig, OnChangeTimeSig);
+  }
+
+  private void OnClickLoadButton()
+  {
+    dispatcher.Dispatch(GameEvent.OpenLoadGame);
+  }
+
+  private void OnClickSaveButton()
+  {
+    dispatcher.Dispatch(GameEvent.OpenSaveGame);
   }
 
   private void DoStopOrPlayMusic(IEvent payload)
