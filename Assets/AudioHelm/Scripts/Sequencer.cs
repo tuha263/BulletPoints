@@ -5,6 +5,7 @@ using UnityEngine.Events;
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AudioHelm
 {
@@ -144,6 +145,8 @@ namespace AudioHelm
         /// All notes in the seqeuncer.
         /// </summary>
         public NoteRow[] allNotes = new NoteRow[Utils.kMidiSize];
+        int copyStart = 0;
+        int copyEnd = 0;
 
         /// <summary>
         /// The x/y scroll position of the inspector sequencer piano roll.
@@ -511,6 +514,29 @@ namespace AudioHelm
             AddSortedNoteEvents(noteObject);
             return noteObject;
         }
+
+        public void SetCopyRange(int start, int end)
+        {
+            this.copyStart = start;
+            this.copyEnd = end;
+
+        }
+
+        public void PasteNotes(int start)
+        {
+            //length += start;
+
+            for (int i = 0; i < allNotes.Length; ++i)
+            {
+                foreach (Note note in allNotes[i].notes.ToList())
+                {
+                    if (note.start >= copyStart && note.start < copyEnd)
+                    {
+                        AddNote(note.note, note.start + start, note.end + start);
+                    }
+                }
+            }
+         }
 
         /// <summary>
         /// Transposes all the notes in the sequencer up by number of semitones.
