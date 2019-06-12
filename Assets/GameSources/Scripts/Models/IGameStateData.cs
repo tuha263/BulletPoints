@@ -81,7 +81,7 @@ public class GameStateData : IGameStateData
         set
         {
             _currentTimeSig = value;
-            _divisionList = value.Divisonlist.Select(e => Int32.Parse(e.Split('/')[1])).ToList();
+            _divisionList = value.Divisonlist.Select(e => int.Parse(e.Split('/')[1])).ToList();
             var sum = 0;
             _beatLength = value.Beatlength.Select(e =>
             {

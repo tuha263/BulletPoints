@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 public class PersistDataHelper
 {
-    private const String LIST_SAVE_FILE = "ListSaveFile";
+    private const string LIST_SAVE_FILE = "ListSaveFile";
 
-    public static void SaveData(String dataName, GameStateData gameStateData)
+    public static void SaveData(string dataName, GameStateData gameStateData)
     {
         ES2.Save(gameStateData, dataName);
         if (!GetLoadList().Contains(dataName))
@@ -14,17 +14,17 @@ public class PersistDataHelper
         }
     }
 
-    public static List<String> GetLoadList()
+    public static List<string> GetLoadList()
     {
         if (ES2.Exists(LIST_SAVE_FILE))
         {
-            return ES2.LoadList<String>(LIST_SAVE_FILE);
+            return ES2.LoadList<string>(LIST_SAVE_FILE);
         }
 
         return new List<string>();
     }
 
-    private static void UpdateLoadList(String dataName, bool isAdd)
+    private static void UpdateLoadList(string dataName, bool isAdd)
     {
         var loadList = GetLoadList();
         if (isAdd)
@@ -39,12 +39,12 @@ public class PersistDataHelper
         ES2.Save(loadList, LIST_SAVE_FILE);
     }
 
-    public static GameStateData LoadData(String dataName)
+    public static GameStateData LoadData(string dataName)
     {
         return ES2.Load<GameStateData>(dataName);
     }
 
-    public static void DeleteData(String dataName)
+    public static void DeleteData(string dataName)
     {
         ES2.Delete(dataName);
         UpdateLoadList(dataName, false);
