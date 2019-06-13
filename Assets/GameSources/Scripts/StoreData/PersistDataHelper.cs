@@ -1,27 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 public class PersistDataHelper
 {
-    private const string LIST_SAVE_FILE = "ListSaveFile";
+    private const string ListSaveFile = "ListSaveFile";
 
     public static void SaveData(string dataName, GameStateData gameStateData)
     {
-        ES2.Save(gameStateData, dataName);
+        int[][] saveData = gameStateData.collumDatas.Select(columnData => columnData.emoDatas)
+            .Select(emoList => emoList.Select(emo => emo?.data.ID ?? 0))
+            .Select(enumerable => enumerable.ToArray()).ToArray();
+
+        ES2.Save(To2DArray(saveData), dataName);
+
         if (!GetLoadList().Contains(dataName))
         {
             UpdateLoadList(dataName, true);
         }
     }
 
-    public static List<string> GetLoadList()
+    private static int[,] To2DArray(int[][] arr)
     {
-        if (ES2.Exists(LIST_SAVE_FILE))
+        int numOfColumn = arr.Length;
+        int numOfNote = arr[0].Length;
+        
+        var result = new int[numOfColumn, numOfNote];
+        for (int i = 0; i < numOfColumn; i++)
         {
-            return ES2.LoadList<string>(LIST_SAVE_FILE);
+            for (int j = 0; j < numOfNote; j++)
+            {
+                result[i, j] = arr[i][j];
+            }
         }
 
-        return new List<string>();
+        return result;
+    }
+
+    public static List<string> GetLoadList()
+    {
+        return ES2.Exists(ListSaveFile) ? ES2.LoadList<string>(ListSaveFile) : new List<string>();
     }
 
     private static void UpdateLoadList(string dataName, bool isAdd)
@@ -36,7 +53,7 @@ public class PersistDataHelper
             loadList.Remove(dataName);
         }
 
-        ES2.Save(loadList, LIST_SAVE_FILE);
+        ES2.Save(loadList, ListSaveFile);
     }
 
     public static GameStateData LoadData(string dataName)
