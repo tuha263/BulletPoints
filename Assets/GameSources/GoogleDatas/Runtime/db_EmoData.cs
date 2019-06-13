@@ -9,8 +9,8 @@ using System.Collections;
 public class db_EmoData
 {
   [SerializeField]
-  string id;
-  public string ID { get {return id; } set { id = value;} }
+  int id;
+  public int ID { get {return id; } set { id = value;} }
   
   [SerializeField]
   string texture;
@@ -35,5 +35,9 @@ public class db_EmoData
   [SerializeField]
   int notelength;
   public int Notelength { get {return notelength; } set { notelength = value;} }
+  
+  [SerializeField]
+  string description;
+  public string Description { get {return description; } set { description = value;} }
   
 }

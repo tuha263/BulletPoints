@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -21,6 +22,7 @@ MonoBehaviour:
     note: 24
     channel: 1
     notelength: 1
+    description: rabit......
   - id: 2
     texture: Emo2
     patch: Bass_Dirty
@@ -28,6 +30,7 @@ MonoBehaviour:
     note: 36
     channel: 2
     notelength: 4
+    description: elephant...
   - id: 3
     texture: Emo3
     patch: Bass_Port
@@ -35,6 +38,7 @@ MonoBehaviour:
     note: 36
     channel: 3
     notelength: 1
+    description: otter
   - id: 4
     texture: Emo4
     patch: Melody_8Bit
@@ -42,6 +46,7 @@ MonoBehaviour:
     note: 48
     channel: 4
     notelength: 1
+    description: monkey (https://i.pinimg.com/236x/d5/22/5e/d5225eec697ad11b7259968671eead9d--tarsier-funny-animals.jpg)
   - id: 5
     texture: Emo5
     patch: Melody_Cute
@@ -49,6 +54,7 @@ MonoBehaviour:
     note: 60
     channel: 5
     notelength: 1
+    description: red panda
   - id: 6
     texture: Emo6
     patch: Melody_PizzDelay
@@ -56,6 +62,7 @@ MonoBehaviour:
     note: 36
     channel: 6
     notelength: 1
+    description: sloth
   - id: 7
     texture: Emo7
     patch: Melody_Stutter
@@ -63,6 +70,7 @@ MonoBehaviour:
     note: 48
     channel: 7
     notelength: 1
+    description: cat
   - id: 8
     texture: Emo8
     patch: Melody_Vibrato
@@ -70,6 +78,7 @@ MonoBehaviour:
     note: 60
     channel: 8
     notelength: 1
+    description: dog
   - id: 9
     texture: Emo9
     patch: Melody_Wobble
@@ -77,6 +86,7 @@ MonoBehaviour:
     note: 48
     channel: 9
     notelength: 1
+    description: walrus
   - id: 10
     texture: Emo10
     patch: (none)
@@ -84,6 +94,7 @@ MonoBehaviour:
     note: 0
     channel: 10
     notelength: 1
+    description: koala
   - id: 11
     texture: Emo11
     patch: (none)
@@ -91,6 +102,7 @@ MonoBehaviour:
     note: 5
     channel: 10
     notelength: 1
+    description: bear
   - id: 12
     texture: Emo12
     patch: (none)
@@ -98,6 +110,7 @@ MonoBehaviour:
     note: 10
     channel: 10
     notelength: 1
+    description: pig
   - id: 13
     texture: Emo13
     patch: (none)
@@ -105,6 +118,7 @@ MonoBehaviour:
     note: 15
     channel: 10
     notelength: 1
+    description: cow
   - id: 14
     texture: Emo14
     patch: (none)
@@ -112,6 +126,7 @@ MonoBehaviour:
     note: 20
     channel: 10
     notelength: 1
+    description: owl
   - id: 15
     texture: Emo15
     patch: (none)
@@ -119,6 +134,7 @@ MonoBehaviour:
     note: 25
     channel: 10
     notelength: 1
+    description: bird
   - id: 16
     texture: Emo16
     patch: (none)
@@ -126,6 +142,7 @@ MonoBehaviour:
     note: 30
     channel: 10
     notelength: 1
+    description: 'alpaca (this one: https://media.mnn.com/assets/images/2018/07/baby-alpaca-cria.jpg.653x0_q80_crop-smart.jpg)'
   - id: 17
     texture: Emo17
     patch: (none)
@@ -133,6 +150,7 @@ MonoBehaviour:
     note: 35
     channel: 10
     notelength: 1
+    description: puffer fish (https://img2.cgtrader.com/items/902468/ae3288d1b5/large/pufferfish-3d-model-low-poly-animated-rigged-obj-mtl-fbx-ma-mb.jpg)
   - id: 18
     texture: Emo18
     patch: (none)
@@ -140,6 +158,7 @@ MonoBehaviour:
     note: 40
     channel: 10
     notelength: 1
+    description: racoon
   - id: 19
     texture: Emo19
     patch: (none)
@@ -147,6 +166,7 @@ MonoBehaviour:
     note: 45
     channel: 10
     notelength: 1
+    description: duck
   - id: 20
     texture: Emo20
     patch: (none)
@@ -154,6 +174,7 @@ MonoBehaviour:
     note: 50
     channel: 10
     notelength: 1
+    description: fox
   - id: 21
     texture: Emo21
     patch: (none)
@@ -161,6 +182,7 @@ MonoBehaviour:
     note: 55
     channel: 10
     notelength: 1
+    description: 
   - id: 22
     texture: Emo22
     patch: (none)
@@ -168,6 +190,7 @@ MonoBehaviour:
     note: 60
     channel: 10
     notelength: 1
+    description: 
   - id: 23
     texture: Emo23
     patch: (none)
@@ -175,6 +198,7 @@ MonoBehaviour:
     note: 65
     channel: 10
     notelength: 1
+    description: 
   - id: 24
     texture: Emo24
     patch: (none)
@@ -182,6 +206,7 @@ MonoBehaviour:
     note: 70
     channel: 10
     notelength: 1
+    description: 
   - id: 25
     texture: Emo25
     patch: (none)
@@ -189,3 +214,4 @@ MonoBehaviour:
     note: 75
     channel: 10
     notelength: 1
+    description: 
