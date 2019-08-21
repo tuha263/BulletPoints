@@ -1,9 +1,9 @@
-﻿using strange.extensions.mediation.impl;
+﻿using EnhancedUI.EnhancedScroller;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class SaveItemView : View
+public class SaveItemView : EnhancedScrollerCellView
 {
     [SerializeField] private Button button;
     [SerializeField] private Text _saveNameText;
@@ -18,8 +18,8 @@ public class SaveItemView : View
         return _saveNameText.text;
     }
 
-    public void SetData(string value)
+    public override void SetData(EnhancedScrollerCellData data)
     {
-        _saveNameText.text = value;
+        _saveNameText.text = ((SaveItemModel) data).name;
     }
 }

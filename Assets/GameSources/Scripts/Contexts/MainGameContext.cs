@@ -26,6 +26,7 @@ public class MainGameContext : MVCSContext
         commandBinder.Bind<StopMusicSignal>().To<StopMusicCommand>().Pooled();
         commandBinder.Bind<ChangeTempoSignal>().To<ChangeTempoCommand>().Pooled();
         commandBinder.Bind<SelectTimeSigSignal>().To<SelectTimeSigCommand>().Pooled();
+        commandBinder.Bind<LoadRecordSignal>().To<LoadRecordCommand>().Pooled();
 
         //Audio mixer
         AudioMixer audioMixer = Resources.Load<AudioMixer>("AudioMixers/BulletPoints");
@@ -62,6 +63,7 @@ public class MainGameContext : MVCSContext
         mediationBinder.Bind<CountPanelView>().To<CountPanelMediator>();
         mediationBinder.Bind<SaveInputView>().To<SaveInputMediator>();
         mediationBinder.Bind<LoadDataView>().To<LoadDataMediator>();
+        mediationBinder.Bind<SaveItemView>().To<SaveItemMediator>();
     }
 
     protected override void addCoreComponents()

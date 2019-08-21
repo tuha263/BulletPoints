@@ -29,6 +29,8 @@ public interface IGameStateData
     db_TimeSigsData currentTimeSig { get; set; }
     List<int> divisionList { get; }
     List<int> beatLength { get; }
+    List<string> saveDataList { get; }
+    List<EmoTileData> emoTileDataList { get; set; }
 }
 
 public class GameStateData : IGameStateData
@@ -112,9 +114,13 @@ public class GameStateData : IGameStateData
         get { return _beatLength; }
     }
 
+    public List<string> saveDataList { get; }
+    public List<EmoTileData> emoTileDataList { get; set; }
+
     public GameStateData()
     {
         collumDatas = new List<NodeCollumTileData>();
+        saveDataList = new List<string>();
         musicLength = 16;
         musicSpeed = 120;
     }

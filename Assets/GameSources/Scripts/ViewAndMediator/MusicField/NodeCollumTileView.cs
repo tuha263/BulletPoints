@@ -117,4 +117,19 @@ public class NodeCollumTileView : EnhancedScrollerCellView {
 
     noteViews.ForEach(noteView => noteView.OnPlay());
   }
+
+  public void OnLoadData()
+  {
+    // the signature
+    if (dataIndex == 0)
+    {
+      return;
+    }
+    
+    for (int index = 0; index < gameStateData.collumDatas[dataIndex - 1].emoDatas.Count; index++)
+    {
+      var emoData = gameStateData.collumDatas[dataIndex - 1].emoDatas[index];
+      SetNodeData(index, emoData);
+    }
+  }
 }

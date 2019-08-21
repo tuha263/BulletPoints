@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 public class PersistDataHelper
@@ -7,11 +8,11 @@ public class PersistDataHelper
 
     public static void SaveData(string dataName, GameStateData gameStateData)
     {
-        int[][] saveData = gameStateData.collumDatas.Select(columnData => columnData.emoDatas)
-            .Select(emoList => emoList.Select(emo => emo?.data.ID ?? 0))
-            .Select(enumerable => enumerable.ToArray()).ToArray();
+        List<string> saveData =
+            gameStateData.collumDatas.Select(columnData => columnData.emoDatas).Select(emoList =>
+                emoList.Aggregate("", (acc, emo) => acc + "," + (emo?.data.ID ?? 0))).ToList();
 
-        ES2.Save(To2DArray(saveData), dataName);
+        ES2.Save(saveData, dataName);
 
         if (!GetLoadList().Contains(dataName))
         {
@@ -23,7 +24,7 @@ public class PersistDataHelper
     {
         int numOfColumn = arr.Length;
         int numOfNote = arr[0].Length;
-        
+
         var result = new int[numOfColumn, numOfNote];
         for (int i = 0; i < numOfColumn; i++)
         {
@@ -56,9 +57,9 @@ public class PersistDataHelper
         ES2.Save(loadList, ListSaveFile);
     }
 
-    public static GameStateData LoadData(string dataName)
+    public static List<string> LoadData(string dataName)
     {
-        return ES2.Load<GameStateData>(dataName);
+        return ES2.LoadList<string>(dataName);
     }
 
     public static void DeleteData(string dataName)

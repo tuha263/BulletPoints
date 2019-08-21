@@ -26,4 +26,4 @@ public class NodeCollumTileData : EnhancedScrollerCellData {
   public override float GetCellViewSize() {
     return 80;
   }
-} 
+}

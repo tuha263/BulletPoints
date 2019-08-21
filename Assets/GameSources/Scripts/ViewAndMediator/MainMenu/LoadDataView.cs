@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using EnhancedUI.EnhancedScroller;
 using strange.extensions.mediation.impl;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,15 +8,18 @@ using UnityEngine.UI;
 public class LoadDataView : View
 {
     [SerializeField] private Button _loadButton;
+    [SerializeField] private Button deleteButton;
     [SerializeField] private Button _cancelButotn;
-    [SerializeField] private GameObject _saveItemPrefab;
-    [SerializeField] private GameObject _saveItemsContainer;
-    [SerializeField] private List<SaveItemView> listItem;
+    [SerializeField] private SaveItemView saveItemPrefab;
+    [SerializeField] private EnhancedScroller scroller;
 
-    public void Init(UnityAction loadButton, UnityAction cancelButton)
+    private List<SaveItemView> loadList;
+    public void Init(UnityAction loadAction, UnityAction cancelAction, UnityAction deleteAction,IEnhancedScrollerDelegate scrollerDelegate)
     {
-        _loadButton.onClick.AddListener(loadButton);
-        _cancelButotn.onClick.AddListener(cancelButton);
+        _loadButton.onClick.AddListener(loadAction);
+        _cancelButotn.onClick.AddListener(cancelAction);
+        deleteButton.onClick.AddListener(deleteAction);
+        scroller.Delegate = scrollerDelegate;
     }
 
     public void OnClose()
@@ -23,13 +27,19 @@ public class LoadDataView : View
         gameObject.SetActive(false);
     }
 
-    public void OnOpen()
+    public void OnOpen(List<SaveItemModel> loadList)
     {
         gameObject.SetActive(true);
-        var loadList = PersistDataHelper.GetLoadList();
-        for (int i = 0; i < loadList.Count; i++)
-        {
-            listItem[i].SetData(loadList[i]);
-        }
+        reLoadScroller();
+    }
+
+    public SaveItemView getSaveItemPrefab()
+    {
+        return saveItemPrefab;
+    }
+
+    public void reLoadScroller()
+    {
+        scroller.ReloadData();
     }
 }

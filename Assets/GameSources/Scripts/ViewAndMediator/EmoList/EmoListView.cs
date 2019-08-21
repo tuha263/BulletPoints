@@ -26,6 +26,7 @@ public class EmoListView : View, IEnhancedScrollerDelegate
     [Inject] public AudioMixer audioMixer { get; set; }
 
     [Inject] public Dictionary<AudioMixerGroup, MusicManagerView> musicManagerViewDic { get; set; }
+    [Inject] public IGameStateData gameStateData { get; set; }
 
     public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
     {
@@ -48,11 +49,9 @@ public class EmoListView : View, IEnhancedScrollerDelegate
     {
         emoDatas = new List<EmoTileData>();
         datas.ForEach(data => { emoDatas.Add(PopulateEmos(data)); });
+        gameStateData.emoTileDataList = emoDatas;
 
         CreateHelmSequencers();
-
-        scroller.Delegate = this;
-        scroller.ReloadData();
 
         scroller.Delegate = this;
         scroller.ReloadData();

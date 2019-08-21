@@ -13,6 +13,6 @@ public enum GameEvent {
   DoStopOrPlayMusic,
   OpenSaveGame,
   OpenLoadGame,
-  DoLoadgame,
-  OnChooseSaveData
+  OnChooseSaveData,
+  OnLoadData
 }
