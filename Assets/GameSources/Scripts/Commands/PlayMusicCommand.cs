@@ -35,6 +35,7 @@ public class PlayMusicCommand : Command
     private IEnumerator ExecuteRoutine()
     {
         int timeRemain = gameStateData.currentTimeSig.Count;
+        //int timeRemain = 0;
         dispatcher.Dispatch(GameEvent.OnCount, timeRemain);
 //        int timeRemain = 0;
 
