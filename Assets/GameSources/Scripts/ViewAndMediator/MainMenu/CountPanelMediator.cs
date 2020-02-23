@@ -18,7 +18,7 @@ public class CountPanelMediator : EventMediator
     private void OnStartCount(IEvent payload)
     {
         gameObject.SetActive(true);
-//    view.SetText(gameStateData.playDelayTime.ToString());
+        //    view.SetText(gameStateData.playDelayTime.ToString());
         view.SetText("1");
     }
 
