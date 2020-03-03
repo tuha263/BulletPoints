@@ -165,18 +165,12 @@ MonoBehaviour:
   noteOnEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: AudioHelm.Sequencer+NoteEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   noteOffEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: AudioHelm.Sequencer+NoteEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   beatEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: AudioHelm.Sequencer+BeatEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   length: 16
   currentIndex: -1
   loop: 1

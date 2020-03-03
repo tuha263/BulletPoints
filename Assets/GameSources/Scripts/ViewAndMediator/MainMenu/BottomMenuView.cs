@@ -11,10 +11,9 @@ public class BottomMenuView : View
     [SerializeField] public Button loopButton;
     [SerializeField] private Button tempoButton;
     [SerializeField] public Button saveButton;
-    [SerializeField] public Button loadButotn;
+    [SerializeField] public Button loadButton;
 
     [SerializeField] private Slider slider;
-    [SerializeField] private Text sliderValue;
     [Inject] public AudioHelmClock helmClock { get; set; }
 
     [Inject] public IGameStateData gameStateData { get; set; }
@@ -23,6 +22,15 @@ public class BottomMenuView : View
     [SerializeField] private Text tempoText;
     [SerializeField] private GameObject tempListRoot;
     [SerializeField] private GameObject tempoTilePrefab;
+    
+    [SerializeField] private Sprite playSprite;
+    [SerializeField] private Sprite stopSprite;
+    [SerializeField] private Sprite loopSprite;
+    [SerializeField] private Sprite noLoopSprite;
+    
+    [SerializeField] private Image playImage;
+    [SerializeField] private Image loopImage;
+
 
     [Inject] public ChangeTempoSignal changeTempoSignal { get; set; }
     private bool isShowingTempSelection;
@@ -30,7 +38,6 @@ public class BottomMenuView : View
 
     public void Init()
     {
-        sliderValue.text = slider.value.ToString();
         slider.onValueChanged.AddListener(OnSliderValueChange);
         helmClock.pause = true;
         helmClock.bpm = slider.value;
@@ -53,7 +60,6 @@ public class BottomMenuView : View
 
     private void OnSliderValueChange(float value)
     {
-        sliderValue.text = value.ToString();
         helmClock.bpm = value;
         gameStateData.musicSpeed = value;
     }
@@ -116,5 +122,15 @@ public class BottomMenuView : View
     {
         tempos = gameStateData.divisionList;
         InitTempo();
+    }
+
+    public void Play(bool play)
+    {
+        playImage.sprite = play ? stopSprite : playSprite;
+    }
+
+    public void Loop(bool loop)
+    {
+        loopImage.sprite = loop ? noLoopSprite : loopSprite;
     }
 }

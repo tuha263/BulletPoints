@@ -7,14 +7,10 @@ public class CurrentEmoView : View {
   [SerializeField]
   private Image icon;
 
-  [SerializeField]
-  private Text description;
-
   private EmoTileData data;
 
   public void Init(EmoTileData data) {
     this.data = data;
     icon.sprite = data.sprite;
-    description.text = string.Format(DESCRIPTION_FORM, data.data.Patch, data.data.Note, data.data.Notelength);
   }
 }

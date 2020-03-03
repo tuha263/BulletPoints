@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Boo.Lang.Runtime.DynamicDispatching;
 using strange.extensions.command.impl;
 using strange.extensions.context.api;
 using strange.extensions.dispatcher.eventdispatcher.api;
@@ -14,14 +13,16 @@ public class LoadRecordCommand : Command
 {
     [Inject] public List<List<int>> recodeData { get; set; }
     [Inject] public IGameStateData gameStateData { get; set; }
-    
+
     [Inject(ContextKeys.CONTEXT_DISPATCHER)]
     public IEventDispatcher dispatcher { get; set; }
+
     [Inject] public StopMusicSignal stopMusicSignal { get; set; }
+
     public override void Execute()
     {
         stopMusicSignal.Dispatch();
-        
+
         gameStateData.collumDatas.Clear();
         for (int index = 0; index < recodeData.Count; index++)
         {
@@ -38,7 +39,7 @@ public class LoadRecordCommand : Command
                 }
             }
         }
-    
+
         dispatcher.Dispatch(GameEvent.OnLoadData);
     }
 }
