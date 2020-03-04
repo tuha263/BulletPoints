@@ -20,6 +20,11 @@ public class SetEmoCommand : Command
     //dataIndex - 1 because of melody data    
     public override void Execute()
     {
+        if (gameStateData.currentEmo == null)
+        {
+            return;
+        }
+
         //remove note when playing
         if (gameStateData.isPlaying && getSettedEmoTileData() != null)
         {
