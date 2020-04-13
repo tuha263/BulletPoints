@@ -20,62 +20,175 @@ SpriteAtlas:
       readable: 0
       crunchedCompression: 0
       sRGB: 1
-    platformSettings: []
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
       serializedVersion: 2
-      padding: 4
+      padding: 8
       blockOffset: 1
       allowAlphaSplitting: 0
-      enableRotation: 1
+      enableRotation: 0
       enableTightPacking: 1
     variantMultiplier: 1
     packables:
-    - {fileID: 2800000, guid: 0f54de2da800a4a3c9490b1606cde412, type: 3}
-    - {fileID: 2800000, guid: 9679aa6125bc24f10999029e30c0635a, type: 3}
-    - {fileID: 2800000, guid: 403cecfe98d2d4abb94acbabdd84bc69, type: 3}
-    - {fileID: 2800000, guid: c60b080b780dc418abfadaecc07d62ce, type: 3}
-    - {fileID: 2800000, guid: 06b369184321144f68db60d564417cd3, type: 3}
-    - {fileID: 2800000, guid: 54e2a4084eef74597998fa8511320e79, type: 3}
-    - {fileID: 2800000, guid: 89b881feabc1843fe81042a3541f6e0b, type: 3}
-    - {fileID: 2800000, guid: 8c199d957b36a4c76997bef91da06bba, type: 3}
-    - {fileID: 2800000, guid: d0bc682705b3d478aa47dce6b9789ef8, type: 3}
-    - {fileID: 2800000, guid: 9c25d4fac9b674f40a372f7bf3ba30e9, type: 3}
-    - {fileID: 2800000, guid: e19ac371e75564ec8b60638d55f53d1a, type: 3}
-    - {fileID: 2800000, guid: 2116ae26b91204a3186e9b06f59ec044, type: 3}
-    - {fileID: 2800000, guid: 9e48f1feef3de43d486eb0240df72673, type: 3}
-    - {fileID: 2800000, guid: 7a0c78aba82a94b17b61cd2f8546f821, type: 3}
-    totalSpriteSurfaceArea: 57091
+    - {fileID: 102900000, guid: 598cb8666baea3f4fbbb8841078c08af, type: 3}
+    - {fileID: 102900000, guid: 93110bafc8dd648b883966487a29eb95, type: 3}
+    - {fileID: 2800000, guid: 56529925845ce3540ba042fe08831c5a, type: 3}
+    - {fileID: 102900000, guid: af07762191cc44a84bfe01777d1e0563, type: 3}
+    - {fileID: 102900000, guid: 5b825eb6060714622b0f1089f78e8b95, type: 3}
+    totalSpriteSurfaceArea: 4380828
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 35268660275cb49aa8f7e1afbe49b2a0, type: 3}
+  - {fileID: 21300000, guid: e10e22b061e8a86458a9598fc5c3c158, type: 3}
   - {fileID: 21300000, guid: 9679aa6125bc24f10999029e30c0635a, type: 3}
   - {fileID: 21300000, guid: e19ac371e75564ec8b60638d55f53d1a, type: 3}
+  - {fileID: 21300000, guid: 517283d1759bfb4468636931093e1cb6, type: 3}
+  - {fileID: 21300000, guid: af1cf432ff67d054d98b1714fb5285b5, type: 3}
+  - {fileID: 21300000, guid: 6a5d8b727650e4bbfb7d71abdc569750, type: 3}
+  - {fileID: 21300000, guid: 83ed9f034ee6c2b4d98c1b4c408df2ac, type: 3}
+  - {fileID: 21300000, guid: 0a5e41439d8b48f4386cbe2dcea40dff, type: 3}
+  - {fileID: 21300000, guid: dffed9c34053441e38750f0bf11fb306, type: 3}
+  - {fileID: 21300000, guid: 81c8bab487d3fea498d143be22920f46, type: 3}
+  - {fileID: 21300000, guid: 6a115ad4d4999164ba11a75d9123711a, type: 3}
+  - {fileID: 21300000, guid: 56529925845ce3540ba042fe08831c5a, type: 3}
+  - {fileID: 21300000, guid: 36dbe25567ef547aa8e1340c65e00f17, type: 3}
   - {fileID: 21300000, guid: 8c199d957b36a4c76997bef91da06bba, type: 3}
+  - {fileID: 21300000, guid: 27bad3b5f40fbea47a740ace9f1dda90, type: 3}
+  - {fileID: 21300000, guid: 5783b1e5f5ad5455997b672bbdcdc18b, type: 3}
+  - {fileID: 21300000, guid: e9f19016e088f364881d2501938e432f, type: 3}
   - {fileID: 21300000, guid: 2116ae26b91204a3186e9b06f59ec044, type: 3}
+  - {fileID: 21300000, guid: eee02d661d9654537890801956234a91, type: 3}
+  - {fileID: 21300000, guid: 544b2c769f3a9d94186733cccd0a0bde, type: 3}
+  - {fileID: 21300000, guid: 0dece6e628b0e724da6312a7e1092c23, type: 3}
+  - {fileID: 21300000, guid: 1bf51de6baee22548899bff1026bca5d, type: 3}
   - {fileID: 21300000, guid: d0bc682705b3d478aa47dce6b9789ef8, type: 3}
+  - {fileID: 21300000, guid: ebd14d273339da5489463513dbb577ab, type: 3}
+  - {fileID: 21300000, guid: 18557247aa72c453fbcb8d33651889cf, type: 3}
+  - {fileID: 21300000, guid: 09260ae791c684aecaca35851a75c0ad, type: 3}
   - {fileID: 21300000, guid: 54e2a4084eef74597998fa8511320e79, type: 3}
   - {fileID: 21300000, guid: 06b369184321144f68db60d564417cd3, type: 3}
+  - {fileID: 21300000, guid: 2d22b1386a7e0704698ae74fbc0b9911, type: 3}
+  - {fileID: 21300000, guid: 88d2d098a4db64d2da0b86bff78fae9f, type: 3}
+  - {fileID: 21300000, guid: 788c33e81e762b248a4bc1f3469a032b, type: 3}
+  - {fileID: 21300000, guid: b8629e49e376c0143b402f7cbc93e8ee, type: 3}
+  - {fileID: 21300000, guid: 9196ccc9cd79649e4a858261199e5dc8, type: 3}
+  - {fileID: 21300000, guid: 02f0bd1a2b2f946849a5f67cea4a7db9, type: 3}
+  - {fileID: 21300000, guid: f793f92aad40c48fa84b6d7af2a6c04f, type: 3}
+  - {fileID: 21300000, guid: df0dddaa45cfa4567a14a0b4b9b96fd1, type: 3}
   - {fileID: 21300000, guid: 9c25d4fac9b674f40a372f7bf3ba30e9, type: 3}
   - {fileID: 21300000, guid: c60b080b780dc418abfadaecc07d62ce, type: 3}
+  - {fileID: 21300000, guid: cbc93c2b63a0d4a4984bb4771b590104, type: 3}
+  - {fileID: 21300000, guid: 7d25474be25416d4e82596a0aa9c76a0, type: 3}
+  - {fileID: 21300000, guid: 9aecb25bf6239ad4b916e5d128de6f53, type: 3}
+  - {fileID: 21300000, guid: 4d64937b0bab434438f4a6a52c00363b, type: 3}
+  - {fileID: 21300000, guid: a2f1a79ba78f442c0a004a669137c868, type: 3}
   - {fileID: 21300000, guid: 7a0c78aba82a94b17b61cd2f8546f821, type: 3}
+  - {fileID: 21300000, guid: b52f22db386ee4ff4aa03ecfe28ec636, type: 3}
+  - {fileID: 21300000, guid: 326f2feb555ef4122975d251c0f15a05, type: 3}
+  - {fileID: 21300000, guid: b72fbafb85d5e7c478fede63e4b385b4, type: 3}
+  - {fileID: 21300000, guid: 6c48e84c6aa0b0546a5572bf13cdbb2b, type: 3}
+  - {fileID: 21300000, guid: 8e09025c6d9363648801b18bc12b857c, type: 3}
+  - {fileID: 21300000, guid: 4ccd8f7cc2d052a4b9b921e1f3a1f4a3, type: 3}
+  - {fileID: 21300000, guid: 7f516c8cdfe73a74d8c317c4f37002bf, type: 3}
+  - {fileID: 21300000, guid: fc33d8ccff878466aa0c6e78540c68e8, type: 3}
+  - {fileID: 21300000, guid: 165fc80d43447409c9837f9b00fe0594, type: 3}
+  - {fileID: 21300000, guid: 4bc10d2d100b9c8439674d7f09233578, type: 3}
   - {fileID: 21300000, guid: 0f54de2da800a4a3c9490b1606cde412, type: 3}
+  - {fileID: 21300000, guid: e7a1893d8ac2749ea8b497d8ae68b405, type: 3}
+  - {fileID: 21300000, guid: 052c9a5da00d645dbbe6792333c138ee, type: 3}
+  - {fileID: 21300000, guid: d65b0a6d52d884ee3b3b865f962a2d32, type: 3}
   - {fileID: 21300000, guid: 89b881feabc1843fe81042a3541f6e0b, type: 3}
   - {fileID: 21300000, guid: 9e48f1feef3de43d486eb0240df72673, type: 3}
   - {fileID: 21300000, guid: 403cecfe98d2d4abb94acbabdd84bc69, type: 3}
+  - {fileID: 21300000, guid: c6199e2f9d695e7458d12e6d2351ee66, type: 3}
+  - {fileID: 21300000, guid: a1be843fe4f8003438f91d3ae27477c2, type: 3}
+  - {fileID: 21300000, guid: d762825f3bda94a99a399b80fb067304, type: 3}
+  - {fileID: 21300000, guid: b74fdb5f7ec98084e90a7e1e78ec678f, type: 3}
+  - {fileID: 21300000, guid: 7b4a866f531aa594db1016ceb9080d23, type: 3}
+  - {fileID: 21300000, guid: 3a14fdafceaf64c0f86d00cae96fb4c5, type: 3}
+  - {fileID: 21300000, guid: 0475dfffc78548448af44023c8e8b646, type: 3}
   m_PackedSpriteNamesToIndex:
+  - 3_4
+  - UI_selection_big
   - Emo2
   - Emo11
+  - clef_4
+  - UI_scroll_bar
+  - emo21
+  - alto
+  - UI_speed_bar
+  - emo24
+  - UI_Button_Stop
+  - clef_3
+  - slotsborder
+  - 5_8
   - Emo8
+  - UI_speed_bg
+  - emo23
+  - UI_footer
   - Emo12
+  - emo16
+  - UI_popup
+  - clef_1
+  - UI_selection_small
   - Emo9
+  - UI_header
+  - emo19
+  - emo17
   - Emo6
   - Emo5
+  - UI_Button_NoLoop
+  - minorClef
+  - UI_Name
+  - UI_Treblo
+  - chromaticClef
+  - 5_4
+  - emo22
+  - majorPentatonicClef
   - Emo10
   - Emo4
+  - UI_close
+  - UI_popup_title
+  - UI_scroll_bar_2
+  - UI_Line_2
+  - emo18
   - emo14
+  - minorPentatonicClef
+  - 2_4
+  - clef_2
+  - UI_Button_Save
+  - UI_Button_Play
+  - bass
+  - UI_speed_circle
+  - emo20
+  - 4_4
+  - UI_Line_3
   - Emo1
+  - 7_8
+  - 7_4
+  - majorClef
   - Emo7
   - Emo13
   - Emo3
+  - UI_Button_Share
+  - UI_speed_bar_2
+  - emo15
+  - UI_Button_Loop_2
+  - UI_Line
+  - emo25
+  - UI_button
   m_Tag: MainTexture
   m_IsVariant: 0
