@@ -47,7 +47,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 56529925845ce3540ba042fe08831c5a, type: 3}
     - {fileID: 102900000, guid: af07762191cc44a84bfe01777d1e0563, type: 3}
     - {fileID: 102900000, guid: 5b825eb6060714622b0f1089f78e8b95, type: 3}
-    totalSpriteSurfaceArea: 4380828
+    totalSpriteSurfaceArea: 4413058
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -87,7 +87,9 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 9196ccc9cd79649e4a858261199e5dc8, type: 3}
   - {fileID: 21300000, guid: 02f0bd1a2b2f946849a5f67cea4a7db9, type: 3}
   - {fileID: 21300000, guid: f793f92aad40c48fa84b6d7af2a6c04f, type: 3}
+  - {fileID: 21300000, guid: 8072c85aecf913c4484faf1d1871f305, type: 3}
   - {fileID: 21300000, guid: df0dddaa45cfa4567a14a0b4b9b96fd1, type: 3}
+  - {fileID: 21300000, guid: 21b882da53f1200498f0110c18fe10bd, type: 3}
   - {fileID: 21300000, guid: 9c25d4fac9b674f40a372f7bf3ba30e9, type: 3}
   - {fileID: 21300000, guid: c60b080b780dc418abfadaecc07d62ce, type: 3}
   - {fileID: 21300000, guid: cbc93c2b63a0d4a4984bb4771b590104, type: 3}
@@ -117,6 +119,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: a1be843fe4f8003438f91d3ae27477c2, type: 3}
   - {fileID: 21300000, guid: d762825f3bda94a99a399b80fb067304, type: 3}
   - {fileID: 21300000, guid: b74fdb5f7ec98084e90a7e1e78ec678f, type: 3}
+  - {fileID: 21300000, guid: 2175906fb2673cb488b7e6a70792b34a, type: 3}
   - {fileID: 21300000, guid: 7b4a866f531aa594db1016ceb9080d23, type: 3}
   - {fileID: 21300000, guid: 3a14fdafceaf64c0f86d00cae96fb4c5, type: 3}
   - {fileID: 21300000, guid: 0475dfffc78548448af44023c8e8b646, type: 3}
@@ -157,7 +160,9 @@ SpriteAtlas:
   - chromaticClef
   - 5_4
   - emo22
+  - ui_BLUE
   - majorPentatonicClef
+  - UI_BG
   - Emo10
   - Emo4
   - UI_close
@@ -187,6 +192,7 @@ SpriteAtlas:
   - UI_speed_bar_2
   - emo15
   - UI_Button_Loop_2
+  - UI_Button_load
   - UI_Line
   - emo25
   - UI_button

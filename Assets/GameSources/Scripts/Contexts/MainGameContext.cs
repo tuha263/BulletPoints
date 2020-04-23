@@ -64,6 +64,7 @@ public class MainGameContext : MVCSContext
         mediationBinder.Bind<SaveInputView>().To<SaveInputMediator>();
         mediationBinder.Bind<LoadDataView>().To<LoadDataMediator>();
         mediationBinder.Bind<SaveItemView>().To<SaveItemMediator>();
+        mediationBinder.Bind<StaffLineView>().To<StaffLineMediator>();
     }
 
     protected override void addCoreComponents()

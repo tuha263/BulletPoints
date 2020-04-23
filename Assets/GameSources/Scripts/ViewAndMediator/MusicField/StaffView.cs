@@ -1,6 +1,5 @@
 using strange.extensions.mediation.impl;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class StaffView : View {
   [SerializeField]
@@ -9,19 +8,13 @@ public class StaffView : View {
   [SerializeField]
   private int amountOfLine;
 
-  [SerializeField]
-  private Color subLineColor;
-  [SerializeField]
-
-  private Color mainLineColor;
-
   public void PopulateLines() {
     for (int i = 0; i < amountOfLine; i++) {
-      Image lineImage = gameObject.InstantiateAsChild(line).GetComponent<Image>();
+      StaffLineView staffLine = gameObject.InstantiateAsChild(line).GetComponent<StaffLineView>();
       if (i == 0 || i == 1 || i == 7) {
-        lineImage.color = subLineColor;
+        staffLine.Init(false);
       } else {
-        lineImage.color = mainLineColor;
+        staffLine.Init(true);
       }
     }
   }

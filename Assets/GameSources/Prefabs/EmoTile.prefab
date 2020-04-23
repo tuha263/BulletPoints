@@ -132,7 +132,7 @@ MonoBehaviour:
   cellIdentifier: 
   icon: {fileID: 114534985342347102}
   button: {fileID: 114354288466889474}
-  selectedBackGround: {fileID: 0}
+  selectedBackGround: {fileID: 7059801671184329517}
 --- !u!114 &114793223984203270
 MonoBehaviour:
   m_ObjectHideFlags: 0

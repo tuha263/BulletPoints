@@ -14,5 +14,6 @@ public enum GameEvent {
   OpenSaveGame,
   OpenLoadGame,
   OnChooseSaveData,
-  OnLoadData
+  OnLoadData,
+  OnSelectEmo
 }

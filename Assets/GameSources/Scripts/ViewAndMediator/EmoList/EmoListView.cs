@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using AudioHelm;
 using EnhancedUI.EnhancedScroller;
 using strange.extensions.mediation.impl;
@@ -21,7 +20,7 @@ public class EmoListView : View, IEnhancedScrollerDelegate
     [SerializeField] private GameObject sequencersPrefabs;
     [SerializeField] private GameObject drumSequencersPrefabs;
 
-    private List<EmoTileData> emoDatas;
+    private List<EmoTileData> emoDataList;
 
     [Inject] public AudioMixer audioMixer { get; set; }
 
@@ -31,7 +30,7 @@ public class EmoListView : View, IEnhancedScrollerDelegate
     public EnhancedScrollerCellView GetCellView(EnhancedScroller scroller, int dataIndex, int cellIndex)
     {
         EnhancedScrollerCellView cellView = scroller.GetCellView(emoTilePrefab);
-        cellView.SetData(emoDatas[dataIndex]);
+        cellView.SetData(emoDataList[dataIndex]);
         return cellView;
     }
 
@@ -42,14 +41,14 @@ public class EmoListView : View, IEnhancedScrollerDelegate
 
     public int GetNumberOfCells(EnhancedScroller scroller)
     {
-        return emoDatas.Count;
+        return emoDataList.Count;
     }
 
     public void PopulateEmos(List<db_EmoData> datas)
     {
-        emoDatas = new List<EmoTileData>();
-        datas.ForEach(data => { emoDatas.Add(PopulateEmos(data)); });
-        gameStateData.emoTileDataList = emoDatas;
+        emoDataList = new List<EmoTileData>();
+        datas.ForEach(data => { emoDataList.Add(PopulateEmoList(data)); });
+        gameStateData.emoTileDataList = emoDataList;
 
         CreateHelmSequencers();
 
@@ -61,10 +60,13 @@ public class EmoListView : View, IEnhancedScrollerDelegate
         sizeFitter.verticalFit = ContentSizeFitter.FitMode.MinSize;
     }
 
-    private EmoTileData PopulateEmos(db_EmoData data)
+    private EmoTileData PopulateEmoList(db_EmoData data)
     {
-        EmoTileData emoTileData = new EmoTileData(data);
-        emoTileData.sprite = Resources.Load<Sprite>(emoSpritePath + data.Texture);
+        EmoTileData emoTileData = new EmoTileData(data)
+        {
+            sprite = Resources.Load<Sprite>(emoSpritePath + data.Texture)
+        };
+        
         if (emoTileData.soundType == SoundType.Sequencer)
         {
             emoTileData.audioMixerGroup = audioMixer.FindMatchingGroups(data.Patch)[0];
@@ -89,7 +91,7 @@ public class EmoListView : View, IEnhancedScrollerDelegate
             sequencersRoot.InstantiateAsChild(drumSequencersPrefabs).GetComponent<DrumSequencerView>();
         musicManagerViewDic.Add(drumSequencerView.mixerGroup, drumSequencerView);
 
-        emoDatas.ForEach(emo =>
+        emoDataList.ForEach(emo =>
         {
             switch (emo.soundType)
             {

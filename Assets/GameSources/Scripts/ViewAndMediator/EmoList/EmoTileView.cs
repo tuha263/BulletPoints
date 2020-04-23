@@ -31,4 +31,9 @@ public class EmoTileView : EnhancedScrollerCellView
     {
         button.onClick.AddListener(action);
     }
+
+    public void setSelected(bool selected)
+    {
+        selectedBackGround.SetActive(selected);
+    }
 }
