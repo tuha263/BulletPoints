@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\AAA\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\AAA\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_BulletPoints.795503624.00" t="ExcludeRecursive" />
+    <e p="C:\Users\AAA\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\AAA\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_BulletPoints.795503624.00" t="ExcludeRecursive" />
     <e p="C:\Users\AAA\source\repos\BulletPoints" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -328,6 +328,8 @@
                 <e p="NodeCollumTileView.cs" t="Include" />
                 <e p="NodeTileMediator.cs" t="Include" />
                 <e p="NodeTileView.cs" t="Include" />
+                <e p="StaffLineMediator.cs" t="Include" />
+                <e p="StaffLineView.cs" t="Include" />
                 <e p="StaffMediator.cs" t="Include" />
                 <e p="StaffView.cs" t="Include" />
                 <e p="TimeSigTileMediator.cs" t="Include" />
@@ -687,12 +689,9 @@
         </e>
       </e>
       <e p="BulletPoints.sln" t="IncludeFlat" />
-      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
