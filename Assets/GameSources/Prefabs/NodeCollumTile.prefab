@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 224802006002965570}
   - component: {fileID: 114099704569573210}
-  - component: {fileID: 114354173361410558}
   - component: {fileID: 222956282058733868}
   m_Layer: 5
   m_Name: Notes
@@ -33,10 +32,10 @@ RectTransform:
   m_Father: {fileID: 224852396563372002}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.2413}
-  m_SizeDelta: {x: 80, y: 393.74}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114099704569573210
 MonoBehaviour:
@@ -45,7 +44,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143477910147914}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
@@ -63,26 +62,6 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
---- !u!114 &114354173361410558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143477910147914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: 58.36
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!222 &222956282058733868
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -151,6 +130,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: b5e95f181841c334cae622c688ddec39, type: 2}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -224,6 +204,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: b5e95f181841c334cae622c688ddec39, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -277,7 +258,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 50, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114281523614613956
 MonoBehaviour:
@@ -317,6 +298,7 @@ MonoBehaviour:
   measureBar: {fileID: 1837051357128928}
   inTabLine: {fileID: 1597429160789074}
   endTabLine: {fileID: 3837667178462685330}
+  notesLayout: {fileID: 114099704569573210}
 --- !u!222 &222712857822272678
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -386,6 +368,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: b5e95f181841c334cae622c688ddec39, type: 2}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -459,6 +442,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: b5e95f181841c334cae622c688ddec39, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

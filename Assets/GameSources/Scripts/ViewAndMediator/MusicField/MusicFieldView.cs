@@ -12,7 +12,7 @@ public class MusicFieldView : View {
 
   public EnhancedScroller enhancedScroller;
   public RectTransform musicBar;
-  public Text debugText;
+  public GameObject scrollBar;
 
   public float GetMinPosX() {
     return enhancedScroller.ScrollSize;

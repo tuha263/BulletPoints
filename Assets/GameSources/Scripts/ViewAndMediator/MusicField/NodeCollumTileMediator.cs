@@ -13,6 +13,7 @@ public class NodeCollumTileMediator : EventMediator {
     dispatcher.AddListener(GameEvent.OnChangeTempo, OnChangeTempo);
     dispatcher.AddListener(GameEvent.OnPlayNote, OnPlayNote);
     dispatcher.AddListener(GameEvent.OnLoadData, OnLoadData);
+    view.initHeight();
   }
 
   private void Start()

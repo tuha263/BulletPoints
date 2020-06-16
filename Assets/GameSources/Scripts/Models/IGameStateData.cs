@@ -31,6 +31,9 @@ public interface IGameStateData
     List<int> beatLength { get; }
     List<string> saveDataList { get; }
     List<EmoTileData> emoTileDataList { get; set; }
+    float fieldHeight { get; set; }
+    int fieldTopPadding { get; set; }
+    int feidlBotPadding { get; set; }
 }
 
 public class GameStateData : IGameStateData
@@ -116,6 +119,10 @@ public class GameStateData : IGameStateData
 
     public List<string> saveDataList { get; }
     public List<EmoTileData> emoTileDataList { get; set; }
+    
+    public float fieldHeight { get; set; }
+    public int fieldTopPadding { get; set; }
+    public int feidlBotPadding { get; set; }
 
     public GameStateData()
     {

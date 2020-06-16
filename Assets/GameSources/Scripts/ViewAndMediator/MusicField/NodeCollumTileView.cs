@@ -11,6 +11,8 @@ public class NodeCollumTileView : EnhancedScrollerCellView
     [SerializeField] private GameObject measureBar;
     [SerializeField] private GameObject inTabLine;
     [SerializeField] private GameObject endTabLine;
+    [SerializeField] private VerticalLayoutGroup notesLayout;
+
     public NodeCollumTileData nodeCollumTileData { get; private set; }
     private List<NodeTileView> noteViews;
 
@@ -20,11 +22,27 @@ public class NodeCollumTileView : EnhancedScrollerCellView
     {
         nodeCollumTileData = data;
         noteViews = new List<NodeTileView>();
+        
         for (int i = 0; i < data.emoDatas.Count; i++)
         {
             NodeTileView nodeView = notesRoot.InstantiateAsChild(nodeTile).GetComponent<NodeTileView>();
             nodeView.Init(i, this);
             noteViews.Add(nodeView);
+        }
+    }
+
+    public void initHeight()
+    {
+        // set notes height
+        float lineHeight = (gameStateData.fieldHeight - gameStateData.fieldTopPadding - gameStateData.feidlBotPadding) / 8;
+        for (int i = 0; i < noteViews.Count; i++)
+        {
+            var rectTransform = (noteViews[i].transform as RectTransform);
+            
+            rectTransform.offsetMax = new Vector2(0, -(gameStateData.fieldTopPadding + lineHeight / 4 + i * lineHeight / 2));
+            rectTransform.offsetMin = Vector2.zero;
+            rectTransform.SetHeight(lineHeight / 2);
+
         }
     }
 

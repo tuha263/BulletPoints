@@ -42,6 +42,7 @@ public class MusicFieldMediator : EventMediator, IEnhancedScrollerDelegate
     public void Start()
     {
         view.enhancedScroller.ScrollRect.onValueChanged.AddListener(OnScroll);
+        view.scrollBar.transform.SetSiblingIndex(view.scrollBar.transform.GetSiblingIndex() + 1);
     }
 
     private void OnChangeTimeSig(IEvent payload)
