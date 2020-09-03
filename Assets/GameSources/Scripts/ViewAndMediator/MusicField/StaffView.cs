@@ -15,13 +15,15 @@ public class StaffView : View {
 
   public void PopulateLines()
   {
+    gameStateData.amountOfLine = amountOfLine;
     gameStateData.fieldHeight = (transform as RectTransform).GetHeight();
     gameStateData.fieldTopPadding = verticalLayoutGroup.padding.top;
     gameStateData.feidlBotPadding = verticalLayoutGroup.padding.bottom;
     
     for (int i = 0; i < amountOfLine; i++) {
       StaffLineView staffLine = gameObject.InstantiateAsChild(line).GetComponent<StaffLineView>();
-      if (i == 0 || i == 1 || i == 7) {
+      // 2 line above and 1 line below
+      if (i < 2 || i == amountOfLine - 1) {
         staffLine.Init(false);
       } else {
         staffLine.Init(true);

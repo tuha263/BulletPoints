@@ -34,12 +34,12 @@ public class NodeCollumTileView : EnhancedScrollerCellView
     public void initHeight()
     {
         // set notes height
-        float lineHeight = (gameStateData.fieldHeight - gameStateData.fieldTopPadding - gameStateData.feidlBotPadding) / 8;
+        float lineHeight = (gameStateData.fieldHeight - gameStateData.fieldTopPadding - gameStateData.feidlBotPadding) / gameStateData.amountOfLine;
         for (int i = 0; i < noteViews.Count; i++)
         {
-            var rectTransform = (noteViews[i].transform as RectTransform);
+            var rectTransform = noteViews[i].transform as RectTransform;
             
-            rectTransform.offsetMax = new Vector2(0, -(gameStateData.fieldTopPadding + lineHeight / 4 + i * lineHeight / 2));
+            rectTransform.offsetMax = new Vector2(0, -(gameStateData.fieldTopPadding + lineHeight / 4 + (i - 1) * lineHeight / 2));
             rectTransform.offsetMin = Vector2.zero;
             rectTransform.SetHeight(lineHeight / 2);
 

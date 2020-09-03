@@ -1,9 +1,4 @@
-using System.Collections;
-using DG.Tweening;
 using strange.extensions.context.impl;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class LoadSceneRoot : ContextView {
   private void Awake() {

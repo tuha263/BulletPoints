@@ -2859,7 +2859,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114576335801421679}
   m_HandleRect: {fileID: 224271648041693209}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3206,8 +3206,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114281453754550279}
   m_HandleRect: {fileID: 224634396586599631}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3622,7 +3622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line: {fileID: 1722895414333964, guid: c08ef3e8815134116a53515f2df3ed36, type: 3}
-  amountOfLine: 8
+  amountOfLine: 7
   verticalLayoutGroup: {fileID: 114208800322428365}
 --- !u!114 &114796092540702443
 MonoBehaviour:

@@ -20,6 +20,8 @@ public class NodeTileView : View
 
     [SerializeField] private Image icon;
     [SerializeField] private Button button;
+    [Inject] public IGameStateData gameStateData { get; set; }
+
 
     public EmoTileData emoTileData =>
         gameStateData.collumDatas[nodeCollumTileView.nodeCollumTileData.columnIndex].emoDatas[index];
@@ -27,17 +29,14 @@ public class NodeTileView : View
     public NodeCollumTileView nodeCollumTileView { get; private set; }
     public int index { get; private set; }
 
-    [Inject] public IGameStateData gameStateData { get; set; }
     public NotePositionType positionType;
 
     private bool isSetable => nodeCollumTileView.nodeCollumTileData.isSetable;
-
+    
     public void AddOnclickListener(UnityAction action)
     {
         button.onClick.AddListener(action);
     }
-
- 
 
     public void SetData(EmoTileData emoTileData)
     {
@@ -56,11 +55,6 @@ public class NodeTileView : View
         }
 
         icon.sprite = emoTileData.sprite;
-    }
-
-    private void Awake()
-    {
-        
     }
 
     public void MoveNoteToLeft()

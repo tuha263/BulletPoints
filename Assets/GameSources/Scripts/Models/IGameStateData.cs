@@ -34,6 +34,7 @@ public interface IGameStateData
     float fieldHeight { get; set; }
     int fieldTopPadding { get; set; }
     int feidlBotPadding { get; set; }
+    int amountOfLine { get; set; }
 }
 
 public class GameStateData : IGameStateData
@@ -123,6 +124,7 @@ public class GameStateData : IGameStateData
     public float fieldHeight { get; set; }
     public int fieldTopPadding { get; set; }
     public int feidlBotPadding { get; set; }
+    public int amountOfLine { get; set; }
 
     public GameStateData()
     {
