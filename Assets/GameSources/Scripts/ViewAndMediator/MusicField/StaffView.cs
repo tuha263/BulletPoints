@@ -23,7 +23,7 @@ public class StaffView : View {
     for (int i = 0; i < amountOfLine; i++) {
       StaffLineView staffLine = gameObject.InstantiateAsChild(line).GetComponent<StaffLineView>();
       // 2 line above and 1 line below
-      if (i < 2 || i == amountOfLine - 1) {
+      if (i < 2 || i >= amountOfLine - 1) {
         staffLine.Init(false);
       } else {
         staffLine.Init(true);
